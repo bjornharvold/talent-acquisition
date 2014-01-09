@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<degrafa:GraphicBorderSkin 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:degrafa="http://www.degrafa.com/2007"
+	width="400" height="300"
+	xmlns:geometry="com.degrafa.geometry.*">
+	
+	
+	<mx:Script>
+        <![CDATA[
+            
+            [Bindable]
+            private var awidth:Number;
+            
+            [Bindable]
+            private var aheight:Number;
+            
+            
+            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+            {
+                
+                super.updateDisplayList(unscaledWidth, unscaledHeight);
+                awidth = unscaledWidth;
+                aheight = unscaledHeight;
+            }
+            
+        ]]>
+    </mx:Script>
+    
+	
+	<degrafa:Surface >
+		
+		<degrafa:fills>
+			<degrafa:LinearGradientFill id="myFill" angle="90">
+				<degrafa:GradientStop ratio="0" color="#CFE4F6" alpha="1" />
+				<degrafa:GradientStop ratio="1" color="#81B0D7" alpha="1" />
+			</degrafa:LinearGradientFill>
+		</degrafa:fills>
+		
+		<degrafa:GeometryGroup>
+			<degrafa:geometry>
+				<degrafa:RegularRectangle 
+					x="0" y="0"
+					width="{ awidth }" 
+					height="{ aheight }"
+					fill="{myFill}" /> 
+			</degrafa:geometry>
+		</degrafa:GeometryGroup>
+	
+	</degrafa:Surface>
+    
+    <degrafa:filters>
+    	<mx:DropShadowFilter distance="3" alpha="1" strength=".75" color="#333333" />
+	</degrafa:filters>
+</degrafa:GraphicBorderSkin>

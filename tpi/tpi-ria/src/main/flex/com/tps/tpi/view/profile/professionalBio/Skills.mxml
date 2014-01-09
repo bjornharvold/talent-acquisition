@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack  
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" 
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	label="SKILLS, KNOWLEDGE &amp; EXPERTISE" 
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	xmlns:components="com.tps.tpi.view.components.*"
+	xmlns:renderers="com.tps.tpi.view.renderers.*">
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.dto.AbstractDto;
+		]]>
+	</mx:Script>
+	<mx:Script>
+		<![CDATA[
+			import mx.resources.ResourceManager;
+		]]>
+	</mx:Script>
+	
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.dto.BiographySkillDto;
+
+        import mx.controls.Alert;
+
+        import org.papervision3d.objects.parsers.Max3DS;
+
+        import mx.controls.dataGridClasses.DataGridColumn;
+
+        import mx.collections.ListCollectionView;
+
+        public function set skills(value:ListCollectionView):void
+        {
+            //				value.addAll( value );
+            read.dataProvider = value;
+            //read.height = value.length * read.rowHeight;
+            //				var newHeight:Number = value.length * read.rowHeight + 25 + 10 + 10 + 15 + 20;//the last ten for good measure
+            //				newHeight = newHeight <= this.maxHeight ? newHeight : this.maxHeight;
+            //				this.height = value.length == 0 ? this.minHeight : newHeight;
+
+            this.height = value.length * 25 + 65;
+        }
+			
+			
+		]]>
+		
+	</mx:Script>
+		
+	<containers:readUI>
+		
+		<components:ProfileDataGrid id="read"  height="100%"   >
+			<components:columns>
+				<mx:DataGridColumn headerText="Skill/Expertise" >
+					<mx:itemRenderer>
+						<mx:Component>
+							<components:QuickSearchLabel
+								text="{ data.skill.shortName }" 
+								paddingLeft="5"
+								baseData="{ data as AbstractDto }"/>
+						</mx:Component>
+					</mx:itemRenderer>
+				</mx:DataGridColumn>
+				<mx:DataGridColumn headerText="Proficiency" >
+					<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label text="{ resourceManager.getString('resources', 'skill.proficiency.' + data.proficiency ) }" />
+							</mx:Component>
+						</mx:itemRenderer>
+				</mx:DataGridColumn>
+				<mx:DataGridColumn headerText="Endorsements" >
+					<mx:itemRenderer>
+						<mx:Component>
+							<renderers:EndorsementsItemRenderer endorsementsKey="biographySkillEndorsements" />
+						</mx:Component>
+					</mx:itemRenderer>
+				</mx:DataGridColumn>
+			</components:columns>
+			
+		</components:ProfileDataGrid>
+	</containers:readUI>	
+		
+</containers:ContentFormStack>

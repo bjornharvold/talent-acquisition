@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" >
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.EmbeddedAssets;
+			
+			private var textIsDirty:Boolean;
+			private var _text:String
+			public function get text():String
+			{
+				return _text;
+			}
+			public function set text( value:String ):void
+			{
+				_text = value;
+				textIsDirty = true;				
+				invalidateProperties();
+				
+			}
+			
+			override protected function commitProperties():void
+			{
+				super.commitProperties();
+				
+				if( textIsDirty )
+				{
+					textIsDirty = false;
+					theLabel.text = _text;
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Image source="{ EmbeddedAssets.ICON_DOWNARROWSMALL}"  verticalCenter="-3"/>
+	<mx:Label id="theLabel" left="4" verticalCenter="0" fontSize="10"/>
+	
+	<mx:Image source="{ EmbeddedAssets.ICON_CLOSEX }"
+		right="1" />
+		
+</mx:Canvas>

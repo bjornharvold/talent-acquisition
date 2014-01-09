@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold
+  -->
+
+<roles>
+    <rolegroup code="rolegroup.manager" en_US="Manager">
+        <role code="role.project.leader" en_US="Project Leader"/>
+        <role code="role.project.manager" en_US="Project Manager"/>
+    </rolegroup>
+    <rolegroup code="rolegroup.analyst" en_US="Analyst">
+        <role code="role.market.data.analyst.ii" en_US="Market Data Analyst II"/>
+        <role code="role.market.data.analyst.sr" en_US="Market Data Analyst Sr."/>
+        <role code="role.technical.expert" en_US="Technical Expert"/>
+        <role code="role.subject.matter.expert" en_US="Subject Matter Expert"/>
+        <role code="role.developer.analyst.ii" en_US="Developer/Analyst II"/>
+        <role code="role.developer.analyst.sr" en_US="Developer/Analyst Sr."/>
+        <role code="role.business.analyst.ii" en_US="Business Analyst II"/>
+        <role code="role.business.analyst.sr" en_US="Business Analyst Sr."/>
+    </rolegroup>
+    <rolegroup code="rolegroup.technology" en_US="Technology">
+        <rolegroup code="rolegroup.developer" en_US="Developer">
+            <role code="role.developer.java.senior" en_US="Senior Java Developer"/>
+            <role code="role.developer" en_US="Developer"/>
+            <role code="role.developer.java" en_US="Java Developer"/>
+            <role code="role.systems.programmer.ii" en_US="Systems Programmer II"/>
+            <role code="role.systems.programmer.sr" en_US="Systems Programmer Sr."/>
+            <role code="role.systems.architect" en_US="Systems Architect"/>
+            <role code="role.messaging.admin.ii" en_US="Messaging Admin II"/>
+            <role code="role.messaging.admin.sr" en_US="Messaging Admin Sr."/>
+            <role code="role.dba.ii" en_US="DBA II"/>
+            <role code="role.dba.sr" en_US="DBA Sr."/>
+            <role code="role.network.specialist.ii" en_US="Network Specialist II"/>
+            <role code="role.network.specialist.sr" en_US="Network Specialist Sr."/>
+            <role code="role.tech.support.analyst.ii" en_US="Tech Support Analyst II"/>
+            <role code="role.tech.support.analyst.sr" en_US="Tech Support Analyst Sr."/>
+            <role code="role.engineer.network.sys.web.i" en_US="Engineer (Network/Sys/Web) I"/>
+            <role code="role.engineer.network.sys.web.ii" en_US="Engineer (Network/Sys/Web) II"/>
+            <role code="role.engineer.network.sys.web.sr" en_US="Engineer (Network/Sys/Web) Sr."/>
+            <role code="role.systems.admin.ii" en_US="Systems Admin II"/>
+            <role code="role.systems.admin.sr" en_US="Systems Admin Sr."/>
+        </rolegroup>
+    </rolegroup>
+</roles>

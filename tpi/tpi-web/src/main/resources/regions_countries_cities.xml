@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regions>
+    <region code="region.africa" en_US="Africa">
+        <!--<region code="region.africa.east" en_US="Eastern Africa">-->
+            <country code="country.burundi" en_US="Burundi"></country>
+            <country code="country.comoros" en_US="Comoros"></country>
+            <country code="country.djibouti" en_US="Djibouti"></country>
+            <country code="country.eritrea" en_US="Eritrea"></country>
+            <country code="country.ethiopia" en_US="Ethiopia"></country>
+            <country code="country.kenya" en_US="Kenya"></country>
+            <country code="country.madagascar" en_US="Madagascar"></country>
+            <country code="country.malawi" en_US="Malawi"></country>
+            <country code="country.mauritius" en_US="Mauritius"></country>
+            <country code="country.mayotte" en_US="Mayotte"></country>
+            <country code="country.mozambique" en_US="Mozambique"></country>
+            <country code="country.reunion" en_US="Réunion"></country>
+            <country code="country.rwanda" en_US="Rwanda"></country>
+            <country code="country.seychelles" en_US="Seychelles"></country>
+            <country code="country.somalia" en_US="Somalia"></country>
+            <country code="country.uganda" en_US="Uganda"></country>
+            <country code="country.united.republic.of.tanzania" en_US="United Republic of Tanzania"></country>
+            <country code="country.zambia" en_US="Zambia"></country>
+            <country code="country.zimbabwe" en_US="Zimbabwe"></country>
+        <!--</region>-->
+        <!--<region code="region.africa.central" en_US="Central Africa">-->
+            <country code="country.angola" en_US="Angola"></country>
+            <country code="country.cameroon" en_US="Cameroon"></country>
+            <country code="country.central.african.republic" en_US="Central African Republic"></country>
+            <country code="country.chad" en_US="Chad"></country>
+            <country code="country.congo" en_US="Congo"></country>
+            <country code="country.democratic.republic.of.the.congo" en_US="Democratic Republic of the Congo"></country>
+            <country code="country.equatorial.guinea" en_US="Equatorial Guinea"></country>
+            <country code="country.gabon" en_US="Gabon"></country>
+            <country code="country.sao.tome.and.principe" en_US="Sao Tome and Principe"></country>
+        <!--</region>-->
+        <!--<region code="region.africa.north" en_US="Northern Africa">-->
+            <country code="country.algeria" en_US="Algeria"></country>
+            <country code="country.egypt" en_US="Egypt"></country>
+            <country code="country.libyan.arab.jamahiriya" en_US="Libyan Arab Jamahiriya"></country>
+            <country code="country.morocco" en_US="Morocco"></country>
+            <country code="country.sudan" en_US="Sudan"></country>
+            <country code="country.tunisia" en_US="Tunisia"></country>
+            <country code="country.western.sahara" en_US="Western Sahara"></country>
+        <!--</region>-->
+        <!--<region code="region.africa.south" en_US="Southern Africa">-->
+            <country code="country.botswana" en_US="Botswana"></country>
+            <country code="country.lesotho" en_US="Lesotho"></country>
+            <country code="country.namibia" en_US="Namibia"></country>
+            <country code="country.south.africa" en_US="South Africa"></country>
+            <country code="country.swaziland" en_US="Swaziland"></country>
+        <!--</region>-->
+        <!--<region code="region.africa.west" en_US="Western Africa">-->
+            <country code="country.benin" en_US="Benin"></country>
+            <country code="country.burkina.faso" en_US="Burkina Faso"></country>
+            <country code="country.cape.verde" en_US="Cape Verde"></country>
+            <country code="country.cote.d.ivoire" en_US="Cote d'Ivoire"></country>
+            <country code="country.gambia" en_US="Gambia"></country>
+            <country code="country.ghana" en_US="Ghana"></country>
+            <country code="country.guinea" en_US="Guinea"></country>
+            <country code="country.guinea.bissau" en_US="Guinea-Bissau"></country>
+            <country code="country.liberia" en_US="Liberia"></country>
+            <country code="country.mali" en_US="Mali"></country>
+            <country code="country.mauritania" en_US="Mauritania"></country>
+            <country code="country.niger" en_US="Niger"></country>
+            <country code="country.nigeria" en_US="Nigeria"></country>
+            <country code="country.saint.helena" en_US="Saint Helena"></country>
+            <country code="country.senegal" en_US="Senegal"></country>
+            <country code="country.sierra.leone" en_US="Sierra Leone"></country>
+            <country code="country.togo" en_US="Togo"></country>
+        <!--</region>-->
+    </region>
+    <region code="region.americas" en_US="Americas">
+        <!--<region code="region.caribbean" en_US="Caribbean">-->
+            <country code="country.anguilla" en_US="Anguilla"></country>
+            <country code="country.antigua.and.barbuda" en_US="Antigua and Barbuda"></country>
+            <country code="country.aruba" en_US="Aruba"></country>
+            <country code="country.bahamas" en_US="Bahamas"></country>
+            <country code="country.barbados" en_US="Barbados"></country>
+            <country code="country.british.virgin.islands" en_US="British Virgin Islands"></country>
+            <country code="country.cayman.islands" en_US="Cayman Islands"></country>
+            <country code="country.cuba" en_US="Cuba"></country>
+            <country code="country.dominica" en_US="Dominica"></country>
+            <country code="country.dominican.republic" en_US="Dominican Republic"></country>
+            <country code="country.grenada" en_US="Grenada"></country>
+            <country code="country.guadeloupe" en_US="Guadeloupe"></country>
+            <country code="country.haiti" en_US="Haiti"></country>
+            <country code="country.jamaica" en_US="Jamaica"></country>
+            <country code="country.martinique" en_US="Martinique"></country>
+            <country code="country.montserrat" en_US="Montserrat"></country>
+            <country code="country.netherlands.antilles" en_US="Netherlands Antilles"></country>
+            <country code="country.puerto.rico" en_US="Puerto Rico"></country>
+            <country code="country.saint.barthelemy" en_US="Saint-Barthélemy"></country>
+            <country code="country.saint.kitts.and.nevis" en_US="Saint Kitts and Nevis"></country>
+            <country code="country.saint.lucia" en_US="Saint Lucia"></country>
+            <country code="country.saint.martin.french" en_US="Saint Martin (French part)"></country>
+            <country code="country.saint.vincent.and.the.grenadines" en_US="Saint Vincent and the Grenadines"></country>
+            <country code="country.trinidad.and.tobago" en_US="Trinidad and Tobago"></country>
+            <country code="country.turks.and.caicos.islands" en_US="Turks and Caicos Islands"></country>
+            <country code="country.united.states.virgin.islands" en_US="United States Virgin Islands"></country>
+        <!--</region>-->
+        <!--<region code="region.central.america" en_US="Central America">-->
+            <country code="country.belize" en_US="Belize"></country>
+            <country code="country.costa.rica" en_US="Costa Rica"></country>
+            <country code="country.el.salvador" en_US="El Salvador"></country>
+            <country code="country.guatemala" en_US="Guatemala"></country>
+            <country code="country.honduras" en_US="Honduras"></country>
+            <country code="country.mexico" en_US="Mexico"></country>
+            <country code="country.nicaragua" en_US="Nicaragua"></country>
+            <country code="country.panama" en_US="Panama"></country>
+        <!--</region>-->
+        <!--<region code="region.south.america" en_US="South America">-->
+            <country code="country.argentina" en_US="Argentina"></country>
+            <country code="country.bolivia" en_US="Bolivia"></country>
+            <country code="country.brazil" en_US="Brazil"></country>
+            <country code="country.chile" en_US="Chile"></country>
+            <country code="country.colombia" en_US="Colombia"></country>
+            <country code="country.ecuador" en_US="Ecuador"></country>
+            <country code="country.falkland.islands" en_US="Falkland Islands (Malvinas)"></country>
+            <country code="country.french.guiana" en_US="French Guiana"></country>
+            <country code="country.guyana" en_US="Guyana"></country>
+            <country code="country.paraguay" en_US="Paraguay"></country>
+            <country code="country.peru" en_US="Peru"></country>
+            <country code="country.suriname" en_US="Suriname"></country>
+            <country code="country.uruguay" en_US="Uruguay"></country>
+            <country code="country.venezuela" en_US="Venezuela (Bolivarian Republic of)"></country>
+        <!--</region>-->
+        <!--<region code="region.north.america" en_US="North America">-->
+            <country code="country.bermuda" en_US="Bermuda"></country>
+            <country code="country.canada" en_US="Canada"></country>
+            <country code="country.greenland" en_US="Greenland"></country>
+            <country code="country.saint.pierre.and.miquelon" en_US="Saint Pierre and Miquelon"></country>
+            <country code="country.united.states.of.america" en_US="United States of America">
+                <cities>
+                    <city code="city.akron" en_US="Akron"/>
+                    <city code="city.albany" en_US="Albany"/>
+                    <city code="city.albuquerque" en_US="Albuquerque"/>
+                    <city code="city.allentown" en_US="Allentown"/>
+                    <city code="city.ann.arbor" en_US="Ann Arbor"/>
+                    <city code="city.anniston" en_US="Anniston"/>
+                    <city code="city.appleton" en_US="Appleton"/>
+                    <city code="city.asheville" en_US="Asheville"/>
+                    <city code="city.atlanta" en_US="Atlanta"/>
+                    <city code="city.atlantic.city" en_US="Atlantic City"/>
+                    <city code="city.augusta" en_US="Augusta"/>
+                    <city code="city.austin" en_US="Austin"/>
+                    <city code="city.bakersfield" en_US="Bakersfield"/>
+                    <city code="city.baltimore" en_US="Baltimore"/>
+                    <city code="city.bangor" en_US="Bangor"/>
+                    <city code="city.barnstable.town" en_US="Barnstable Town"/>
+                    <city code="city.baton.rouge" en_US="Baton Rouge"/>
+                    <city code="city.beaumont" en_US="Beaumont"/>
+                    <city code="city.bellingham" en_US="Bellingham"/>
+                    <city code="city.bend" en_US="Bend"/>
+                    <city code="city.billings" en_US="Billings"/>
+                    <city code="city.binghamton" en_US="Binghamton"/>
+                    <city code="city.birmingham" en_US="Birmingham"/>
+                    <city code="city.bloomington" en_US="Bloomington"/>
+                    <city code="city.boise" en_US="Boise"/>
+                    <city code="city.boston" en_US="Boston"/>
+                    <city code="city.boulder" en_US="Boulder"/>
+                    <city code="city.bridgeport" en_US="Bridgeport"/>
+                    <city code="city.brownsville" en_US="Brownsville"/>
+                    <city code="city.buffalo" en_US="Buffalo"/>
+                    <city code="city.burlington" en_US="Burlington"/>
+                    <city code="city.canton" en_US="Canton"/>
+                    <city code="city.cape.coral" en_US="Cape Coral"/>
+                    <city code="city.cedar.rapids" en_US="Cedar Rapids"/>
+                    <city code="city.champaign" en_US="Champaign"/>
+                    <city code="city.charleston" en_US="Charleston"/>
+                    <city code="city.charleston" en_US="Charleston"/>
+                    <city code="city.charlotte" en_US="Charlotte"/>
+                    <city code="city.chattanooga" en_US="Chattanooga"/>
+                    <city code="city.chicago" en_US="Chicago"/>
+                    <city code="city.cincinnati" en_US="Cincinnati"/>
+                    <city code="city.cleveland" en_US="Cleveland"/>
+                    <city code="city.coeur.alene" en_US="Coeur d'Alene"/>
+                    <city code="city.colorado.springs" en_US="Colorado Springs"/>
+                    <city code="city.columbia" en_US="Columbia"/>
+                    <city code="city.columbus" en_US="Columbus"/>
+                    <city code="city.corpus.christi" en_US="Corpus Christi"/>
+                    <city code="city.dallas" en_US="Dallas"/>
+                    <city code="city.danbury" en_US="Danbury"/>
+                    <city code="city.davenport" en_US="Davenport"/>
+                    <city code="city.dayton" en_US="Dayton"/>
+                    <city code="city.daytona.beach" en_US="Daytona Beach"/>
+                    <city code="city.denver" en_US="Denver"/>
+                    <city code="city.des.moines" en_US="Des Moines"/>
+                    <city code="city.detroit" en_US="Detroit"/>
+                    <city code="city.dover" en_US="Dover"/>
+                    <city code="city.duluth" en_US="Duluth"/>
+                    <city code="city.durham" en_US="Durham"/>
+                    <city code="city.eau.claire" en_US="Eau Claire"/>
+                    <city code="city.el.paso" en_US="El Paso"/>
+                    <city code="city.erie" en_US="Erie"/>
+                    <city code="city.eugene" en_US="Eugene"/>
+                    <city code="city.fargo" en_US="Fargo"/>
+                    <city code="city.fayetteville" en_US="Fayetteville"/>
+                    <city code="city.flint" en_US="Flint"/>
+                    <city code="city.fort.collins" en_US="Fort Collins"/>
+                    <city code="city.fort.smith" en_US="Fort Smith"/>
+                    <city code="city.fort.wayne" en_US="Fort Wayne"/>
+                    <city code="city.fresno" en_US="Fresno"/>
+                    <city code="city.grand.rapids" en_US="Grand Rapids"/>
+                    <city code="city.greeley" en_US="Greeley"/>
+                    <city code="city.green.bay" en_US="Green Bay"/>
+                    <city code="city.greensboro" en_US="Greensboro"/>
+                    <city code="city.greenville" en_US="Greenville"/>
+                    <city code="city.harrisburg" en_US="Harrisburg"/>
+                    <city code="city.hartford" en_US="Hartford"/>
+                    <city code="city.hickory" en_US="Hickory"/>
+                    <city code="city.holland" en_US="Holland"/>
+                    <city code="city.honolulu" en_US="Honolulu"/>
+                    <city code="city.houston" en_US="Houston"/>
+                    <city code="city.huntington" en_US="Huntington"/>
+                    <city code="city.huntsville" en_US="Huntsville"/>
+                    <city code="city.indianapolis" en_US="Indianapolis"/>
+                    <city code="city.iowa.city" en_US="Iowa City"/>
+                    <city code="city.jackson" en_US="Jackson"/>
+                    <city code="city.jackson" en_US="Jackson"/>
+                    <city code="city.jacksonville" en_US="Jacksonville"/>
+                    <city code="city.janesville" en_US="Janesville"/>
+                    <city code="city.joplin" en_US="Joplin"/>
+                    <city code="city.kalamazoo" en_US="Kalamazoo"/>
+                    <city code="city.kankakee" en_US="Kankakee"/>
+                    <city code="city.kansas.city" en_US="Kansas City"/>
+                    <city code="city.knoxville" en_US="Knoxville"/>
+                    <city code="city.lafayette" en_US="Lafayette"/>
+                    <city code="city.lakeland" en_US="Lakeland"/>
+                    <city code="city.lancaster" en_US="Lancaster"/>
+                    <city code="city.lansing" en_US="Lansing"/>
+                    <city code="city.las.cruces" en_US="Las Cruces"/>
+                    <city code="city.las.vegas" en_US="Las Vegas"/>
+                    <city code="city.lawrence" en_US="Lawrence"/>
+                    <city code="city.lexington" en_US="Lexington"/>
+                    <city code="city.little.rock" en_US="Little Rock"/>
+                    <city code="city.los.angeles" en_US="Los Angeles"/>
+                    <city code="city.louisville" en_US="Louisville"/>
+                    <city code="city.madison" en_US="Madison"/>
+                    <city code="city.medford" en_US="Medford"/>
+                    <city code="city.memphis" en_US="Memphis"/>
+                    <city code="city.menlo.park" en_US="Menlo Park"/>
+                    <city code="city.miami" en_US="Miami"/>
+                    <city code="city.milwaukee" en_US="Milwaukee"/>
+                    <city code="city.minneapolis.st.paul" en_US="Minneapolis-St Paul"/>
+                    <city code="city.mobile" en_US="Mobile"/>
+                    <city code="city.modesto" en_US="Modesto"/>
+                    <city code="city.monroe" en_US="Monroe"/>
+                    <city code="city.montgomery" en_US="Montgomery"/>
+                    <city code="city.myrtle.beach" en_US="Myrtle Beach"/>
+                    <city code="city.naples" en_US="Naples"/>
+                    <city code="city.nashville" en_US="Nashville"/>
+                    <city code="city.new.haven" en_US="New Haven"/>
+                    <city code="city.new.orleans" en_US="New Orleans"/>
+                    <city code="city.new.york" en_US="New York"/>
+                    <city code="city.norwich" en_US="Norwich"/>
+                    <city code="city.ocala" en_US="Ocala"/>
+                    <city code="city.ogden" en_US="Ogden"/>
+                    <city code="city.oklahoma.city" en_US="Oklahoma City"/>
+                    <city code="city.olympia" en_US="Olympia"/>
+                    <city code="city.omaha" en_US="Omaha"/>
+                    <city code="city.orlando" en_US="Orlando"/>
+                    <city code="city.oxnard" en_US="Oxnard"/>
+                    <city code="city.palm.bay" en_US="Palm Bay"/>
+                    <city code="city.panama.city" en_US="Panama City"/>
+                    <city code="city.pensacola" en_US="Pensacola"/>
+                    <city code="city.peoria" en_US="Peoria"/>
+                    <city code="city.philadelphia" en_US="Philadelphia"/>
+                    <city code="city.phoenix" en_US="Phoenix"/>
+                    <city code="city.pittsburgh" en_US="Pittsburgh"/>
+                    <city code="city.port.st.lucie" en_US="Port St. Lucie"/>
+                    <city code="city.portland" en_US="Portland"/>
+                    <city code="city.poughkeepsie" en_US="Poughkeepsie"/>
+                    <city code="city.providence" en_US="Providence"/>
+                    <city code="city.provo" en_US="Provo"/>
+                    <city code="city.pueblo" en_US="Pueblo"/>
+                    <city code="city.racine" en_US="Racine"/>
+                    <city code="city.raleigh" en_US="Raleigh"/>
+                    <city code="city.reading" en_US="Reading"/>
+                    <city code="city.reno" en_US="Reno"/>
+                    <city code="city.richmond" en_US="Richmond"/>
+                    <city code="city.riverside" en_US="Riverside"/>
+                    <city code="city.roanoke" en_US="Roanoke"/>
+                    <city code="city.rochester" en_US="Rochester"/>
+                    <city code="city.rockford" en_US="Rockford"/>
+                    <city code="city.sacramento" en_US="Sacramento"/>
+                    <city code="city.salem" en_US="Salem"/>
+                    <city code="city.salinas" en_US="Salinas"/>
+                    <city code="city.salt.lake.city" en_US="Salt Lake City"/>
+                    <city code="city.san.antonio" en_US="San Antonio"/>
+                    <city code="city.san.diego" en_US="San Diego"/>
+                    <city code="city.san.francisco" en_US="San Francisco"/>
+                    <city code="city.san.jose" en_US="San Jose"/>
+                    <city code="city.santa.barbara" en_US="Santa Barbara"/>
+                    <city code="city.santa.rosa" en_US="Santa Rosa"/>
+                    <city code="city.sarasota" en_US="Sarasota"/>
+                    <city code="city.savannah" en_US="Savannah"/>
+                    <city code="city.scranton" en_US="Scranton"/>
+                    <city code="city.seattle" en_US="Seattle"/>
+                    <city code="city.shreveport" en_US="Shreveport"/>
+                    <city code="city.sioux.falls" en_US="Sioux Falls"/>
+                    <city code="city.south.bend" en_US="South Bend"/>
+                    <city code="city.spartanburg" en_US="Spartanburg"/>
+                    <city code="city.spokane" en_US="Spokane"/>
+                    <city code="city.springfield" en_US="Springfield"/>
+                    <city code="city.st.cloud" en_US="St. Cloud"/>
+                    <city code="city.st.louis" en_US="St. Louis"/>
+                    <city code="city.stockton" en_US="Stockton"/>
+                    <city code="city.syracuse" en_US="Syracuse"/>
+                    <city code="city.tampa" en_US="Tampa"/>
+                    <city code="city.toledo" en_US="Toledo"/>
+                    <city code="city.topeka" en_US="Topeka"/>
+                    <city code="city.trenton" en_US="Trenton"/>
+                    <city code="city.tucson" en_US="Tucson"/>
+                    <city code="city.tulsa" en_US="Tulsa"/>
+                    <city code="city.utica" en_US="Utica"/>
+                    <city code="city.vallejo" en_US="Vallejo"/>
+                    <city code="city.victoria" en_US="Victoria"/>
+                    <city code="city.virginia.beach" en_US="Virginia Beach"/>
+                    <city code="city.visalia" en_US="Visalia"/>
+                    <city code="city.waco" en_US="Waco"/>
+                    <city code="city.washington" en_US="Washington"/>
+                    <city code="city.waterbury" en_US="Waterbury"/>
+                    <city code="city.waterloo" en_US="Waterloo"/>
+                    <city code="city.wichita" en_US="Wichita"/>
+                    <city code="city.winston.salem" en_US="Winston-Salem"/>
+                    <city code="city.worcester" en_US="Worcester"/>
+                    <city code="city.york" en_US="York"/>
+                    <city code="city.youngstown" en_US="Youngstown"/>
+                </cities>
+            </country>
+        <!--</region>-->
+    </region>
+    <region code="region.asia" en_US="Asia">
+        <!--<region code="region.asia.central" en_US="Central Asia">-->
+            <country code="country.kazakhstan" en_US="Kazakhstan"></country>
+            <country code="country.kyrgyzstan" en_US="Kyrgyzstan"></country>
+            <country code="country.tajikistan" en_US="Tajikistan"></country>
+            <country code="country.turkmenistan" en_US="Turkmenistan"></country>
+            <country code="country.uzbekistan" en_US="Uzbekistan"></country>
+        <!--</region>-->
+        <!--<region code="region.asia.east" en_US="Eastern Asia">-->
+            <country code="country.china" en_US="China"></country>
+            <country code="country.hong.kong" en_US="Hong Kong Special Administrative Region of China"></country>
+            <country code="country.macao" en_US="Macao Special Administrative Region of China"></country>
+            <country code="country.democratic.people.republic.of.korea" en_US="Democratic People's Republic of Korea"></country>
+            <country code="country.japan" en_US="Japan"></country>
+            <country code="country.mongolia" en_US="Mongolia"></country>
+            <country code="country.republic.of.korea" en_US="Republic of Korea"></country>
+        <!--</region>-->
+        <!--<region code="region.asia.south" en_US="Southern Asia">-->
+            <country code="country.afghanistan" en_US="Afghanistan"></country>
+            <country code="country.bangladesh" en_US="Bangladesh"></country>
+            <country code="country.bhutan" en_US="Bhutan"></country>
+            <country code="country.india" en_US="India"></country>
+            <country code="country.iran" en_US="Iran, Islamic Republic of"></country>
+            <country code="country.maldives" en_US="Maldives"></country>
+            <country code="country.nepal" en_US="Nepal"></country>
+            <country code="country.pakistan" en_US="Pakistan"></country>
+            <country code="country.sri.lanka" en_US="Sri Lanka"></country>
+        <!--</region>-->
+        <!--<region code="region.asia.south.east" en_US="South-Eastern Asia">-->
+            <country code="country.brunei.darussalam" en_US="Brunei Darussalam"></country>
+            <country code="country.cambodia" en_US="Cambodia"></country>
+            <country code="country.indonesia" en_US="Indonesia"></country>
+            <country code="country.lao" en_US="Lao People's Democratic Republic"></country>
+            <country code="country.malaysia" en_US="Malaysia"></country>
+            <country code="country.myanmar" en_US="Myanmar"></country>
+            <country code="country.philippines" en_US="Philippines"></country>
+            <country code="country.singapore" en_US="Singapore"></country>
+            <country code="country.thailand" en_US="Thailand"></country>
+            <country code="country.timor.leste" en_US="Timor-Leste"></country>
+            <country code="country.viet.nam" en_US="Viet Nam"></country>
+        <!--</region>-->
+        <!--<region code="region.asia.west" en_US="Western Asia">-->
+            <country code="country.armenia" en_US="Armenia"></country>
+            <country code="country.azerbaijan" en_US="Azerbaijan"></country>
+            <country code="country.bahrain" en_US="Bahrain"></country>
+            <country code="country.cyprus" en_US="Cyprus"></country>
+            <country code="country.georgia" en_US="Georgia"></country>
+            <country code="country.iraq" en_US="Iraq"></country>
+            <country code="country.israel" en_US="Israel"></country>
+            <country code="country.jordan" en_US="Jordan"></country>
+            <country code="country.kuwait" en_US="Kuwait"></country>
+            <country code="country.lebanon" en_US="Lebanon"></country>
+            <country code="country.palestine" en_US="Occupied Palestinian Territory"></country>
+            <country code="country.oman" en_US="Oman"></country>
+            <country code="country.qatar" en_US="Qatar"></country>
+            <country code="country.saudi.arabia" en_US="Saudi Arabia"></country>
+            <country code="country.syrian.arab.republic" en_US="Syrian Arab Republic"></country>
+            <country code="country.turkey" en_US="Turkey"></country>
+            <country code="country.united.arab.emirates" en_US="United Arab Emirates"></country>
+            <country code="country.yemen" en_US="Yemen"></country>
+        <!--</region>-->
+    </region>
+    <region code="region.europe" en_US="Europe">
+        <!--<region code="region.europe.east" en_US="Eastern Europe">-->
+            <country code="country.belarus" en_US="Belarus"></country>
+            <country code="country.bulgaria" en_US="Bulgaria"></country>
+            <country code="country.czech.republic" en_US="Czech Republic"></country>
+            <country code="country.hungary" en_US="Hungary"></country>
+            <country code="country.poland" en_US="Poland"></country>
+            <country code="country.republic.of.moldova" en_US="Republic of Moldova"></country>
+            <country code="country.romania" en_US="Romania"></country>
+            <country code="country.russian.federation" en_US="Russian Federation"></country>
+            <country code="country.slovakia" en_US="Slovakia"></country>
+            <country code="country.ukraine" en_US="Ukraine"></country>
+        <!--</region>-->
+        <!--<region code="region.europe.north" en_US="Northern Europe">-->
+            <country code="country.aaland.islands" en_US="Åland Islands"></country>
+            <country code="country.channel.islands" en_US="Channel Islands"></country>
+            <country code="country.denmark" en_US="Denmark"></country>
+            <country code="country.estonia" en_US="Estonia"></country>
+            <country code="country.faeroe.islands" en_US="Faeroe Islands"></country>
+            <country code="country.finland" en_US="Finland"></country>
+            <country code="country.guernsey" en_US="Guernsey"></country>
+            <country code="country.iceland" en_US="Iceland"></country>
+            <country code="country.ireland" en_US="Ireland"></country>
+            <country code="country.isle.of.man" en_US="Isle of Man"></country>
+            <country code="country.jersey" en_US="Jersey"></country>
+            <country code="country.latvia" en_US="Latvia"></country>
+            <country code="country.lithuania" en_US="Lithuania"></country>
+            <country code="country.norway" en_US="Norway"></country>
+            <country code="country.svalbard" en_US="Svalbard and Jan Mayen Islands"></country>
+            <country code="country.sweden" en_US="Sweden"></country>
+            <country code="country.united.kingdom" en_US="United Kingdom">
+                <cities>
+                    <city code="city.aberdeen" en_US="Aberdeen"/>
+                    <city code="city.armagh" en_US="Armagh"/>
+                    <city code="city.bangor" en_US="Bangor"/>
+                    <city code="city.bath" en_US="Bath"/>
+                    <city code="city.belfast" en_US="Belfast"/>
+                    <city code="city.birmingham" en_US="Birmingham"/>
+                    <city code="city.bradford" en_US="Bradford"/>
+                    <city code="city.bristol" en_US="Bristol"/>
+                    <city code="city.cambridge" en_US="Cambridge"/>
+                    <city code="city.canterbury" en_US="Canterbury"/>
+                    <city code="city.cardiff" en_US="Cardiff"/>
+                    <city code="city.carlisle" en_US="Carlisle"/>
+                    <city code="city.chester" en_US="Chester"/>
+                    <city code="city.chichester" en_US="Chichester"/>
+                    <city code="city.coventry" en_US="Coventry"/>
+                    <city code="city.derby" en_US="Derby"/>
+                    <city code="city.derry" en_US="Derry"/>
+                    <city code="city.dundee" en_US="Dundee"/>
+                    <city code="city.durham" en_US="Durham"/>
+                    <city code="city.edinburgh" en_US="Edinburgh"/>
+                    <city code="city.ely" en_US="Ely"/>
+                    <city code="city.exeter" en_US="Exeter"/>
+                    <city code="city.glasgow" en_US="Glasgow"/>
+                    <city code="city.gloucester" en_US="Gloucester"/>
+                    <city code="city.hereford" en_US="Hereford"/>
+                    <city code="city.inverness" en_US="Inverness"/>
+                    <city code="city.lancaster" en_US="Lancaster"/>
+                    <city code="city.leeds" en_US="Leeds"/>
+                    <city code="city.leicester" en_US="Leicester"/>
+                    <city code="city.lichfield" en_US="Lichfield"/>
+                    <city code="city.lincoln" en_US="Lincoln"/>
+                    <city code="city.lisburn" en_US="Lisburn"/>
+                    <city code="city.liverpool" en_US="Liverpool"/>
+                    <city code="city.london" en_US="London"/>
+                    <city code="city.manchester" en_US="Manchester"/>
+                    <city code="city.newport" en_US="Newport"/>
+                    <city code="city.newry" en_US="Newry"/>
+                    <city code="city.norwich" en_US="Norwich"/>
+                    <city code="city.nottingham" en_US="Nottingham"/>
+                    <city code="city.oxford" en_US="Oxford"/>
+                    <city code="city.peterborough" en_US="Peterborough"/>
+                    <city code="city.plymouth" en_US="Plymouth"/>
+                    <city code="city.portsmouth" en_US="Portsmouth"/>
+                    <city code="city.preston" en_US="Preston"/>
+                    <city code="city.ripon" en_US="Ripon"/>
+                    <city code="city.salford" en_US="Salford"/>
+                    <city code="city.salisbury" en_US="Salisbury"/>
+                    <city code="city.sheffield" en_US="Sheffield"/>
+                    <city code="city.southampton" en_US="Southampton"/>
+                    <city code="city.st.albans" en_US="St Albans"/>
+                    <city code="city.st.davids" en_US="St David's"/>
+                    <city code="city.stirling" en_US="Stirling"/>
+                    <city code="city.stoke.on.trent" en_US="Stoke-on-Trent"/>
+                    <city code="city.sunderland" en_US="Sunderland"/>
+                    <city code="city.swansea" en_US="Swansea"/>
+                    <city code="city.truro" en_US="Truro"/>
+                    <city code="city.wakefield" en_US="Wakefield"/>
+                    <city code="city.wells" en_US="Wells"/>
+                    <city code="city.westminster" en_US="Westminster"/>
+                    <city code="city.winchester" en_US="Winchester"/>
+                    <city code="city.wolverhampton" en_US="Wolverhampton"/>
+                    <city code="city.worcester" en_US="Worcester"/>
+                    <city code="city.york" en_US="York"/>
+                </cities>
+            </country>
+        <!--</region>-->
+        <!--<region code="region.europe.south" en_US="Southern Europe">-->
+            <country code="country.albania" en_US="Albania"></country>
+            <country code="country.andorra" en_US="Andorra"></country>
+            <country code="country.bosnia.and.herzegovina" en_US="Bosnia and Herzegovina"></country>
+            <country code="country.croatia" en_US="Croatia"></country>
+            <country code="country.gibraltar" en_US="Gibraltar"></country>
+            <country code="country.greece" en_US="Greece"></country>
+            <country code="country.holy.see" en_US="Holy See"></country>
+            <country code="country.italy" en_US="Italy"></country>
+            <country code="country.malta" en_US="Malta"></country>
+            <country code="country.montenegro" en_US="Montenegro"></country>
+            <country code="country.portugal" en_US="Portugal"></country>
+            <country code="country.san.marino" en_US="San Marino"></country>
+            <country code="country.serbia" en_US="Serbia"></country>
+            <country code="country.slovenia" en_US="Slovenia"></country>
+            <country code="country.spain" en_US="Spain"></country>
+            <country code="country.macedonia" en_US="The former Yugoslav Republic of Macedonia"></country>
+        <!--</region>-->
+        <!--<region code="region.europe.west" en_US="Western Europe">-->
+            <country code="country.austria" en_US="Austria"></country>
+            <country code="country.belgium" en_US="Belgium"></country>
+            <country code="country.france" en_US="France"></country>
+            <country code="country.germany" en_US="Germany">
+                <cities>
+                    <city code="city.berlin" en_US="Berlin"/>
+                    <city code="city.frankfurt" en_US="Frankfurt"/>
+                    <city code="city.munich" en_US="Munich"/>
+                    <city code="city.cologne" en_US="Cologne"/>
+                    <city code="city.stuttgart" en_US="Stuttgart"/>
+                    <city code="city.kaiserslautern" en_US="Kaiserslautern"/>
+                    <city code="city.mannheim" en_US="Mannheim"/>
+                    <city code="city.augsburg" en_US="Augsburg"/>
+                    <city code="city.dusseldorf" en_US="Düsseldorf"/>
+                    <city code="city.hamburg" en_US="Hamburg"/>
+                </cities>
+            </country>
+            <country code="country.liechtenstein" en_US="Liechtenstein"></country>
+            <country code="country.luxembourg" en_US="Luxembourg"></country>
+            <country code="country.monaco" en_US="Monaco"></country>
+            <country code="country.netherlands" en_US="Netherlands"></country>
+            <country code="country.switzerland" en_US="Switzerland"></country>
+        <!--</region>-->
+    <!--</region>-->
+    <!--<region code="region.oceania" en_US="Oceania">-->
+        <!--<region code="region.oceania.australia.new.zealand" en_US="Australia and New Zealand">-->
+            <country code="country.australia" en_US="Australia"></country>
+            <country code="country.new.zealand" en_US="New Zealand"></country>
+            <country code="country.norfolk.island" en_US="Norfolk Island"></country>
+        <!--</region>-->
+        <!--<region code="region.oceania.melanesia" en_US="Melanesia">-->
+            <country code="country.fiji" en_US="Fiji"></country>
+            <country code="country.new.caledonia" en_US="New Caledonia"></country>
+            <country code="country.papua.new.guinea" en_US="Papua New Guinea"></country>
+            <country code="country.solomon.islands" en_US="Solomon Islands"></country>
+            <country code="country.vanuatu" en_US="Vanuatu"></country>
+        <!--</region>-->
+        <!--<region code="region.oceania.micronesia" en_US="Micronesia">-->
+            <country code="country.guam" en_US="Guam"></country>
+            <country code="country.kiribati" en_US="Kiribati"></country>
+            <country code="country.marshall.islands" en_US="Marshall Islands"></country>
+            <country code="country.micronesia" en_US="Micronesia, Federated States of"></country>
+            <country code="country.nauru" en_US="Nauru"></country>
+            <country code="country.northern.mariana.islands" en_US="Northern Mariana Islands"></country>
+            <country code="country.palau" en_US="Palau"></country>
+        <!--</region>-->
+        <!--<region code="region.oceania.polynesia" en_US="Polynesia">-->
+            <country code="country.american.samoa" en_US="American Samoa"></country>
+            <country code="country.cook.islands" en_US="Cook Islands"></country>
+            <country code="country.french.polynesia" en_US="French Polynesia"></country>
+            <country code="country.niue" en_US="Niue"></country>
+            <country code="country.pitcairn" en_US="Pitcairn"></country>
+            <country code="country.samoa" en_US="Samoa"></country>
+            <country code="country.tokelau" en_US="Tokelau"></country>
+            <country code="country.tonga" en_US="Tonga"></country>
+            <country code="country.tuvalu" en_US="Tuvalu"></country>
+            <country code="country.wallis.and.futuna.islands" en_US="Wallis and Futuna Islands"></country>
+        <!--</region>-->
+    </region>
+</regions>

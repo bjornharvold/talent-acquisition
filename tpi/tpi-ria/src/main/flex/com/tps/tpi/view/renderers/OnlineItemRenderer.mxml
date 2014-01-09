@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	horizontalGap="0"
+	horizontalScrollPolicy="off" >
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.EmbeddedAssets;
+			
+			
+			override public function set data(value:Object):void
+			{
+				super.data = value;
+				if( value )
+				{
+					switch( value.onlineType )
+					{
+						case "AIM" : showHideIcon( true );
+							showHideLabel( true );
+							img.source = EmbeddedAssets.ICON_AIM;
+							break;
+						
+						case "GTalk" : showHideIcon( true );
+							showHideLabel( true );
+							img.source = EmbeddedAssets.ICON_GTALK;
+							break;
+							
+						case "MSN" : showHideIcon( true );
+							showHideLabel( true );
+							img.source = EmbeddedAssets.ICON_MSN;
+							break;
+							
+						case "Twitter" : showHideIcon( true );
+							showHideLabel( true );
+							img.source = EmbeddedAssets.ICON_TWITTER;
+							break;
+
+						case "Skype" : showHideIcon( true );
+							showHideLabel( true );
+							img.source = EmbeddedAssets.ICON_SKYPE;
+							break;
+							
+						case "Yahoo" : showHideIcon( true );
+							showHideLabel( true );
+							img.source = EmbeddedAssets.ICON_YAHOO;
+							break;
+							
+						default: showHideIcon( false );
+							showHideLabel( false );
+					}
+				}
+			} 
+			
+			private function showHideIcon( hide:Boolean = false ):void
+			{
+				img.visible = hide;
+				img.includeInLayout = hide;
+			}
+			
+			private function showHideLabel( hide:Boolean = false ):void
+			{
+//				type.visible = hide;
+//				type.includeInLayout = hide;
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Image id="img" 
+		visible="false" 
+		includeInLayout="false" />
+	<mx:Label id="type" 
+		text="{ data.onlineType }" />
+	
+</mx:HBox>

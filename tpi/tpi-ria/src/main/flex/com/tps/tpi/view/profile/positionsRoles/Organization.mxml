@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" height="300"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="ORGANIZATION" >
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ListCollectionView;
+			
+			
+			private var _organizations:ListCollectionView;
+			
+			public function set organizations( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_organizations = value;
+					dg.dataProvider = _organizations;
+					this.height = _organizations.length * 25 + 65;
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<ProfileDataGrid id="dg">
+				<columns>
+					<mx:DataGridColumn headerText="Name" dataField="organization" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.organization }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+						
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Role" dataField="role" />
+				</columns>
+				
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

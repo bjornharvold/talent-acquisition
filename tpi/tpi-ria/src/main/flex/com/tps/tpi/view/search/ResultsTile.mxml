@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	xmlns:components="com.tps.tpi.view.components.*"
+	creationComplete="onCreationComplete()" >
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.view.renderers.ResourceBadgeRenderer;
+        import com.tps.tpi.events.CubeSideChangeEvent;
+        import com.tps.tpi.model.objects.lite.PersonLite;
+
+        import mx.collections.ListCollectionView;
+
+        private var resultsIsDirty:Boolean;
+        private var _results:ListCollectionView;
+        [Bindable]
+        public function get results():ListCollectionView
+        {
+            return _results;
+        }
+
+        public function set results(value:ListCollectionView):void
+        {
+            if (value)
+            {
+
+                _results = value;
+                resultsIsDirty = true;
+                invalidateProperties();
+            }
+        }
+
+
+        //we need to store this here for use instead of digging for it
+        //when needed.
+        private var groupCubeIndex:int = 0;
+
+        /**
+         * @private
+         *
+         *
+         */
+        private function onCreationComplete():void
+        {
+            //add cubeSidelistener
+            addEventListener(CubeSideChangeEvent.CHANGE_SELECTED, onCubeSideChanged);
+        }
+
+
+        private function onCubeSideChanged(event:CubeSideChangeEvent):void
+        {
+            var found:Boolean = false;
+            var pl:PersonLite = ResourceBadgeRenderer(event.target).personLite;
+            for each(var data:PersonLite in tile.selectedItems)
+            {
+                if (data.id == pl.id)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                groupCubeIndex = event.newIndex;
+                updateAllSelectedCubes();
+            }
+        }
+
+        /**
+         * updates all cubes to current group index
+         *
+         */
+        private function updateAllSelectedCubes():void
+        {
+            for each(var pLite:PersonLite in tile.selectedItems)
+            {
+                pLite.cubeIndex = groupCubeIndex;
+            }
+        }
+
+        private function onChange():void
+        {
+            if (tile.selectedItems.length > 1)
+            {
+                updateAllSelectedCubes();
+            }
+            else
+            {
+                //length is one, lets set the cube index based on this solo choice
+                groupCubeIndex = ( tile.selectedItem as PersonLite).cubeIndex;
+            }
+        }
+
+        override protected function commitProperties():void
+        {
+            super.commitProperties();
+
+            if (resultsIsDirty)
+            {
+                resultsIsDirty = false;
+                //tile.dataProvider = _results;
+            }
+        }
+			
+		]]>
+	</mx:Script>
+	
+	<!-- note the visible property binding and oh so not delicious
+		quick way to be able to turn off the animations showing 
+		when the user was in the list views and sorted data.
+	-->
+	<components:SearchTileList id="tile"
+		dataProvider="{ results }"
+		itemRenderer="com.tps.tpi.view.renderers.ResourceBadgeRenderer"
+		direction="horizontal"
+		allowMultipleSelection="true"
+		width="100%" 
+		height="100%"
+		selectionColor="#E2FFE3"
+		borderThickness="0"
+		useRollOver="false"
+		change="onChange()"
+		visible="{ visible }" />
+		
+</mx:Canvas>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<degrafa:GraphicBorderSkin 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:degrafa="http://www.degrafa.com/2007"
+	xmlns:geometry="com.degrafa.geometry.*">
+	
+	
+    
+   <degrafa:strokes>
+   		<degrafa:SolidStroke id="strokeOne" color="#FFFFFF" weight="1" alpha="0.3" />
+   		<degrafa:SolidStroke id="strokeTwo" color="#FFFFFF" weight="1" alpha="0.1" />
+   </degrafa:strokes> 
+    
+    <degrafa:fills>
+		<degrafa:LinearGradientFill id="myFill" angle="90">
+			<degrafa:GradientStop color="#6C614B" alpha="1" />
+			<degrafa:GradientStop color="#8B7D61" alpha="1" />
+		</degrafa:LinearGradientFill>
+		<degrafa:LinearGradientFill id="shine" angle="90">
+			<degrafa:GradientStop color="#FFFFFF" alpha=".1" />
+			<degrafa:GradientStop color="#FFFFFF" alpha=".2" />
+		</degrafa:LinearGradientFill>
+	</degrafa:fills>
+	
+	<degrafa:geometry>
+         <degrafa:RoundedRectangleComplex id="rect" 
+         	width="{skinWidth}" 
+         	height="{skinHeight}" 
+         	topLeftRadius="5" 
+            topRightRadius="5" 
+            bottomLeftRadius="0" 
+            bottomRightRadius="0" 
+         	fill="{myFill}" />
+         <degrafa:RoundedRectangleComplex
+         	width="{skinWidth}" 
+         	height="{skinHeight / 2}"
+            topLeftRadius="0" 
+            topRightRadius="0" 
+            bottomLeftRadius="35" 
+            bottomRightRadius="35" 
+            fill="{shine}" />
+    </degrafa:geometry>
+    
+</degrafa:GraphicBorderSkin>

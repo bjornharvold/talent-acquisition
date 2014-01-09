@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	xmlns:components="com.tps.tpi.view.components.*"
+	label="PATENTS"
+	 >
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.renderers.URLItemRenderer;
+			import mx.collections.ListCollectionView;
+
+			private var _patents:ListCollectionView;
+			public function set patents( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_patents = value;
+					dg.dataProvider = _patents;
+					this.height = _patents.length * 25 + 65;
+				}
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<ProfileDataGrid id="dg" >
+				<columns>
+					<mx:DataGridColumn  id="urlColumn" 
+						headerText="Patent ID" 
+						dataField="code"
+						width="100" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<components:ExternalLinkLabel
+									text="{ data.code }" 
+									paddingLeft="5"
+									baseData="{ data as AbstractDto }"
+									url="{ data.ref }"/>
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Title/Name" dataField="shortName" />
+				</columns>
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

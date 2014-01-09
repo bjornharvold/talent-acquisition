@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.tps.tpi</groupId>
+        <artifactId>tpi</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.tps.tpi</groupId>
+    <artifactId>tpi-ria</artifactId>
+    <packaging>swf</packaging>
+    <name>Talent Portfolio Intelligence: RIA</name>
+
+    <build>
+        <defaultGoal>compile</defaultGoal>
+        <!-- if you want this vs. artifactId.swf use finalName -->
+        <!--><finalName>blah</finalName>-->
+        <!-- flex has different directory layout -->
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <outputDirectory>target</outputDirectory>
+        <plugins>
+            <!-- This plugin zips up files that are needed within the war -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <id>make shared resources</id>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/resources.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- this is for flex compilation -->
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>${flex.mojo.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <sourceFile>tpiria.mxml</sourceFile>
+                    <output>target/tpiria.swf</output>
+                    <sourcePaths>
+                        <sourcePath>${basedir}/src/main/flex</sourcePath>
+                        <sourcePath>${basedir}/src/main/resources</sourcePath>
+                        <sourcePath>${basedir}/src/main/resources/locale/{locale}</sourcePath>
+                    </sourcePaths>
+                    <!--<contextRoot>${webapp.context.root}</contextRoot>-->
+                    <headlessServer>true</headlessServer>
+                    <incremental>false</incremental>
+                    <linkReport>true</linkReport>
+                    <loadExternsOnModules>true</loadExternsOnModules>
+                    <optimize>true</optimize>
+                    <debug>${player.debug}</debug>
+                    <defaultFrameRate>60</defaultFrameRate>
+                    <accessible>true</accessible>
+                    <as3>true</as3>
+                    <licenses>
+                        <flexbuilder3>1377-4367-9337-3253-7973-5311</flexbuilder3>
+                    </licenses>
+                    <locales>
+                        <param>en_US</param>
+                    </locales>
+                    <showWarnings>false</showWarnings>
+                    <verboseStacktraces>true</verboseStacktraces>
+                    <!-- we're doing testing through the ant task -->
+                    <skipTests>true</skipTests>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>license</artifactId>
+                        <version>1.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>compiler</artifactId>
+                        <version>${flex.version}</version>
+                        <type>pom</type>
+                    </dependency>
+
+                </dependencies>
+            </plugin>
+
+            <!-- Java to AS3 generator -->
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>${flex.mojo.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <generatorToUse>graniteds2</generatorToUse>
+                    <!--<baseOutputDirectory>${project.build.sourceDirectory}</baseOutputDirectory>-->
+                    <includeClasses>
+                        <includeClass>com.tps.tpi.model.objects.dto.*</includeClass>
+                        <includeClass>com.tps.tpi.model.objects.lite.*</includeClass>
+                        <includeClass>com.tps.tpi.model.objects.enums.*</includeClass>
+                    </includeClasses>
+                    <excludeJavaClasses>
+                        <excludeJavaClass>com.tps.tpi.model.hibernate.EnumUserType</excludeJavaClass>
+                    </excludeJavaClasses>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <!-- so we can generate AS3 from Java -->
+        <dependency>
+            <groupId>com.tps.tpi</groupId>
+            <artifactId>tpi-model</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- third party deps
+        <dependency>
+            <groupId>com.adobe.flex</groupId>
+            <artifactId>cairngorm</artifactId>
+            <version>${flex.cairngorm.version}</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.flex</groupId>
+            <artifactId>corelib</artifactId>
+            <version>${flex.corelib.version}</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>${flexunit.version}</version>
+            <type>swc</type>
+        </dependency>
+        -->
+
+        <!-- parsley + deps
+        <dependency>
+            <groupId>org.spicefactory.parsley</groupId>
+            <artifactId>cinnamon</artifactId>
+            <version>1.0.1</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>org.spicefactory.parsley</groupId>
+            <artifactId>pimento</artifactId>
+            <version>1.0.1</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>org.spicefactory.parsley</groupId>
+            <artifactId>parsley</artifactId>
+            <version>2.0.1</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>org.spicefactory.parsley</groupId>
+            <artifactId>spicelib</artifactId>
+            <version>2.0.1</version>
+            <type>swc</type>
+        </dependency>
+        -->
+
+        <!-- non-SDK deps
+        <dependency>
+            <groupId>com.adobe.flex.sdk</groupId>
+            <artifactId>datavisualization</artifactId>
+            <version>${flex.datavisualization.version}</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.flex.sdk</groupId>
+            <artifactId>datavisualization</artifactId>
+            <version>${flex.datavisualization.version}</version>
+            <type>rb.swc</type>
+            <classifier>en_US</classifier>
+        </dependency>
+        -->
+
+        <!-- Dougs libs -->
+        <!--   we are fully Swizzled <dependency>
+            <groupId>com.universalmind</groupId>
+            <artifactId>cairngorm</artifactId>
+            <version>2.2.1</version>
+            <type>swc</type>
+        </dependency>-->
+        <dependency>
+            <groupId>com.googlecode</groupId>
+            <artifactId>flexlib</artifactId>
+            <version>${flexlib.version}</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode</groupId>
+            <artifactId>swiz</artifactId>
+            <version>${swiz.version}</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>com.papervision3d</groupId>
+            <artifactId>pv3d</artifactId>
+            <version>2.0.883</version>
+            <type>swc</type>
+        </dependency>
+        <dependency>
+            <groupId>org.degrafa</groupId>
+            <artifactId>degrafa</artifactId>
+            <version>3.1</version>
+            <type>swc</type>
+        </dependency>
+
+        <!-- Granite DS code generation libs -->
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-core-swc</artifactId>
+            <version>${graniteds.version}</version>
+            <type>swc</type>
+        </dependency>
+    </dependencies>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>com.adobe.ac</groupId>
+                <artifactId>flex-pmd-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <properties>
+        <flex.version>3.4.0.9271</flex.version>
+        <flex.datavisualization.version>3.2.0.3978</flex.datavisualization.version>
+        <flex.mojo.version>3.4.0</flex.mojo.version>
+        <flexunit.version>4.0-alpha-1.0</flexunit.version>
+        <flex.corelib.version>0.90</flex.corelib.version>
+        <flex.resizeabletitlewindow.version>0.1</flex.resizeabletitlewindow.version>
+        <flexlib.version>0.2.4b</flexlib.version>
+        <flex.cairngorm.version>2.2.1</flex.cairngorm.version>
+        <graniteds.version>1.2.0</graniteds.version>
+        <swiz.version>0.6.2</swiz.version>
+    </properties>
+</project>

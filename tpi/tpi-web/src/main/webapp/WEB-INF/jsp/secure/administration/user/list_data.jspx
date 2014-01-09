@@ -1,0 +1,71 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:spring="http://www.springframework.org/tags"
+          xmlns:spring-form="http://www.springframework.org/tags/form"
+          xmlns:security="http://www.springframework.org/security/tags"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:x="http://java.sun.com/jsp/jstl/xml"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns:tiles="http://tiles.apache.org/tags-tiles"
+          xmlns:custom="urn:jsptagdir:/WEB-INF/tags/custom"
+          xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0">
+    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"/>
+
+    <div id="usersTable">
+        <!-- alt text -->
+        <spring:message var="altNew" code="button.new" text="New"/>
+        <spring:message var="altDelete" code="button.delete" text="Delete"/>
+        <spring:message var="altView" code="button.view" text="View"/>
+
+        <table cellpadding="2" cellspacing="0" border="0" width="100%" class="list_table">
+            <thead>
+            <tr>
+                <th align="left" width="10%" class="first_column"><spring:message code="table.date.created" text="Created"/></th>
+                <th width="20%" align="left"><spring:message code="user.username" text="Username"/></th>
+                <th width="16%" align="left"><spring:message code="user.email" text="E-mail"/></th>
+                <th width="10%"><spring:message code="user.status" text="Status"/></th>
+                <th width="4%" align="right">&#160;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:choose>
+                <c:when test="${empty users}">
+                    <tr>
+                        <td align="center" height="350" colspan="5">
+                            <spring:message code="user.empty" text="No users are currently in the system"/>
+                        </td>
+                    </tr>
+                </c:when>
+                <c:otherwise>
+                    <c:forEach items="${users}" varStatus="status" var="user">
+                        <c:choose>
+                            <c:when test="${status.count % 2 == 0}">
+                                <c:set var="color" value="rowStyle1" scope="request"/>
+                            </c:when>
+                            <c:otherwise>
+                                <c:set var="color" value="rowStyle2" scope="request"/>
+                            </c:otherwise>
+                        </c:choose>
+                        <tr class="${color}" valign="top">
+                            <td class="first_column"><fmt:formatDate value="${user.createdDate}" dateStyle="long"/></td>
+                            <td class="row_title">${user.username}</td>
+                            <td>${user.email}</td>
+                            <td align="center"><spring:message code="dropdown.UserStatusCd.${user.status}" text="Unknown status"/></td>
+                            <td align="right">
+                                <security:authorize ifAllGranted="ROLE_ADMINISTRATOR">
+                                    <spring-form:form action="/secure/user/${user.id}" method="GET"><input type="image" src="/static/images/icons/newtab.png" alt="${altView}" value="${altView}"/></spring-form:form>
+                                    <spring-form:form action="/secure/user/${user.id}" method="DELETE"><input type="image" src="/static/images/icons/delete.png" alt="${altDelete}" value="${altDelete}"/></spring-form:form>
+                                </security:authorize>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </c:otherwise>
+            </c:choose>
+            </tbody>
+        </table>
+
+        <div class="paginator">
+            <casino:paginator id="usersTable" url="/secure/user/list" extraParameters="&amp;view=user.list.data" currentPage="${index}" rowsPerPage="${maxResults}" count="${count}"/>
+        </div>
+    </div>
+</jsp:root>

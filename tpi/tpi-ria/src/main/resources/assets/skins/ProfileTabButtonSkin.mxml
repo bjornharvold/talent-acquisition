@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<degrafa:GraphicBorderSkin xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:degrafa="http://www.degrafa.com/2007"
+	>
+
+
+	<mx:Script>
+        <![CDATA[
+            
+            [Bindable]
+            private var awidth:Number=0;
+            
+            [Bindable]
+            private var aheight:Number=0;
+            
+            
+            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+            {
+                
+                super.updateDisplayList(unscaledWidth, unscaledHeight);
+                awidth = unscaledWidth;
+                aheight = unscaledHeight;
+                
+            }
+            
+        ]]>
+    </mx:Script>
+
+	<degrafa:fills>
+        <degrafa:LinearGradientFill id="upFill" angle="90">
+            <degrafa:GradientStop color="#CFE4F6" alpha="1"/>
+            <degrafa:GradientStop color="#80AFD7" alpha="1"/>
+        </degrafa:LinearGradientFill>
+        <degrafa:LinearGradientFill id="overFill" angle="90">
+            <degrafa:GradientStop color="#CFE4F6" alpha="0.76"/>
+            <degrafa:GradientStop color="#80AFD7" alpha="0.76"/>
+        </degrafa:LinearGradientFill>
+        <degrafa:LinearGradientFill id="downFill" angle="90">
+            <degrafa:GradientStop color="#CFE4F6" alpha="1"/>
+            <degrafa:GradientStop color="#80AFD7" alpha="1"/>
+        </degrafa:LinearGradientFill>
+        <degrafa:LinearGradientFill id="disabledFill" angle="90">
+            <degrafa:GradientStop color="#FFFFFF" alpha="1"/>
+            <degrafa:GradientStop color="#FFFFFF" alpha="1"/>
+        </degrafa:LinearGradientFill>
+        <degrafa:LinearGradientFill id="shine" angle="90">
+            <degrafa:GradientStop color="#FFFFFF" alpha=".5"/>
+            <degrafa:GradientStop color="#FFFFFF" alpha=".1"/>
+        </degrafa:LinearGradientFill>
+    </degrafa:fills>
+
+	<degrafa:strokes>
+		<degrafa:SolidStroke id="border" color="#D2C5AD" weight="1" />	
+	</degrafa:strokes>
+	
+	
+    <degrafa:geometry>
+        <degrafa:GeometryComposition>
+            <degrafa:RoundedRectangle id="rect" width="{awidth}" height="{aheight}"  fill="{upFill}" />
+            <degrafa:RoundedRectangle x="2" y="2" width="{awidth - 4}" height="{aheight / 2}"
+                fill="{shine}" />
+            <degrafa:Polyline stroke="{border}">
+            	<degrafa:data>0,0 {awidth},0</degrafa:data>
+            </degrafa:Polyline>  
+            <degrafa:Polyline stroke="{border}">
+            	<degrafa:data>0,0 0,{aheight}</degrafa:data>
+            </degrafa:Polyline>  
+            <degrafa:Polyline stroke="{border}">
+            	<degrafa:data>0,{aheight} {awidth},{aheight}</degrafa:data>
+            </degrafa:Polyline>  
+        </degrafa:GeometryComposition>
+    </degrafa:geometry>
+
+    <degrafa:states>
+        <degrafa:State name="overSkin">
+            <degrafa:SetProperty target="{rect}" name="fill" value="{overFill}"/>
+        </degrafa:State>
+        <degrafa:State name="downSkin">
+            <degrafa:SetProperty target="{rect}" name="fill" value="{downFill}"/>
+        </degrafa:State>
+        <degrafa:State name="disabledSkin">
+            <degrafa:SetProperty target="{rect}" name="fill" value="{disabledFill}"/>
+        </degrafa:State>
+        <degrafa:State name="selectedUpSkin">
+            <degrafa:SetProperty target="{rect}" name="fill" value="{disabledFill}"/>
+        </degrafa:State>
+        <degrafa:State name="selectedOverSkin">
+            <degrafa:SetProperty target="{rect}" name="fill" value="{disabledFill}"/>
+        </degrafa:State>
+        <degrafa:State name="selectedDownSkin">
+            <degrafa:SetProperty target="{rect}" name="fill" value="{disabledFill}"/>
+        </degrafa:State>
+    </degrafa:states>
+
+</degrafa:GraphicBorderSkin>

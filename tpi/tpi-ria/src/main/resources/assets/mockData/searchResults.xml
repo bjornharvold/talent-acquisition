@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="utf-8"?>
+<results>
+
+<!--  the uid needs to be unique!!! -->
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="1"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="2"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="3" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="4" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="5"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="6"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="7"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="8"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="9"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="10"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="11"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="12" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="13" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="14"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="15"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="16"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="17"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="18"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="19"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="20"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="21" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="22" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="23"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="24"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="25"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="26"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="27"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="28"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="29"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="30" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Jeremy Tanner" profileImage="assets/webimages/jeremytanner.png" uid="31" >
+		<general role="Graphic Designer" profileStatus="visible" availability="Now" rate="$1600 per day" location="San Francisco, CA" timeZone="PST (GMT -8)" />
+		<contacts>
+			<contact type="Phone" value="312-555-1212" /> 			<contact type="Email" value="jeremytanner@gmail.com" />
+			<contact type="Twitter" value="jeremytanner" />
+			<contact type="Skype" value="jeremytanner" />
+			<contact type="AIM" value="jeremytanner" />
+			<contact type="GTalk" value="jeremytanner" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="32"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="33"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Krishna Guha" profileImage="assets/webimages/krishnaguha.png" uid="34"   >
+		<general role="Project Manager" profileStatus="visible" availability="Now" rate="$999 per day" location="Atlanta, GA" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="678-555-1212" /> 			<contact type="Email" value="krishnaguha@yahoo.com" />
+			<contact type="Twitter" value="krishnaguha" />
+			<contact type="Skype" value="krishnaguha" />
+			<contact type="AIM" value="krishnaguha" />
+			<contact type="GTalk" value="krishnaguha" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="35"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+	<resource name="Sandy Smith" profileImage="assets/webimages/sandysmith.png" uid="36"  >
+		<general role="Development Manager" profileStatus="visible" availability="Now" rate="$1250 per day" location="New York, NY" timeZone="EST (GMT -5)" />
+		<contacts>
+			<contact type="Phone" value="212-555-1212" /> 			<contact type="Email" value="sandysmith@gmail.com" />
+			<contact type="Twitter" value="sndytwit" />
+			<contact type="Skype" value="sandysmith" />
+			<contact type="AIM" value="ssmith42" />
+			<contact type="GTalk" value="ssmith" />
+		</contacts>
+		<skills>
+			<skill name="Java" proficiency="3" lastUsed="Currently" isCertified="false" />
+			<skill name="C#" proficiency="4" lastUsed="08/01/2009" isCertified="true" />
+			<skill name="Flash" proficiency="4" lastUsed="Currently" isCertified="true" />
+			<skill name=".NET" proficiency="2" lastUsed="01/01/2007" isCertified="false" />
+			<skill name="ASP" proficiency="1" lastUsed="02/02/1995" isCertified="false" />
+			<skill name="SQL" proficiency="5" lastUsed="Currently" isCertified="true" />
+		</skills>
+		<references>
+			<reference name="Bob Newman" company="MetroBank" url="" userid="" />
+			<reference name="Wei Ling" company="ABC Corp." url=""  userid=""/>
+			<reference name="Michelle Carr" company="Contracotr" url="" userid="" />
+			<reference name="Ben Massicott" company="Contractor" url="" userid="" />
+		</references>
+	</resource>
+
+
+</results>

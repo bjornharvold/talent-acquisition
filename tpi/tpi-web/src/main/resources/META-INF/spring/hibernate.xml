@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
+        <property name="driverClassName" value="${database.driverClassName}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <!-- uncomment to get more detailed sql logging
+    <bean id="p6spy" class="com.p6spy.engine.spy.P6DataSource">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+    -->
+
+    <!-- wrapping dataSource reference into a lazy datasource -->
+    <bean id="lazyDataSourceProxy" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy" primary="true">
+        <property name="targetDataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- custom interceptor for persistence layer -->
+    <bean id="entityInterceptor" class="com.tps.tpi.hibernate.EntityInterceptor"/>
+
+    <!-- custom project naming strategy for db tables -->
+    <bean id="namingStrategy" class="com.tps.tpi.hibernate.NamingStrategy">
+        <property name="tablePrefix" value="tpi"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+          scope="singleton">
+        <property name="dataSource" ref="lazyDataSourceProxy"/>
+        <property name="entityInterceptor" ref="entityInterceptor"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.tps.tpi.model.objects.entity.Address</value>
+                <value>com.tps.tpi.model.objects.entity.Affiliation</value>
+                <value>com.tps.tpi.model.objects.entity.Award</value>
+                <value>com.tps.tpi.model.objects.entity.Biography</value>
+                <value>com.tps.tpi.model.objects.entity.BiographyCity</value>
+                <value>com.tps.tpi.model.objects.entity.BiographyCompanyTitle</value>
+                <value>com.tps.tpi.model.objects.entity.BiographyDepartment</value>
+                <value>com.tps.tpi.model.objects.entity.BiographySkill</value>
+                <value>com.tps.tpi.model.objects.entity.BiographySkilledRole</value>
+                <value>com.tps.tpi.model.objects.entity.Certification</value>
+                <value>com.tps.tpi.model.objects.entity.City</value>
+                <value>com.tps.tpi.model.objects.entity.Company</value>
+                <value>com.tps.tpi.model.objects.entity.CompanyIndustry</value>
+                <value>com.tps.tpi.model.objects.entity.CompanyName</value>
+                <value>com.tps.tpi.model.objects.entity.CompanyTitle</value>
+                <value>com.tps.tpi.model.objects.entity.Country</value>
+                <value>com.tps.tpi.model.objects.entity.Coverage</value>
+                <value>com.tps.tpi.model.objects.entity.CoverageEndorsement</value>
+                <value>com.tps.tpi.model.objects.entity.Degree</value>
+                <value>com.tps.tpi.model.objects.entity.Department</value>
+                <value>com.tps.tpi.model.objects.entity.Division</value>
+                <value>com.tps.tpi.model.objects.entity.Education</value>
+                <value>com.tps.tpi.model.objects.entity.Endorsement</value>
+                <value>com.tps.tpi.model.objects.entity.Entitlement</value>
+                <value>com.tps.tpi.model.objects.entity.History</value>
+                <value>com.tps.tpi.model.objects.entity.Industry</value>
+                <value>com.tps.tpi.model.objects.entity.IndustryGroup</value>
+                <value>com.tps.tpi.model.objects.entity.Interest</value>
+                <value>com.tps.tpi.model.objects.entity.Language</value>
+                <value>com.tps.tpi.model.objects.entity.LanguageEndorsement</value>
+                <value>com.tps.tpi.model.objects.entity.Patent</value>
+                <value>com.tps.tpi.model.objects.entity.Person</value>
+                <value>com.tps.tpi.model.objects.entity.PersonAddress</value>
+                <value>com.tps.tpi.model.objects.entity.EducationCertification</value>
+                <value>com.tps.tpi.model.objects.entity.Position</value>
+                <value>com.tps.tpi.model.objects.entity.PositionEndorsement</value>
+                <value>com.tps.tpi.model.objects.entity.Product</value>
+                <value>com.tps.tpi.model.objects.entity.SkilledRole</value>
+                <value>com.tps.tpi.model.objects.entity.SkilledRoleGroup</value>
+                <value>com.tps.tpi.model.objects.entity.BiographySkillEndorsement</value>
+                <value>com.tps.tpi.model.objects.entity.Project</value>
+                <value>com.tps.tpi.model.objects.entity.ProjectEndorsement</value>
+                <value>com.tps.tpi.model.objects.entity.Publication</value>
+                <value>com.tps.tpi.model.objects.entity.Region</value>
+                <value>com.tps.tpi.model.objects.entity.Role</value>
+                <value>com.tps.tpi.model.objects.entity.School</value>
+                <value>com.tps.tpi.model.objects.entity.Search</value>
+                <value>com.tps.tpi.model.objects.entity.SearchComponentGroup</value>
+                <value>com.tps.tpi.model.objects.entity.SearchComponent</value>
+                <value>com.tps.tpi.model.objects.entity.Skill</value>
+                <value>com.tps.tpi.model.objects.entity.SkillGroup</value>
+                <value>com.tps.tpi.model.objects.entity.Source</value>
+                <value>com.tps.tpi.model.objects.entity.State</value>
+                <value>com.tps.tpi.model.objects.entity.Title</value>
+                <value>com.tps.tpi.model.objects.entity.User</value>
+                <value>com.tps.tpi.model.objects.entity.UserRole</value>
+            </list>
+        </property>
+        <property name="namingStrategy" ref="namingStrategy"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${database.dialect}</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+
+                <prop key="hibernate.cache.use_query_cache">true</prop>
+                <prop key="hibernate.cache.use_minimal_puts">true</prop>
+                <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.search.default.indexBase">${hibernate.search.path}</prop>
+                <prop key="hibernate.search.analyzer">org.apache.lucene.analysis.standard.StandardAnalyzer</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- Parent bean for all our DAOs -->
+    <bean id="hibSupport" class="org.springframework.orm.hibernate3.support.HibernateDaoSupport" abstract="true"
+          lazy-init="true">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="hibInterceptor" class="org.springframework.orm.hibernate3.HibernateInterceptor">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- Exception translation bean post processor -->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+</beans>

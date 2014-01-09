@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets:WidgetParamsBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+						  xmlns:widgets="com.tps.tpi.view.search.widgets.*"
+						  creationComplete="onCreationComplete()"
+						  height="40"
+						  width="100%">
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.SearchComponentDto;
+			import com.tps.tpi.model.objects.enums.BooleanTypeCd;
+			import com.tps.tpi.model.objects.enums.LanguageCd;
+			import com.tps.tpi.model.objects.enums.LanguageLevelCd;
+			import com.tps.tpi.model.objects.enums.SearchComponentFieldNameCd;
+			
+			
+			/**
+			 * 
+			 * expose the search params to parent for
+			 * gathering them up
+			 */
+			override public function get params():SearchComponentDto
+			{
+				_params = new SearchComponentDto();
+				_params.searchMap = new Object();
+				_params.searchMap[ SearchComponentFieldNameCd.LANGUAGE_TYPE ]= langType.selectedItem.data.name;
+				_params.searchMap[ SearchComponentFieldNameCd.LANGUAGE_VERBAL ]= verbalType.selectedItem.data.name;
+				_params.searchMap[ SearchComponentFieldNameCd.LANGUAGE_READWRITE ]= writtenType.selectedItem.data.name;
+				_params.searchMap[ SearchComponentFieldNameCd.GLOBAL_EXACT_MATCH ]= exactMatchChoice ? BooleanTypeCd.TRUE.name : BooleanTypeCd.FALSE.name; 
+				
+				return _params;
+			}
+			
+			private function onCreationComplete():void
+			{
+				var comboData:Array = [];
+				for each( var lang:LanguageCd in LanguageCd.constants )
+				{
+					comboData.push( { label:resourceManager.getString('resources','language.' + lang.name ),
+						data:lang } );
+				} 
+				langType.dataProvider = comboData.sortOn( "label", Array.CASEINSENSITIVE );
+				
+				comboData = [];
+				for each( var langLevel:LanguageLevelCd in LanguageLevelCd.constants )
+				{
+					comboData.push( { label:resourceManager.getString('resources','language.proficiency.' + langLevel.name ),
+						data:langLevel } );
+				} 
+				verbalType.dataProvider = comboData.sortOn( "label", Array.CASEINSENSITIVE );
+				writtenType.dataProvider = comboData.sortOn( "label", Array.CASEINSENSITIVE );
+				
+				
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:ComboBox id="langType"
+				 height="18"
+				 width="165"
+				 styleName="advancedSearchCombo"/>
+	
+	<mx:ComboBox id="verbalType"
+				 height="18"
+				 width="90"
+				 styleName="advancedSearchCombo"/>
+	<mx:ComboBox id="writtenType"
+				 height="18"
+				 width="90"
+				 styleName="advancedSearchCombo"/>
+	
+	<mx:Button styleName="removeSearchCriteriaButton" click="onRemoveSearchParms( event )" />
+	<mx:Button styleName="addSearchCriteriaButton" click="onAddSearchParams( event )"  />
+	<mx:Spacer width="100%" />
+	<mx:CheckBox id="exactMatchChoice" 
+				 label="{ resourceManager.getString('resources','form.exactMatch') }"
+				 fontSize="11"  />
+	
+</widgets:WidgetParamsBase>

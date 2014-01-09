@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack  
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" 
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="EDUCATION" >
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.utils.ObjectUtil;
+			import mx.controls.Alert;
+			import mx.collections.ListCollectionView;
+			
+			private var _degrees:ListCollectionView;
+			public function set degrees( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_degrees = value;
+					dg.dataProvider = _degrees;
+					this.height = _degrees.length * 25 + 65;
+				}
+			}
+			
+		]]>
+	</mx:Script>
+	 
+	<containers:readUI>
+			<ProfileDataGrid id="dg" >
+				<columns>
+					<mx:DataGridColumn headerText="School" dataField="schoolName" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.schoolName }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Degree" dataField="type" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ resourceManager.getString('resources', 'degree.' + data.type ) }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Major" dataField="major" width="170" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{  data.major }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+						<!--<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label text="{ resourceManager.getString('resources', 'degree.' + data.major ) }" />
+							</mx:Component>
+						</mx:itemRenderer>-->
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Year" dataField="completedDate" width="50" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label >
+									<mx:Script>
+									<![CDATA[
+											import com.tps.tpi.utils.DateUtils;
+											
+										]]>
+									</mx:Script>
+									<mx:text>{ DateUtils.formatDateYear( data.completedDate ) }</mx:text>
+								</mx:Label>
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+				</columns>
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<actionScriptProperties 
+        mainApplicationPath="main.mxml" 
+        version="3"
+        >
+
+    <compiler 
+            additionalCompilerArguments="-locale en_US" 
+            copyDependentFiles="true" 
+            enableModuleDebug="true" 
+            generateAccessible="true" 
+            htmlExpressInstall="true" 
+            htmlGenerate="false" 
+            htmlHistoryManagement="true" 
+            htmlPlayerVersion="9.0.0" 
+            htmlPlayerVersionCheck="true" 
+            outputFolderPath="bin-debug" 
+            sourceFolderPath="src/main/flex" 
+            strict="true" 
+            useApolloConfig="false" 
+            verifyDigests="true" 
+            warn="false"
+            >
+
+        <compilerSourcePath>
+            <compilerSourcePathEntry 
+                    kind="1" 
+                    linkType="1" 
+                    path="src/main/flex"
+                    />
+            <compilerSourcePathEntry 
+                    kind="1" 
+                    linkType="1" 
+                    path="src/main/resources"
+                    />
+        </compilerSourcePath>
+
+        <libraryPath
+                defaultLinkType="1">
+
+			<!-- artifact: com.adobe.flex.framework:flex:3.4.0.9271 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/adobe/flex/framework/flex/3.4.0.9271/flex-3.4.0.9271.swc"
+                    sourcepath="${PROJECT_FRAMEWORKS}/projects/flex/src"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.adobe.flex.framework:framework:3.4.0.9271 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/adobe/flex/framework/framework/3.4.0.9271/framework-3.4.0.9271.swc"
+                    sourcepath="${PROJECT_FRAMEWORKS}/projects/framework/src"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.adobe.flex.framework:rpc:3.4.0.9271 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/adobe/flex/framework/rpc/3.4.0.9271/rpc-3.4.0.9271.swc"
+                    sourcepath="${PROJECT_FRAMEWORKS}/projects/rpc/src"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.adobe.flex.framework:utilities:3.4.0.9271 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/adobe/flex/framework/utilities/3.4.0.9271/utilities-3.4.0.9271.swc"
+                    sourcepath="${PROJECT_FRAMEWORKS}/projects/utilities/src"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.googlecode:flexlib:0.2.4b -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/googlecode/flexlib/0.2.4b/flexlib-0.2.4b.swc"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.googlecode:swiz:0.6.2 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/googlecode/swiz/0.6.2/swiz-0.6.2.swc"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.papervision3d:pv3d:2.0.883 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/papervision3d/pv3d/2.0.883/pv3d-2.0.883.swc"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.universalmind:cairngorm:2.2.1 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/universalmind/cairngorm/2.2.1/cairngorm-2.2.1.swc"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: org.degrafa:degrafa:3.1 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/org/degrafa/degrafa/3.1/degrafa-3.1.swc"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.adobe.flex.framework:framework:3.4.0.9271 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/adobe/flex/framework/framework/3.4.0.9271/framework-3.4.0.9271-en_US.rb.swc"
+                    useDefaultLinkType="false"
+                    />
+
+			<!-- artifact: com.adobe.flex.framework:rpc:3.4.0.9271 -->
+            <libraryPathEntry 
+                    kind="3" 
+                    linkType="1" 
+                    path="/Users/crash/.m2/repository/com/adobe/flex/framework/rpc/3.4.0.9271/rpc-3.4.0.9271-en_US.rb.swc"
+                    useDefaultLinkType="false"
+                    />
+
+
+	      <libraryPathEntry kind="4" path="">
+	        <excludedEntries>
+	          <libraryPathEntry kind="1" linkType="1" path="${PROJECT_FRAMEWORKS}/locale/{locale}"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/flex.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/qtp.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/rpc.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="4" path="${PROJECT_FRAMEWORKS}/libs/framework.swc" useDefaultLinkType="true">
+	            <crossDomainRsls>
+	              <crossDomainRslEntry autoExtract="true" policyFileUrl="" rslUrl="framework_3.1.0.2710.swz"/>
+	              <crossDomainRslEntry autoExtract="true" policyFileUrl="" rslUrl="framework_3.1.0.2710.swf"/>
+	            </crossDomainRsls>
+	          </libraryPathEntry>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/datavisualization.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_dmv.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_flashflexkit.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/utilities.swc" useDefaultLinkType="false"/>
+	          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
+	        </excludedEntries>
+	      </libraryPathEntry>
+        </libraryPath>
+
+        <sourceAttachmentPath/>
+
+    </compiler>
+
+    <applications>
+        <application 
+                path="main.mxml"
+                />
+    </applications>
+
+    <modules/>
+
+    <buildCSSFiles>
+    </buildCSSFiles>
+
+</actionScriptProperties>

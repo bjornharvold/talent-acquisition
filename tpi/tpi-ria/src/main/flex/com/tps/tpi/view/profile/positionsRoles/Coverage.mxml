@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" height="300"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	 xmlns:renderers="com.tps.tpi.view.renderers.*"
+	label="COVERAGE" >
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.dto.AbstractDto;
+		]]>
+	</mx:Script>
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ListCollectionView;
+			
+			private var _coverages:ListCollectionView;
+			public function set coverages( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_coverages = value;
+					dg.dataProvider = _coverages;
+					this.height = _coverages.length * 25 + 65;
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<ProfileDataGrid id="dg" >
+				<columns>
+					<mx:DataGridColumn headerText="Client" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel
+									text="{ data.company.shortName }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Product" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.product.shortName }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Role" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ resourceManager.getString('resources', data.skilledRole.code ) }" 
+									baseData="{ data as AbstractDto }"/>
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Territory">
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.region.shortName }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Endorsements" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<renderers:EndorsementsItemRenderer endorsementsKey="coverageEndorsements" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+				</columns>
+				
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

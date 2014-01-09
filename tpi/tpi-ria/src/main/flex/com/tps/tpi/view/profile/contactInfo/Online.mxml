@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" height="300"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="ONLINE" xmlns:renderers="com.tps.tpi.view.renderers.*">
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.vo.OnlineContact;
+        import com.tps.tpi.model.objects.dto.PersonDto;
+
+        import mx.collections.ArrayCollection;
+
+
+        import mx.collections.ListCollectionView;
+
+        [Bindable]
+        private var onlineData:ArrayCollection;
+        /**
+         * we will need to create a DP for th DG
+         * manually
+         * why? beacause of all the crazy data joins going on,
+         * these properties were left flat for performance :)
+         */
+        private var _person:PersonDto;
+        public function set person(value:PersonDto):void
+        {
+            var src:Array = new Array();
+
+            if (value)
+            {
+                _person = value;
+
+                if (value.workEmail && value.workEmail != "")
+                {
+                    src.push(new OnlineContact("Work Email", value.workEmail, value.workEmail == value.preferredEmail));
+                }
+                if (value.homeEmail && value.homeEmail != "")
+                {
+                    src.push(new OnlineContact("Home Email", value.homeEmail, value.homeEmail == value.preferredEmail));
+                }
+                if (value.facebook && value.facebook != "")
+                {
+                    src.push(new OnlineContact("Facebook", value.facebook, false));
+                }
+                if (value.aim && value.aim != "")
+                {
+                    src.push(new OnlineContact("AIM", value.aim, false));
+                }
+                if (value.gtalk && value.gtalk != "")
+                {
+                    src.push(new OnlineContact("GTalk", value.gtalk, false));
+                }
+                if (value.msn && value.msn != "")
+                {
+                    src.push(new OnlineContact("MSN", value.msn, false));
+                }
+                if (value.twitter && value.twitter != "")
+                {
+                    src.push(new OnlineContact("Twitter", value.twitter, false));
+                }
+                if (value.skype && value.skype != "")
+                {
+                    src.push(new OnlineContact("Skype", value.skype, false));
+                }
+                if (value.yahoo && value.yahoo != "")
+                {
+                    src.push(new OnlineContact("Yahoo", value.yahoo, false));
+                }
+
+                onlineData = new ArrayCollection(src);
+            }
+
+
+        }
+
+        public function get person():PersonDto
+        {
+            return _person;
+        }
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<ProfileDataGrid id="dg" dataProvider="{ onlineData }" 
+				width="100%" height="{ onlineData.length * 25 }" >
+				<columns>
+					<mx:DataGridColumn headerText="{ resourceManager.getString('resources','form.type') }" 
+						dataField="onlineType"
+						width="75"  >
+						<mx:itemRenderer>
+							<mx:Component>
+								<renderers:OnlineItemRenderer />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="{ resourceManager.getString('resources','form.username') + '/' + resourceManager.getString('resources','form.address') }" 
+						dataField="value"
+						width="160" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label truncateToFit="true" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+				</columns>
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

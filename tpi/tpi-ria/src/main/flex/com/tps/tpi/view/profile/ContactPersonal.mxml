@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	label="CONTACT &amp; PERSONAL" 
+	width="400" height="300" 
+	paddingBottom="15"
+	 paddingTop="15"
+	 paddingRight="20"
+	 paddingLeft="0"
+	 verticalGap="15"
+	 horizontalScrollPolicy="off"
+	 verticalScrollPolicy="off"
+	 xmlns:contactInfo="com.tps.tpi.view.profile.contactInfo.*">
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.presentation.IContactPersonalModel;
+
+        [Bindable]
+        public var contactPersonalModel:IContactPersonalModel;
+
+        public var userId:String;
+
+        [Bindable]
+        public var editable:Boolean = false;
+			
+		]]>
+	</mx:Script>
+
+	<mx:HBox width="100%" height="100%" horizontalGap="25" >
+		<contactInfo:Phone 
+			width="100%"
+			height="100%"
+			person="{ contactPersonalModel.person }"
+			editable="{ editable }"  />
+		<contactInfo:Addresses
+			width="100%"
+			height="100%"
+			addresses="{ contactPersonalModel.person.personAddresses }"
+			editable="{ editable }"  />
+	</mx:HBox>
+
+	<mx:HBox width="100%" height="100%"  horizontalGap="25" >
+		<contactInfo:Online 
+			width="100%"
+			height="100%"
+			person="{ contactPersonalModel.person }"
+			editable="{ editable }"  />
+		<contactInfo:Interests 
+			width="100%"
+			height="100%"
+			interests="{ contactPersonalModel.person.interests }" 
+			editable="{ editable }" />
+		
+		
+	</mx:HBox>
+		
+</mx:VBox>

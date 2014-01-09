@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	label="PROFILE"
+	width="100%" height="100%"
+	xmlns:profile="com.tps.tpi.view.profile.*"
+	show="onShowMe()">
+	
+	<mx:Script>
+		<![CDATA[
+        import mx.core.UIComponent;
+        import mx.events.FlexEvent;
+
+        import com.tps.tpi.model.constants.MainViewIndex;
+        import com.tps.tpi.events.MainViewIndexChangeEvent;
+        import com.tps.tpi.model.presentation.ProfileModel;
+
+        import mx.core.IUIComponent;
+
+        import com.tps.tpi.model.objects.dto.PersonDto;
+        import com.tps.tpi.events.FetchProfileEvent;
+
+        import mx.controls.Alert;
+
+
+        [Bindable]
+        public var profile:ProfileModel;
+
+        [Bindable]
+        public var editable:Boolean = false;
+
+
+        /**
+         * if in non-editable mode, we know that if
+         * this is shown again, its a new profile
+         * from search results
+         * hacky whacky...when a new profile is loaded, we need to know to load the bio data on the first page.
+         */
+        private function onShowMe():void
+        {
+            if (!editable)
+            {
+                if (leStack.selectedIndex == 0)
+                {
+                    ( leStack.getChildAt(0) as UIComponent ).dispatchEvent(new FlexEvent(FlexEvent.SHOW));
+                }
+                else
+                {
+                    leStack.selectedIndex = 0;
+                }
+
+            }
+        }
+
+        /**
+         * respond to users gesture to return to the search results view
+         */
+        private function onReturnToSearch():void
+        {
+            dispatchEvent(new MainViewIndexChangeEvent(MainViewIndex.SEARCH));
+
+        }
+			
+		]]>
+	</mx:Script>
+
+	<mx:Canvas  width="100%" >
+			
+	<mx:LinkButton x="40" y="5"
+		label="Search Results"
+		fontSize="11"
+		click="onReturnToSearch()"
+		visible="{ !editable }" />
+	<mx:Label x="115" y="5" 
+		text=" - { profile.contactPersonalModel.person.firstName + ' ' + profile.contactPersonalModel.person.lastName }"
+		visible="{ !editable }" />
+	<profile:ProfileHeader
+		height="240"
+		width="900"
+		x="40"
+		y="25"
+		styleName="dropShadowContainer"
+		currentPerson="{ profile.contactPersonalModel.person }" 
+		editable="{ editable }"/>
+	
+	<mx:ViewStack id="leStack"
+		width="720"
+		bottom="20" 
+		top="285"
+ 		x="220"
+ 		styleName="dropShadowContainer"
+ 		resizeToContent="true">
+		<profile:ProfessionalBioView width="100%" height="100%" 
+			editable="{ editable }" 
+			bioModel="{ profile.professionalBioModel }"
+			userId="{ profile.contactPersonalModel.person.id }" />
+		<profile:ProfileHistoryView width="100%" height="100%" 
+			editable="{ editable }" 
+			historyModel="{ profile.historyModel }"
+			userId="{ profile.contactPersonalModel.person.id }" />
+		<profile:Education width="100%" height="100%" 
+			editable="{ editable }" 
+			educationModel="{ profile.educationModel }"
+			userId="{ profile.contactPersonalModel.person.id }" />
+		<profile:ContactPersonal width="100%" height="100%" 
+			editable="{ editable }" 
+			contactPersonalModel="{ profile.contactPersonalModel }"
+			userId="{ profile.contactPersonalModel.person.id }" />
+		
+	</mx:ViewStack>
+	<mx:TabBar dataProvider="{ leStack }" left="40"
+		styleName="profileTabBar"
+		y="285"
+		direction="vertical"  
+		width="181"
+		tabHeight="40"/>
+	</mx:Canvas> 
+</mx:VBox>

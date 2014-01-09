@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" 
+	height="300">
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.lite.PersonLite;
+
+        /**
+         * we will use a local typed var instead of data
+         */
+        [Bindable]
+        public var personLite:PersonLite;
+			
+			
+		]]>
+	</mx:Script>
+	
+	<mx:Grid x="0" horizontalScrollPolicy="off" width="255" 
+		height="90" 
+		verticalGap="0" 
+		horizontalGap="0">
+		<mx:GridRow width="255">
+			<mx:GridItem width="125" >
+				<mx:Label text="Skill/Expertise" color="0x808080"  />
+			</mx:GridItem>
+			<mx:GridItem width="135">
+				<mx:Label  text="Proficiency" color="0x808080"  />
+			</mx:GridItem>
+		</mx:GridRow>
+	
+	
+	
+	<!-- i know, repeater, but hey, much lighter then a DG, eh? -->
+	
+		<mx:Repeater id="skillsLoop" dataProvider="{ personLite.biographySkills }" count="4">
+			<mx:GridRow width="255">
+				<mx:GridItem width="125">
+					<mx:Label
+						  width="125"
+						truncateToFit="true"
+						text="{ skillsLoop.currentItem.skill }"  />
+				</mx:GridItem>
+				<mx:GridItem width="135">
+					<mx:Label  
+						width="135"
+						truncateToFit="true"
+						text="{ resourceManager.getString('resources', 'skill.proficiency.' +  skillsLoop.currentItem.proficiency ) }"  />
+				</mx:GridItem>
+			</mx:GridRow>
+		</mx:Repeater>
+	
+	</mx:Grid>
+</mx:Canvas>

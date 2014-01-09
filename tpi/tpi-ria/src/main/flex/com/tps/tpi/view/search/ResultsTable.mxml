@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	xmlns:renderers="com.tps.tpi.view.renderers.*"
+	xmlns:components="com.tps.tpi.view.components.*">
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.lite.PersonLite;
+
+        import mx.utils.ObjectUtil;
+        import mx.collections.ListCollectionView;
+
+
+        [Bindable]
+        public var results:ListCollectionView;
+
+
+        private function sortByName(objectOne:PersonLite, objectTwo:PersonLite):int
+        {
+            var lastCompare:int = ObjectUtil.stringCompare(objectOne.lastName, objectTwo.lastName, true);
+            if (lastCompare == 0)
+            {
+                lastCompare = ObjectUtil.stringCompare(objectOne.firstName, objectTwo.firstName, true);
+            }
+            return lastCompare;
+        }
+
+        private function sortByLocation(objectOne:PersonLite, objectTwo:PersonLite):int
+        {
+            var lastCompare:int = ObjectUtil.stringCompare(objectOne.state, objectTwo.state, true);
+            if (lastCompare == 0)
+            {
+                lastCompare = ObjectUtil.stringCompare(objectOne.city, objectTwo.city, true);
+            }
+            return lastCompare;
+        }
+
+			
+		]]>
+	</mx:Script>
+	
+	
+	<mx:DataGrid dataProvider="{ results }" 
+		styleName="searchResultsGrid"
+		right="5"
+		left="5"
+		top="5"
+		bottom="5"
+		rowHeight="60"
+		allowMultipleSelection="true" >
+		<mx:columns>
+			<mx:DataGridColumn headerText="Name" width="175"  sortCompareFunction="sortByName">
+				<mx:itemRenderer>
+					<mx:Component>
+						<renderers:ResourceColorBandRenderer>
+							<mx:Script>
+								<![CDATA[
+									import com.tps.tpi.events.FetchProfileEvent;
+								]]>
+							</mx:Script>
+							<mx:Image height="50" width="50" 
+								maintainAspectRatio="true" 
+								x="5"
+								source="{ data.profileImageUrlSmall }"
+								verticalCenter="0"
+								click="dispatchEvent( new  FetchProfileEvent( FetchProfileEvent.FETCH_PERSON_BY_ID, data.id ) );" />
+							<components:ProfileNameLabel
+								x="60" fontWeight="bold" 
+								text="{ data.firstName + ' ' + data.lastName }"
+								personId="{ data.id }"
+								width="110"/>
+						</renderers:ResourceColorBandRenderer>
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			
+			<mx:DataGridColumn headerText="Status" dataField="employmentType" >
+				<mx:itemRenderer>
+					<mx:Component>
+						<mx:Label text="{ resourceManager.getString('resources', 'employment.type.' + data.employmentType ) }" />
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn headerText="Location" sortCompareFunction="sortByLocation"  >
+				<mx:itemRenderer>
+					<mx:Component>
+						<mx:Label text="{ data.city + ', ' + data.state }" />
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn headerText="Role" dataField="currentBiographySkilledRole" >
+				<mx:itemRenderer>
+					<mx:Component>
+						<mx:Label text="{ data.currentBiographySkilledRole }" />
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn headerText="Phone Number" dataField="phone" >
+				<mx:itemRenderer>
+					<mx:Component>
+						<components:PhoneNumberLabel text="{ data.phone }" />
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn headerText="Email" dataField="email"  >
+				<mx:itemRenderer>
+					<mx:Component>
+						<components:EmailLabel  text="{ data.email}" fontSize="11" />
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn headerText="Match" width="85" dataField="relevancy"  >
+				<mx:itemRenderer>
+					<mx:Component>
+						<mx:Canvas >
+							<components:RelevencyData y="0" relevancy="{ data.relevancy }" />
+						</mx:Canvas>
+					</mx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			<mx:DataGridColumn headerText="Action" sortable="false"
+				width="120"
+				itemRenderer="com.tps.tpi.view.renderers.SearchResultActionsRenderer" >
+			</mx:DataGridColumn>
+		</mx:columns>
+	</mx:DataGrid>
+	
+	
+</mx:Canvas>

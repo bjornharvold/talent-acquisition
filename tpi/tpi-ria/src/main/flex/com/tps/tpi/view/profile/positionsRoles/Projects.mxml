@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" 
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="PROJECTS &amp; INITIATIVES" xmlns:renderers="com.tps.tpi.view.renderers.*">
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ListCollectionView;
+			
+			
+			private var _projects:ListCollectionView;
+			
+			public function set projects( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_projects = value;
+					dg.dataProvider = _projects;
+					this.height = _projects.length * 25 + 65;
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<ProfileDataGrid id="dg" >
+				<columns>
+					<mx:DataGridColumn headerText="Project Name" dataField="name">
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.name }"
+									baseData="{ data as AbstractDto }"
+									paddingLeft="5" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Company" >
+						<mx:itemRenderer>
+							<mx:Component>
+								
+								<QuickSearchLabel text="{ data.company.shortName }" 
+									baseData="{ data as AbstractDto }"/>
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Role" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ resourceManager.getString('resources', data.skilledRole.code  ) }" 
+									baseData="{ data as AbstractDto }"/>
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Location" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.city.shortName }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Dates">
+						<mx:itemRenderer>
+							<mx:Component>
+								<renderers:DatesFromToItemRenderer fromDateKey="from" toDateKey="to" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Endorsements" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<renderers:EndorsementsItemRenderer endorsementsKey="projectEndorsements" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+				</columns>
+				
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	cornerRadius="6"
+	backgroundColor="#e0eefa"
+	borderColor="#e0eefa"
+	borderThickness="1"
+	borderStyle="solid"
+	verticalAlign="middle"
+	paddingLeft="5"
+	paddingRight="5"
+	horizontalGap="3" >
+	
+	<mx:Metadata>
+		[Event(name="click",type="flash.events.MouseEvent")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.EmbeddedAssets;
+			
+			[Bindable]
+			public var text:String;
+			
+			private function onClick( event:MouseEvent ):void
+			{
+				dispatchEvent( event );
+				
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Label paddingTop="2" text="{ text }" />
+	<mx:Spacer width="100%" />
+	<mx:Image source="{ EmbeddedAssets.ICON_CLOSEX }"
+		click="onClick( event )" />
+</mx:HBox>

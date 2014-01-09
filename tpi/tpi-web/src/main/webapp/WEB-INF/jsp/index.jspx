@@ -1,0 +1,33 @@
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold.
+  -->
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:spring="http://www.springframework.org/tags"
+          xmlns:spring-form="http://www.springframework.org/tags/form"
+          xmlns:security="http://www.springframework.org/security/tags"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:x="http://java.sun.com/jsp/jstl/xml"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns:tiles="http://tiles.apache.org/tags-tiles"
+          xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0">
+    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"/>
+
+    <h2 class="page_header"><spring:message code="page.home.title" text="Talent Portfolio Intelligence"/></h2>
+
+    <!--
+    <p><a href="${pageContext.request.contextPath}/registration/signup"><spring:message code="page.register.name" text="Register"/></a></p>
+    <p><a href="${pageContext.request.contextPath}/registration/forgotpassword"><spring:message code="page.forgotpassword.title" text="Forgot password"/></a></p>
+    -->
+    <p><a href="${pageContext.request.contextPath}/login"><spring:message code="page.login.name" text="Login"/></a></p>
+
+    <spring-form:form action="${pageContext.request.contextPath}/j_spring_security_check" method="POST">
+        <input type="image" src="/static/external/photos/6.jpg" alt="Sandy Smith" value="Sandy Smith"/>
+        <input type="hidden" name="j_username" value="sandysmith"/>
+        <input type="hidden" name="j_password" value="tpi"/>
+    </spring-form:form>
+
+    <p>Build number: <spring:message code="build.number" text="Unknown version"/></p>
+
+</jsp:root>

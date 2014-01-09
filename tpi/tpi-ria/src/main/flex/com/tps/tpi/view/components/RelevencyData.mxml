@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="85"
+	height="15" >
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.EmbeddedAssets;
+			
+			private static const GRAPH_WIDTH:int = 50;
+			private static const GRAPH_HEIGHT:int = 6;
+			
+			
+			private var relevancyIsDirty:Boolean;
+			private var _relevancy:Number;
+			public function set relevancy( value:Number ):void
+			{
+				if( value )
+				{
+					relevancyIsDirty = true;
+					_relevancy = value;
+					invalidateProperties();
+				}
+				
+			}
+			
+			override protected function commitProperties():void
+			{
+				if( relevancyIsDirty )
+				{
+					relevancyIsDirty = false;
+					rel.text = Math.round( _relevancy * 100 ) + '%';
+					invalidateDisplayList();
+				}
+			}
+			
+			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+			{
+				super.updateDisplayList( unscaledWidth, unscaledHeight );
+				
+				if( _relevancy )
+				{
+					var barWidth:int = Math.round( Math.min( GRAPH_WIDTH - 1, _relevancy * GRAPH_WIDTH ) ); 
+					
+					graphics.clear();
+					graphics.beginFill( 0xFFFFFF );
+					graphics.lineStyle( 1, 0x2E5C1F );
+					graphics.drawRect( unscaledWidth - GRAPH_WIDTH - 2,
+									   unscaledHeight/2 - GRAPH_HEIGHT/2 - 1,
+									   GRAPH_WIDTH,
+									   GRAPH_HEIGHT );
+					graphics.endFill();
+					
+					graphics.beginFill( 0x659359 );
+					graphics.lineStyle( 0,0,0 );
+					graphics.drawRect( unscaledWidth - GRAPH_WIDTH - 2 + 1,
+										unscaledHeight/2 - GRAPH_HEIGHT/2 - 1,
+										barWidth,
+										GRAPH_HEIGHT )
+					graphics.endFill();
+					
+				}
+				
+			}
+				
+		]]>
+	</mx:Script>
+	<mx:Label id="rel" left="0"
+		verticalCenter="0" />
+	
+	
+</mx:Canvas>

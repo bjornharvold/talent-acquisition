@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schools>
+    <school>
+        <longname>Boston University</longname>
+        <shortname>Boston</shortname>
+        <code>BU</code>
+        <ref>http://www.boston.edu</ref>
+    </school>    
+    <school>
+        <longname>Cornell University</longname>
+        <shortname>Cornell</shortname>
+        <code>CU</code>
+        <ref>http://www.cornell.edu</ref>
+    </school>    
+    <school>
+        <longname>Drexel University</longname>
+        <shortname>Drexel</shortname>
+        <code>DRX</code>
+        <ref>http://www.drexel.edu</ref>
+    </school>
+    <school>
+        <longname>Harvard University</longname>
+        <shortname>Harvard</shortname>
+        <code>HVU</code>
+        <ref>http://www.harvard.edu</ref>
+    </school>
+    <school>
+        <longname>Jefferson University</longname>
+        <shortname>Jefferson</shortname>
+        <code>JU</code>
+        <ref>http://www.jefferson.edu</ref>
+    </school>
+    <school>
+        <longname>Loyola University</longname>
+        <shortname>Loyola</shortname>
+        <code>LU</code>
+        <ref>http://www.loyola.edu</ref>
+    </school>
+    <school>
+        <longname>Princeton University</longname>
+        <shortname>Princeton</shortname>
+        <code>PU</code>
+        <ref>http://www.princeton.edu</ref>
+    </school>
+    <school>
+        <longname>Rider College</longname>
+        <shortname>Rider</shortname>
+        <code>RC</code>
+        <ref>http://www.rider.edu</ref>
+    </school>
+    <school>
+        <longname>St. Joseph University</longname>
+        <shortname>SJU</shortname>
+        <code>SJU</code>
+        <ref>http://www.sju.edu</ref>
+    </school>
+    <school>
+        <longname>Stanford University</longname>
+        <shortname>Stanford</shortname>
+        <code>STU</code>
+        <ref>http://www.stanford.edu</ref>
+    </school>
+    <school>
+        <longname>Syracuse University</longname>
+        <shortname>Syracuse</shortname>
+        <code>SYR</code>
+        <ref>http://www.syracuse.edu</ref>
+    </school>
+    <school>
+        <longname>Temple University</longname>
+        <shortname>Temple</shortname>
+        <code>TU</code>
+        <ref>http://www.temple.edu</ref>
+    </school>
+    <school>
+        <longname>University of New Mexico</longname>
+        <shortname>UNM</shortname>
+        <code>UNM</code>
+        <ref>http://www.unm.edu</ref>
+    </school>
+    <school>
+        <longname>University of Pennsylvania</longname>
+        <shortname>UPenn</shortname>
+        <code>UP</code>
+        <ref>http://www.penn.edu</ref>
+    </school>    
+    <school>
+        <longname>New York University</longname>
+        <shortname>NYU</shortname>
+        <code>NYU</code>
+        <ref>http://www.nyu.edu</ref>
+    </school>
+    <school>
+        <longname>Columbia University</longname>
+        <shortname>Columbia</shortname>
+        <code>CU</code>
+        <ref>http://www.columbia.edu</ref>
+    </school>
+    <school>
+        <longname>Yale University</longname>
+        <shortname>Yale</shortname>
+        <code>YU</code>
+        <ref>http://www.yale.edu</ref>
+    </school>
+</schools>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets:WidgetBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+					xmlns:widgets="com.tps.tpi.view.search.widgets.*" 
+					type="{ SearchComponentTypeCd.LANGUAGE }"
+					title="{ resourceManager.getString('resources', 'search.language' )}"
+					xmlns:languages="com.tps.tpi.view.search.widgets.languages.*"> 
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.SearchComponentGroupDto;
+			import com.tps.tpi.model.objects.enums.SearchComponentGroupTypeCd;
+			import com.tps.tpi.model.objects.enums.SearchComponentTypeCd;
+			
+			import mx.collections.ArrayCollection;
+			import mx.collections.ListCollectionView;
+			
+			
+			override protected function onAddSearchParams( event:Event ):void
+			{
+				var newParamsRow:LanguagesParams = new LanguagesParams();
+				newParamsRow.addEventListener( 'addSearchParams' , onAddSearchParams );
+				newParamsRow.addEventListener( 'removeSearchParams' , onRemoveSearchParams );
+				searches.addChild( newParamsRow );
+				
+			}
+			
+			override protected function onRemoveSearchParams( event:Event ):void
+			{
+				if( event.target != searchParams )
+				{
+					var params:LanguagesParams = event.target as LanguagesParams;
+					params.removeEventListener( 'searchParams', onAddSearchParams );
+					params.removeEventListener( 'removeSearchParams', onRemoveSearchParams );
+					searches.removeChild( params );
+					
+				}
+			}
+			
+			override public function get params():SearchComponentGroupDto
+			{
+				_params = new SearchComponentGroupDto();
+				_params.type = SearchComponentGroupTypeCd.LANGUAGE.name;
+				
+				_params.components =  new ArrayCollection();
+				
+				for each( var langs:LanguagesParams in searches.getChildren() )
+				{
+					_params.components.addItem( langs.params );
+				}
+				
+				
+				return _params;
+			}
+			
+			//////////////////////
+			// overrides
+			///////////////////////
+			
+			override protected function commitProperties():void
+			{
+				super.commitProperties();
+				
+				if( searchComponentIsDirty )
+				{
+					searchComponentIsDirty = false;
+					//ok...do some work here
+				}
+			}
+			
+			
+		]]>
+	</mx:Script>
+	
+	
+	<mx:HBox id="header"
+			 x="0" 
+			 y="5" >
+		<mx:Label styleName="advancedSearchLabel"
+				  text="{ resourceManager.getString('resources','form.language') }"
+				  width="165"/>
+		
+		<mx:Label styleName="advancedSearchLabel"
+				  text="{ resourceManager.getString('resources','form.verbal') }"
+				  width="90"/>
+		
+		<mx:Label styleName="advancedSearchLabel"
+				  text="{ resourceManager.getString('resources','form.read') + '/' + resourceManager.getString('resources','form.write') }"
+				  width="90"/>
+		
+	</mx:HBox>
+	
+	<mx:VBox id="searches" verticalGap="0"
+			  y="0" width="100%">
+		<languages:LanguagesParams id="searchParams" height="40" 
+		   addSearchParams="onAddSearchParams( event )"
+		   removeSearchParams="onRemoveSearchParams( event )" />
+	</mx:VBox>
+</widgets:WidgetBase>

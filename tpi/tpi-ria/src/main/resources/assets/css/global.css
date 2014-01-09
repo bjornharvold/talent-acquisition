@@ -1,0 +1,774 @@
+/* CSS file */
+
+
+.appControlBar
+{
+	border-skin:ClassReference("assets.skins.NavBarSkin");
+}
+
+.userNameHeader
+{
+	font-size:12;
+}
+
+.headerNavLink
+{
+	color:#0D61B5;
+	font-size:10;	
+	
+}
+
+.navBar
+{
+	color:#FFFFFF;
+	text-roll-over-color:#FFFFFF;
+	disabled-color:#20446C;
+	disabled-overlay-alpha:0;
+	font-weight:normal;
+	separator-width:0;
+	font-size:11;
+	button-style-name: "navBarButton";
+	first-button-style-name: "navBarButtonFirstButtonStyle";
+	last-button-style-name: "navBarButtonLastButtonStyle";
+	selected-button-text-style-name:"navBarSelectedButtonTextStyle";
+	padding-left:0;
+	horizontal-gap:5;
+	button-width:105;
+}
+
+.navBarSelectedButtonTextStyle
+{
+	color:#20446C;
+	roll-over-color:#20446C;	
+}
+
+.navBarButton
+{
+	/** designer wnated the bitmap version here  skin:ClassReference("assets.skins.NavBarLinkButtonSkin");**/
+	disabled-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	over-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	down-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	up-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	selected-up-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+    selected-over-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+    selected-down-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	
+	color:#FFFFFF;
+	text-selected-color:#20446C;
+	font-weight:normal;
+	font-size:11;
+	vertical-align:bottom;
+	padding-top:5;
+	 highlightAlphas: 0, 0;
+	 padding-left:0;
+	
+}
+
+.navBarButtonFirstButtonStyle
+{
+	/** designer wnated the bitmap version here  skin:ClassReference("assets.skins.NavBarLinkButtonSkin");**/
+	disabled-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	over-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	down-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	up-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	selected-up-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+    selected-over-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+    selected-down-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	
+	color:#FFFFFF;
+	font-weight:normal;
+	font-size:11;
+	vertical-align:bottom;
+	padding-top:5;
+	corner-radius:0;
+}
+
+.navBarButtonLastButtonStyle
+{
+	/** designer wnated the bitmap version here  skin:ClassReference("assets.skins.NavBarLinkButtonSkin");**/
+	disabled-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	over-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	down-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	up-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	selected-up-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+    selected-over-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+    selected-down-skin:Embed( source='/assets/skins/MainNavLinkButtonSkin.png',
+		scaleGridTop=1, 
+        scaleGridLeft=5, 
+        scaleGridBottom=20, 
+        scaleGridRight=63 );
+	
+	color:#FFFFFF;
+	font-weight:normal;
+	font-size:11;
+	vertical-align:bottom;
+	padding-top:5;
+	corner-radius:0;
+}
+
+
+.profileTabBar
+{
+	firstTabStyleName:"profileTabStyle";
+	lastTabStyleName:"profileTabStyle";
+	tabStyleName:"profileTabStyle";
+	selected-tab-text-style-name:"profileSelectedTextTabStyle";
+	borderStyle: none;
+	borderThickness: 0;
+	drop-shadow-enabled:true;
+	drop-shadow-color:#747474;
+	font-size:11;
+	theme-color: #D1C5AD;
+}
+
+.profileTabStyle
+{
+   	skin:ClassReference("assets.skins.ProfileTabButtonSkin");
+   	color: #333333;
+    textRollOverColor: #333333;
+    textSelectedColor: #333333;
+    disabledColor: #333333;
+	font-weight: normal;
+	text-align:left;
+}
+
+.profileSelectedTextTabStyle
+{
+	font-weight: normal;
+}
+
+.gtePanel
+{
+	title-background-skin:ClassReference("assets.skins.GTEPanelSkin");
+	border-thickness-left:0;
+	border-thickness-right:0;
+	border-thickness-bottom:0;
+	border-thickness-top:0;
+	rounded-bottom-corners:false;	
+	header-height:20;
+	title-style-name:"gtePanelTitleStyle";
+	drop-shadow-enabled:true;
+	drop-shadow-color:#999791;
+	padding-bottom:10;
+	padding-left:10;
+	padding-right:10;
+	padding-top:10;
+}
+
+.gtePanelTitleStyle
+{
+	color:#FFFFFF;
+}
+
+
+.dropShadowContainer
+{
+	border-style:solid;
+	border-color:#D2C5AD;
+	background-color:#ffffff;
+	drop-shadow-enabled:true;
+	drop-shadow-color:#999791;	
+}
+
+.solidBorderContainer
+{
+	border-style:solid;
+	border-color:#D2C5AD;
+	background-color:#ffffff;
+}
+
+.formHeader
+{
+	color:#808080;
+	font-size:11;	
+}
+
+.formItem
+{
+	font-size:11;	
+}
+
+.formItemLink
+{
+	font-color:#0D61B5;
+	font-size:11;	
+}	
+
+.groupsNavigatorPopupButton
+{
+	color:#0D61B5;	
+}
+
+
+.paddedContent
+{
+	padding-bottom:10;
+	padding-left:10;
+	padding-right:10;
+	padding-top:10;
+}
+
+.profileDataGrid
+{
+	backgroundAlpha: 1;
+	alternatingItemColors: #ffffff, #ffffff;
+	headerColors: #ffffff, #ffffff;
+	verticalGridLines: false;
+	rollOverColor: #eeeeee;
+	textRollOverColor: #333333;
+	borderThickness: 0;
+	borderColor: #ffffff;
+	iconColor: #808080;
+	selectionColor: #dddddd;
+	color: #333333;
+	textSelectedColor: #333333;
+	fontWeight: normal;
+	headerStyleName: "profileDataGridHeaderStyle";
+	
+}
+
+.profileDataGridHeaderStyle
+{
+	color: #808080;	
+}
+
+.editContentButton
+{
+	
+}
+
+.addNewSearchButton
+{
+	font-weight:normal;
+	highlightAlphas: 0, 0;
+    fillAlphas: 1, 1;
+    fillColors: #dedede, #ffffff;
+    borderColor: #bdbdbd;	
+    corner-radius:4;
+}
+
+.addSearchCriteriaButton
+{
+	skin:Embed(source="/assets/icons/add.png");	
+}
+
+.removeSearchCriteriaButton
+{
+	skin:Embed(source="/assets/icons/remove.png");	
+}
+
+SuperTabBar
+{
+	tabStyleName:"superTabNavTabStyle";
+	horizontal-gap:4;
+	background-color:#FFFFFF;
+	
+}
+
+.superTabNavTabStyle
+{
+	font-weight:normal;
+	highlightAlphas: 0, 0;
+    fillAlphas: 1, 1;
+    fillColors: #dedede, #ffffff;
+    borderColor: #bdbdbd;	
+    corner-radius:4;
+}
+
+.superTabNavTabStyleCloseTab
+{
+	up-skin:Embed(source="/assets/icons/closex.png");
+    over-skin:Embed(source="/assets/icons/closex.png");
+    down-skin:Embed(source="/assets/icons/closex.png");
+    disabled-skin:Embed(source="/assets/icons/closex.png");
+}
+
+SuperTab
+{
+	tabCloseButtonStyleName:"superTabNavTabStyleCloseTab";
+}
+
+.searchResultsGridHeaderStyle
+{
+	font-weight:bold;	
+}	
+
+.searchResultsGrid
+{
+	alternating-item-colors: #ffffff, #ffffff;
+   	header-colors: #d3ccc1, #bbb09e;
+   	vertical-grid-lines: false;
+   	border-thickness: 1;
+   	border-color: #d8d8d8;
+   	drop-shadow-enabled: true;
+   	shadow-color:#9D9D9D;
+   	shadow-direction:center;
+   	shadow-distance:1;
+   	header-separator-skin:ClassReference("mx.skins.ProgrammaticSkin");
+   	header-style-name: "searchResultsGridHeaderStyle";
+   	roll-over-color:#F8F8F8;
+   	selection-color:#F4F4F4;
+   	horizontal-grid-lines:true;
+   	horizontal-grid-line-color:#EDEAE2;
+}
+
+.contentPanelTitleStyle
+{
+	font-size:10;
+}
+
+.readMode
+{
+	background-color:#FFFFFF;
+	
+	borderSkin:ClassReference("assets.skins.ContentPanelSkin");
+	border-thickness-bottom:0;
+	border-thickness-left:0;
+	border-thickness-top:0;
+	border-thickness-right:0;
+	border-thickness:0;
+	title-background-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	contentBorderAlpha:1;
+	contentBorderThickness:1;
+	contentBorderColor:#D2C5AD;
+	header-height:15;
+	title-style-name:"contentPanelTitleStyle";
+	border-alpha:0;
+	highlightAlphas:0,0;
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	padding-top:0;
+}
+
+.editMode
+{
+	background-color:#E4EFF5;
+	
+	borderSkin:ClassReference("assets.skins.ContentPanelSkin");
+	border-thickness-bottom:0;
+	border-thickness-left:0;
+	border-thickness-top:0;
+	border-thickness-right:0;
+	border-thickness:0;
+	title-background-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	contentBorderAlpha:1;
+	contentBorderThickness:1;
+	contentBorderColor:#BCD1E4;
+	header-height:15;
+	title-style-name:"contentPanelTitleStyle";
+	border-alpha:0;
+	highlightAlphas:0,0;
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	padding-top:0;
+}
+
+/*
+note that this is very specific to the THREE buttons
+toggling the search view types.  Adding another WILL incur more work 
+elsewhere
+*/
+.viewTypeToggleButtonBar 
+{
+   buttonStyleName: "viewTypeToggleButtonBarButtonStyle";
+   firstButtonStyleName: "viewTypeToggleButtonBarFirstButtonStyle";
+   lastButtonStyleName: "viewTypeToggleButtonBarLastButtonStyle";
+   selectedButtonTextStyleName: "viewTypeToggleButtonBarSelectedButtonStyle";
+}
+
+.viewTypeToggleButtonBarButtonStyle 
+{
+	selected-up-skin:Embed(source="/assets/icons/largelistview_selected.png");
+	selected-over-skin:Embed(source="/assets/icons/largelistview_selected.png");
+	selected-down-skin:Embed(source="/assets/icons/largelistview_selected.png");
+	up-skin:Embed(source="/assets/icons/largelistview_unselected.png");
+	disabled-skin:Embed(source="/assets/icons/largelistview_unselected.png");
+	over-skin:Embed(source="/assets/icons/largelistview_unselected.png");
+	down-skin:Embed(source="/assets/icons/largelistview_unselected.png");
+}
+
+.viewTypeToggleButtonBarFirstButtonStyle 
+{
+   cornerRadius: 4;
+   selected-up-skin:Embed(source="/assets/icons/listview_selected.png");
+   selected-over-skin:Embed(source="/assets/icons/listview_selected.png");
+   selected-down-skin:Embed(source="/assets/icons/listview_selected.png");
+   up-skin:Embed(source="/assets/icons/listview_unselected.png");
+   disabled-skin:Embed(source="/assets/icons/listview_unselected.png");
+   over-skin:Embed(source="/assets/icons/listview_unselected.png");
+   down-skin:Embed(source="/assets/icons/listview_unselected.png");
+}
+
+.viewTypeToggleButtonBarLastButtonStyle 
+{
+   cornerRadius: 4;
+   selected-up-skin:Embed(source="/assets/icons/tileview_selected.png");
+   selected-over-skin:Embed(source="/assets/icons/tileview_selected.png");
+   selected-down-skin:Embed(source="/assets/icons/tileview_selected.png");
+   up-skin:Embed(source="/assets/icons/tileview_unselected.png");
+   disabled-skin:Embed(source="/assets/icons/tileview_unselected.png");
+   over-skin:Embed(source="/assets/icons/tileview_unselected.png");
+   down-skin:Embed(source="/assets/icons/tileview_unselected.png");
+}
+
+.viewTypeToggleButtonBarSelectedButtonStyle 
+{
+	
+}
+
+.resourceBadgeHeaderConsultant
+{
+	background-color: "90deg #99BFF4 #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.resourceBadgeHeaderVendor
+{
+	background-color: "90deg #A3D586 #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.resourceBadgeHeaderGTE
+{
+	background-color: "90deg #D3B8D3 #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.resourceBadgeHeaderOther
+{
+	background-color: "90deg #FFFFFF #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.resourceColorBandRendererConsultant
+{
+	background-color: "0deg #99BFF4 #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.resourceColorBandRendererVendor
+{
+	background-color: "0deg #A3D586 #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.resourceColorBandRendererGTE
+{
+	background-color: "0deg #D3B8D3 #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.resourceColorBandRendererOther
+{
+	background-color:#FFFFFF; 
+}
+
+.profileHeaderConsultant
+{
+	background-color: "90deg 0% 100% #99BFF4 15% 100% #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.profileBadgeHeaderVendor
+{
+	background-color: "90deg 0% 100% #A3D586 15% 100%  #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.profileBadgeHeaderGTE
+{
+	background-color: "90deg 0% 100% #D3B8D3 15% 100%  #FFFFFF"; 
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+}
+
+.profileBadgeHeaderOther
+{
+	background-color:#FFFFFF; 
+}
+
+.redTextInput
+{
+	border-color:#D6130D;
+	background-color:#FEE0E0;	
+}
+
+
+.advancedSearchLabel
+{
+	font-size:11;
+}
+
+.advancedSearchCombo
+{
+	font-size:11;
+	padding-top:3;
+}
+	
+
+/** CLASS LEVEL **/
+Application
+{
+	background-color: #FFFFFF;
+	fill-colors:#FFFFFF,#FFFFFF;
+	fill-alphas:1,1;
+   	font-size: 12;
+   	color:#333333;
+   	font-family: "Myriad Pro";
+   	theme-color:#5D91BE;
+}
+
+global
+{
+	font-family: "Myriad Pro";
+}
+
+Footer
+{
+	background-color:#FFFFFF;
+	color:#666666;
+	font-size:10;
+}
+
+Header
+{
+	background-color:#FFFFFF;	
+}
+
+LinkButton
+{
+	color:#0D61B5;
+	font-size:10;
+	font-weight:normal;
+}
+
+
+
+SearchForm
+{
+	
+	background-color:#C8D3DB;
+	
+}
+
+Button
+{
+	color:#333333;
+	border-color:#B9B9B9;
+	highlight-alphas: 0.25, 0;
+   	fill-alphas: 1, 1;
+   	fill-colors: #fefefe, #d8d8d8;	
+   	font-weight:normal;
+   	font-size:10;
+   	corner-radius:0;
+}
+
+SearchWidget
+{
+	background-color: "90deg #CFE4F6 #81B0D7";
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+	padding-bottom:5;
+	padding-left:10;
+	padding-right:10;
+	padding-top:10;
+}
+
+ComboBox
+{
+	
+	corner-radius:0;
+
+}
+
+/**
+ContentPanel
+{
+	borderSkin:ClassReference("assets.skins.ContentPanelSkin");
+	border-thickness-bottom:0;
+	border-thickness-left:0;
+	border-thickness-top:0;
+	border-thickness-right:0;
+	border-thickness:0;
+	title-background-skin:ClassReference("mx.skins.ProgrammaticSkin");
+	contentBorderAlpha:1;
+	contentBorderThickness:1;
+	contentBorderColor:#D2C5AD;
+	header-height:15;
+	title-style-name:"contentPanelTitleStyle";
+	border-alpha:0;
+	highlightAlphas:0,0;
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	padding-top:0;
+}
+*/
+EditContentButton
+{
+	background-color: "#FFFFFF";
+	border-skin: ClassReference("com.degrafa.skins.CSSSkin");
+	/*border-skin: ClassReference("assets.skins.EditButtonSkin");*/
+	border-color:#D2C5AD;
+	border-width:1;
+	border-thickness:1;
+	border-alpha: 1;
+    border-color:"#D2C5AD #FFFFFF #D2C5AD #D2C5AD";
+    border-width:"1px 1px 1px 1px";
+    
+	border-bottom-left-radius:15;
+	border-top-left-radius:15;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+	
+	drop-shadow-enabled:true;
+	drop-shadow-color:#747474;
+	
+}
+
+QuickSearchLabel
+{
+	color:#0D61B5;	
+}
+
+ProfileNameLabel
+{
+	color:#0D61B5;	
+}
+
+ExternalLinkLabel
+{
+	color:#0D61B5;	
+}
+
+EmailLabel
+{
+	color:#0D61B5;	
+}
+
+
+Alert 
+{
+    title-background-skin:ClassReference("assets.skins.GTEPanelSkin");
+	border-thickness-left:0;
+	border-thickness-right:0;
+	border-thickness-bottom:0;
+	border-thickness-top:0;
+	rounded-bottom-corners:false;	
+	header-height:20;
+	title-style-name:"alertTitleStyle";
+	message-style-name:"alertMessageStyle";
+	drop-shadow-enabled:true;
+	drop-shadow-color:#999791;
+	padding-bottom:10;
+	padding-left:10;
+	padding-right:10;
+	padding-top:10;
+}
+
+.alertTitleStyle 
+{
+    fontSize: 14;
+    color:#FFFFFF;
+}
+
+.alertMessageStyle 
+{
+	color:#000000;
+	background-color:#FFFFFF;
+}
+
+WidgetTitle
+{
+	background-color:#99C0E2;
+	border-color:#99C0E2;
+	border-style:solid;
+	border-width:0;
+	corner-radius:5;
+}
+
+WidgetBase
+{
+	border-style:solid;
+	rounded-bottom-corners:false;	
+	header-height:20;
+	drop-shadow-enabled:false;
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	padding-top:10;
+	highlight-alphas: 0, 0;
+	header-colors: #c8c8c8, #c8c8c8;
+	background-color: #e2e2e2;
+	corner-radius:6;
+	rounded-bottom-corners:true;
+	close-button-skin:Embed( source='/assets/icons/closex_white.png' );
+	close-button-disabled-skin: ClassReference(null);
+	closeButtonDownSkin: ClassReference(null);
+	closeButtonOverSkin: ClassReference(null);
+	closeButtonUpSkin: ClassReference(null);
+	vertical-gap:0;
+}
+
+WidgetParamsBase
+{
+	vertical-gap:0;
+	vertical-align:bottom;
+
+}

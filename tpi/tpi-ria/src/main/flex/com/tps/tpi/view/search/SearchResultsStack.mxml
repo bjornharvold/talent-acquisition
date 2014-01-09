@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:ViewStack xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	xmlns:search="com.tps.tpi.view.search.*"
+	>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.constants.SearchResultsViewIndex;
+			import com.tps.tpi.model.objects.dto.SearchDto;
+
+        [Bindable]
+        public var searchResult:SearchDto;
+		]]>
+	</mx:Script>
+
+	<!-- ======================================================================================= -->
+	<!-- 	Transistions                                               -->
+	<!-- ======================================================================================= -->
+	<mx:Fade id="fadeIn" alphaFrom="0" alphaTo="1" duration="100" />
+	<mx:Fade id="fadeOut" alphaFrom="1" alphaTo="0" duration="50" />
+	
+	
+	<search:ResultsBlank height="100%" width="100%"
+		showEffect="{fadeIn}" />
+	
+	<!-- note that we set enabled on these as the effects for the cube were showing
+		whne items changed in the List or Table views...binding can be a troubled person
+		note it was tested that code below in the tile renderer did NOT fire
+	-->
+	<search:ResultsTile height="100%" width="100%"
+		results="{ searchResult.persons }"
+		enabled="{ searchResult.currentResultsViewType == SearchResultsViewIndex.TILE }"
+		visible="{ searchResult.currentResultsViewType == SearchResultsViewIndex.TILE }"
+		showEffect="{fadeIn}"  />
+	
+	<search:ResultsList height="100%" width="100%"
+		results="{ searchResult.persons }"
+		enabled="{ searchResult.currentResultsViewType == SearchResultsViewIndex.LIST }" 
+		showEffect="{fadeIn}"  />
+	
+	<search:ResultsTable height="100%" width="100%"
+		results="{ searchResult.persons }"
+		enabled="{ searchResult.currentResultsViewType == SearchResultsViewIndex.TABLE }" 
+		showEffect="{fadeIn}" />
+	
+</mx:ViewStack>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="90"
+	dropShadowEnabled="true" xmlns:components="com.tps.tpi.view.components.*">
+	
+	<mx:Script>
+		<![CDATA[
+        import mx.core.Application;
+
+        import com.tps.tpi.model.presentation.ApplicationModel;
+        import com.tps.tpi.model.constants.MainViewIndex;
+
+        import mx.events.ItemClickEvent;
+        import mx.controls.Alert;
+
+        import com.tps.tpi.events.MainViewIndexChangeEvent;
+
+        import mx.events.IndexChangedEvent;
+
+        import com.tps.tpi.model.objects.dto.PersonDto;
+        import com.tps.tpi.events.LoginEvent;
+        import com.tps.tpi.view.EmbeddedAssets;
+
+        [Bindable]
+        public var currentPerson:PersonDto;
+
+
+        public function set mainViewState(value:int):void
+        {
+            if (value > 3)
+                linkBar.selectedIndex = -1;
+            else
+                linkBar.selectedIndex = value;
+
+        }
+
+        private function onLogout():void
+        {
+            dispatchEvent(new LoginEvent(LoginEvent.EVENT_LOGOUT));
+        }
+
+        private function onIndexChange(event:ItemClickEvent):void
+        {
+            dispatchEvent(new MainViewIndexChangeEvent(event.item.data));
+        }
+
+        /**
+         *
+         * removed...no text input interactions in full screen mode
+         * left this here for posterity though and
+         * for possible AIR version
+         */
+        private function onFullScreen():void
+        {
+
+            if (Application.application.stage.displayState == StageDisplayState.FULL_SCREEN)
+                Application.application.stage.displayState = StageDisplayState.NORMAL;
+            else
+                Application.application.stage.displayState = StageDisplayState.FULL_SCREEN;
+
+        }
+		]]>
+	</mx:Script>
+	
+	<mx:Image source="{ EmbeddedAssets.LOGO }"  x="35" y="10" width="120" height="35"/>
+	
+	<mx:VBox left="185" 
+		height="35" 
+		y="10" 
+		right="0" 
+		horizontalGap="0" 
+		verticalGap="0">
+		<mx:Label paddingLeft="8" styleName="userNameHeader" text="Welcome, { currentPerson.firstName + ' ' +  currentPerson.lastName }"  height="18"/>
+		<mx:HBox height="17" horizontalGap="0" verticalAlign="middle">
+			<mx:LinkButton label="My Account"/>
+			<mx:Image source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+			<mx:LinkButton label="Help" />
+			<mx:Image verticalAlign="bottom" source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+			<mx:LinkButton label="Logout" click="onLogout()" />
+		</mx:HBox>
+	</mx:VBox>
+	
+	<components:QuickSearchWidget right="20"
+		height="43"
+		width="260"
+		y="5" />
+	
+	<!-- hey, don't move this, has to be here for proper z-order and a drop shodow effect -->
+	<mx:ApplicationControlBar id="mainViewControlBar" 
+		styleName="appControlBar" 
+		left="0"
+		right="0"
+		y="50"
+		height="40"
+		>
+		
+		<mx:ToggleButtonBar id="linkBar" 
+			height="25" paddingLeft="30" 
+			styleName="navBar"
+			itemClick="onIndexChange( event )">
+			<mx:dataProvider>
+				<mx:Array>
+					<mx:Object label="DASHBOARD" data="{ MainViewIndex.DASHBOARD }" />
+					<mx:Object label="PROFILE" data="{ MainViewIndex.PROFILE }" />
+					<mx:Object label="SEARCH" data="{ MainViewIndex.SEARCH }" />
+				</mx:Array>
+			</mx:dataProvider>
+		</mx:ToggleButtonBar>
+		<mx:Spacer width="100%" />
+		<!-- removed...no text input interactions in full screen mode
+			left this here for posterity though and 
+			for possible AIR version
+			<mx:Image source="{ EmbeddedAssets.ICON_FULL_SCREEN}"
+			height="20"
+			width="20" 
+			useHandCursor="true"
+			buttonMode="true"
+			click="onFullScreen()" />
+		-->
+	</mx:ApplicationControlBar>
+	
+</mx:Canvas>

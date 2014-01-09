@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:AbstractFormCanvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	xmlns:containers="com.tps.tpi.containers.*" 
+	xmlns:form="com.tps.tpi.view.components.form.*">
+	
+	<mx:Metadata>
+		[Event(name="cancelEdit",type="com.tps.tpi.view.events.CancelEditEvent")]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.events.CancelEditEvent;
+			import com.tps.tpi.view.events.ValidChangeEvent;
+			
+			private var _summary:String;
+			[Bindable]
+			public function set summary( value:String ):void
+			{
+				if( value )
+				{
+					_summary = value;
+				} 
+			}
+			public function get summary():String
+			{
+				return _summary;
+			}
+			
+			private function onSave():void
+			{
+				formIsValid = true;
+				summary = summaryText.text;
+				dispatchEvent( new ValidChangeEvent() );
+			}
+			
+			private function onCancel():void
+			{
+				dispatchEvent( new CancelEditEvent() );
+				summaryText.text = summary;
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:VBox width="100%" horizontalAlign="right" >
+		<mx:TextArea id="summaryText" 
+			width="100%" height="150" 
+			verticalScrollPolicy="auto"
+			horizontalScrollPolicy="off"
+			maxChars="4000"
+			text="{ summary }" />
+		
+		<mx:HBox>
+			<mx:Button label="{ 4000 - summaryText.text.length + ' ' + resourceManager.getString( 'resources', 'form.charsLeft' ) }" />
+			<mx:Button label="{ resourceManager.getString( 'resources', 'form.savechanges' )}" click="onSave()" />	
+			<mx:Button label="{ resourceManager.getString( 'resources','form.cancel' ) }" click="onCancel()" />	
+		</mx:HBox>	
+	</mx:VBox>
+	
+</containers:AbstractFormCanvas>

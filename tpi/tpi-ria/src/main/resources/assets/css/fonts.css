@@ -1,0 +1,20 @@
+@font-face
+{
+	src: url( "/assets/fonts/MyriadProFonts.swf" );
+	font-weight: normal;
+	font-family: "Myriad Pro";
+}
+
+@font-face
+{
+	src: url( "/assets/fonts/MyriadProFonts.swf" );
+	font-weight: bold;
+	font-family: "Myriad Pro";
+}
+@font-face
+{
+	src: url( "/assets/fonts/MyriadProFonts.swf" );
+	fontFamily: "Myriad Pro";
+	font-style:italic;
+}
+ 

@@ -1,0 +1,182 @@
+<companies>
+    <company>
+        <longname>Bank Holding Company Ltd</longname>
+        <shortname>Bank Holding Company Ltd</shortname>
+        <code>BHC</code>
+        <names>
+            <name>Company Alternate Name 1</name>
+        </names>
+        <divisions>
+            <division name="Consulting">
+                <departments>
+                    <department name="Small-Business"/>
+                </departments>
+            </division>
+        </divisions>
+        <titles>
+            <title code="title.board">
+                <rating>13</rating>
+            </title>
+            <title code="title.chairman">
+                <rating>85</rating>
+            </title>
+            <title code="title.cao">
+                <rating>42</rating>
+            </title>
+            <title code="title.cfo">
+                <rating>72</rating>
+            </title>
+        </titles>
+        <products>
+            <product name="Integrated Inventory"/>
+            <product name="Financial Cross Ref"/>
+            <product name="Derivative Packaging"/>
+            <product name="Regulatory Audit"/>
+            <product name="System X Analysis"/>
+            <product name="Bond Management System"/>
+            <product name="Wealth Management Wizard"/>
+            <product name="Microsoft Office 2007"/>
+            <product name="Human Resource Data System"/>
+        </products>
+        <industries>
+            <industry code="industry.service.financial.banking"/>
+        </industries>
+    </company>
+    <company>
+        <longname>Bank of USA</longname>
+        <shortname>Bank of USA</shortname>
+        <code>BUSA</code>
+        <names>
+            <name>Company Alternate Name 1</name>
+        </names>
+        <divisions>
+            <division name="Consulting">
+                <departments>
+                    <department name="Small-Business"/>
+                    <department name="Information Systems"/>
+                </departments>
+            </division>
+        </divisions>
+        <titles>
+            <title code="title.board">
+                <rating>13</rating>
+            </title>
+            <title code="title.chairman">
+                <rating>85</rating>
+            </title>
+            <title code="title.cao">
+                <rating>42</rating>
+            </title>
+            <title code="title.cfo">
+                <rating>72</rating>
+            </title>
+        </titles>
+        <products>
+            <product name="Integrated Inventory"/>
+            <product name="Financial Cross Ref"/>
+            <product name="Derivative Packaging"/>
+            <product name="Regulatory Audit"/>
+            <product name="System X Analysis"/>
+            <product name="Bond Management System"/>
+            <product name="Wealth Management Wizard"/>
+            <product name="Microsoft Office 2007"/>
+            <product name="Human Resource Data System"/>
+        </products>
+        <industries>
+            <industry code="industry.service.financial.banking"/>
+        </industries>
+    </company>
+    <company>
+        <longname>Sun Microsystems</longname>
+        <shortname>Sun Microsystems</shortname>
+        <code>SUN</code>
+        <names>
+            <name>Company Alternate Name 1</name>
+        </names>
+        <divisions>
+            <division name="Consulting">
+                <departments>
+                    <department name="Small-Business"/>
+                    <department name="Information Systems"/>
+                </departments>
+            </division>
+        </divisions>
+        <titles>
+            <title code="title.board">
+                <rating>13</rating>
+            </title>
+            <title code="title.chairman">
+                <rating>85</rating>
+            </title>
+            <title code="title.cao">
+                <rating>42</rating>
+            </title>
+            <title code="title.cfo">
+                <rating>72</rating>
+            </title>
+        </titles>
+        <products>
+            <product name="Integrated Inventory"/>
+            <product name="Financial Cross Ref"/>
+            <product name="Derivative Packaging"/>
+            <product name="Regulatory Audit"/>
+            <product name="System X Analysis"/>
+            <product name="Bond Management System"/>
+            <product name="Wealth Management Wizard"/>
+            <product name="Microsoft Office 2007"/>
+            <product name="Human Resource Data System"/>
+        </products>
+        <industries>
+            <industry code="industry.service.financial.banking"/>
+        </industries>
+    </company>
+    <company>
+        <longname>Metrobank</longname>
+        <shortname>Metrobank</shortname>
+        <code>MB</code>
+        <names>
+            <name>Company Alternate Name 1</name>
+        </names>
+        <divisions>
+            <division name="Consulting">
+                <departments>
+                    <department name="Finance"/>
+                    <department name="Information Systems"/>
+                    <department name="Marketing"/>
+                    <department name="Small-Business"/>
+                </departments>
+            </division>
+        </divisions>
+        <titles>
+            <title code="title.ceo">
+                <rating>42</rating>
+            </title>
+            <title code="title.board">
+                <rating>13</rating>
+            </title>
+            <title code="title.chairman">
+                <rating>85</rating>
+            </title>
+            <title code="title.cao">
+                <rating>42</rating>
+            </title>
+            <title code="title.cfo">
+                <rating>72</rating>
+            </title>
+        </titles>
+        <products>
+            <product name="Integrated Inventory"/>
+            <product name="Financial Cross Ref"/>
+            <product name="Derivative Packaging"/>
+            <product name="Regulatory Audit"/>
+            <product name="System X Analysis"/>
+            <product name="Bond Management System"/>
+            <product name="Wealth Management Wizard"/>
+            <product name="Microsoft Office 2007"/>
+            <product name="Human Resource Data System"/>
+        </products>
+        <industries>
+            <industry code="industry.service.financial.banking"/>
+        </industries>
+    </company>
+</companies>

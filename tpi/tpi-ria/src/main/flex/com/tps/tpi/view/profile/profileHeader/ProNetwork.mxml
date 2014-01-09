@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProfilePanel xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300"
+	label="PROFESSIONAL NETWORK"
+	paddingBottom="0" paddingTop="0" >
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.PersonDto;
+
+        [Bindable]
+        public var person:PersonDto;
+			
+		]]>
+	</mx:Script>
+	
+	
+	<mx:Image source="@Embed('/assets/images/profNetworkMockup.png')" />
+</ProfilePanel>

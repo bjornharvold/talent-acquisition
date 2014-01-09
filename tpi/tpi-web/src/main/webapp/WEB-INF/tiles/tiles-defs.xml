@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold.
+  -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<!-- Definitions for Tiles documentation   -->
+
+<tiles-definitions>
+
+    <definition name="exception.generic" template="/WEB-INF/jsp/error.jspx"/>
+    <!-- =======================================================  -->
+    <!-- Master definition  									-->
+    <!-- =======================================================  -->
+
+    <!-- page master  -->
+    <definition name="template.page.master" template="/WEB-INF/jsp/template/master.jspx">
+        <put-attribute name="title" value="NA"/>
+        <put-attribute name="masthead" value="/WEB-INF/jsp/masthead.jspx"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/basic_header.jspx"/>
+        <put-attribute name="content" value=""/>
+        <put-list-attribute name="navbars">
+            <add-attribute type="string" value="/WEB-INF/jsp/navbar.jspx"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="template.flash.master" template="/WEB-INF/jsp/template/flashlauncher.jspx">
+        <put-list-attribute name="stylesheets">
+            <add-attribute type="string" value="/history/history.css"/>
+        </put-list-attribute>
+
+    </definition>
+
+
+    <!-- content master  -->
+    <definition name="template.content.master" template="/WEB-INF/jsp/template/content.jspx"/>
+
+    <!-- form master  -->
+    <definition name="template.form.master" template="/WEB-INF/jsp/template/form.jspx">
+        <put-attribute name="form" value="NA"/>
+        <put-attribute name="formButtons" value="NA"/>
+    </definition>
+
+    <!-- =======================================================  -->
+    <!-- For simplicity, all the definitions below have the same name as the controller -->
+    <!-- =======================================================  -->
+    <definition name="flexapp" extends="template.flash.master">
+        <put-attribute name="title" value="page.index.name"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/basic_flash_header.jspx"/>
+        <put-attribute name="swf" value="tpiria.swf"/>
+    </definition>
+
+
+    <definition name="index" extends="template.page.master">
+        <put-attribute name="title" value="page.index.name"/>
+        <put-list-attribute name="contents">
+            <add-attribute type="string" value="/WEB-INF/jsp/index.jspx"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="login.form" extends="template.page.master">
+        <put-attribute name="title" value="page.login.title"/>
+        <put-list-attribute name="contents">
+            <add-attribute type="string" value="/WEB-INF/jsp/registration/login_form.jspx"/>
+        </put-list-attribute>
+    </definition>
+
+    <!-- secure pages -->
+    <definition name="dashboard" extends="template.page.master">
+        <put-attribute name="title" value="page.dashboard.title"/>
+        <put-list-attribute name="contents">
+            <add-attribute type="string" value="/WEB-INF/jsp/secure/dashboard.jspx"/>
+        </put-list-attribute>
+    </definition>
+
+
+</tiles-definitions>

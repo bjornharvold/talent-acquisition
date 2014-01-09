@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="255" 
+	height="90" 
+	verticalScrollPolicy="off" 
+	horizontalScrollPolicy="off" 
+	xmlns:components="com.tps.tpi.view.components.*">
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.events.FetchProfileEvent;
+        import com.tps.tpi.model.objects.lite.PersonLite;
+        import com.tps.tpi.view.EmbeddedAssets;
+
+
+        /**
+         * we will use a local typed var instead of data
+         */
+        [Bindable]
+        public var personLite:PersonLite;
+
+        /**
+         * we need to block propagation of
+         * this event so the cubes do not
+         * show interaction based on this click
+         */
+        private function onMouseDown(event:MouseEvent):void
+        {
+            if (!event.shiftKey)
+            {
+                event.stopImmediatePropagation();
+                event.stopPropagation();
+            }
+        }
+
+        private function openProfile():void
+        {
+
+            dispatchEvent(new FetchProfileEvent(FetchProfileEvent.FETCH_PERSON_BY_ID, personLite.id));
+
+        }
+			
+		]]>
+	</mx:Script>
+
+	<components:ProfileImage 
+		x="5" y="5"
+		height="70"
+		width="70"
+		source="{ personLite.profileImageUrlSmall }"
+		smoothBitmapContent="true"
+		click="openProfile()"
+		mouseDown="onMouseDown( event )"/>
+	<mx:VBox x="83" y="5" verticalGap="0">
+		<mx:Label height="15" 
+			text="{ personLite.city + ', ' + personLite.state }"/>
+		<mx:Label height="15" 
+			text="{ personLite.country }"/>
+		<mx:Label height="15"
+			text="{ personLite.timezone }"/>
+		<components:PhoneNumberLabel
+			height="15" 
+			text="{ personLite.phone }"/>
+		<components:EmailLabel height="15" 
+			text="{ personLite.email }"
+			mouseDown="onMouseDown( event )"/>
+	</mx:VBox>
+	<components:RelevencyData x="4" y="77" 
+		height="13"
+		relevancy="{ personLite.relevancy }" />
+</mx:Canvas>

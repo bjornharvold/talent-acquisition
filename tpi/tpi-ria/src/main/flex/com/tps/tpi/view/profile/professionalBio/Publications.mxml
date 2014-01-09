@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" 
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="PUBLICATIONS" >
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.dto.AbstractDto;
+		]]>
+	</mx:Script>
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ListCollectionView;
+			
+			
+			private var _publications:ListCollectionView;
+			public function set publications( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_publications = value;
+					dg.dataProvider = _publications;
+					this.height = _publications.length * 25 + 65;
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+		<mx:Canvas id="vb"  
+		horizontalScrollPolicy="off"
+		verticalScrollPolicy="off"
+		 >
+		 	<ProfileDataGrid  id="dg" >
+				<columns>
+					<mx:DataGridColumn headerText="Type" dataField="type" width="150" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label
+									text="{ resourceManager.getString('resources', 'publication.type.' + data.type ) }"
+									paddingLeft="5" />
+							</mx:Component>
+						</mx:itemRenderer>
+						
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Title" dataField="description" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.description }"
+									paddingLeft="5"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+				</columns>
+				
+			</ProfileDataGrid>
+			
+		</mx:Canvas>
+	</containers:readUI>
+
+</containers:ContentFormStack>

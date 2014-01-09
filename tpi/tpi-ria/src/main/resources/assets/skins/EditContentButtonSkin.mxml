@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<degrafa:GraphicBorderSkin
+	 xmlns:degrafa="http://www.degrafa.com/2007" 
+	 xmlns:mx="http://www.adobe.com/2006/mxml" 
+	 width="400" height="300">
+	 
+    
+	<degrafa:strokes>
+		<degrafa:SolidStroke color="#D2C5AD" id="tan" weight="1" alpha="1" /> 
+		<degrafa:SolidStroke color="#FFFFFF" id="wht" weight="1" alpha="1" /> 
+	</degrafa:strokes>
+		
+	<degrafa:geometry>
+		<degrafa:GeometryComposition >
+			<degrafa:RoundedRectangleComplex
+	            id="selUp"
+	            topLeftRadius="20"
+	            topRightRadius="0"
+	            bottomRightRadius="0"
+	            bottomLeftRadius="20"
+	            
+	            stroke="{ tan }"
+	            height="{ skinHeight}"
+	            width="{ skinWidth }" />
+	         <degrafa:Line x="{ skinWidth}" x1="{ skinWidth }"
+	         	y="0" y1="{ skinHeight }" stroke="{ wht }" />
+		</degrafa:GeometryComposition>
+        
+    </degrafa:geometry>
+    
+	
+</degrafa:GraphicBorderSkin>

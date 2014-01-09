@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skills>
+    <skillgroup code="skillgroup.technology" en_US="Technology">
+        <skillgroup code="skillgroup.languages" en_US="Languages">
+            <skill code="skill.dot.net">.Net</skill>
+            <skill code="skill.c">C</skill>
+            <skill code="skill.c.sharp">C#</skill>
+            <skill code="skill.c++">C++</skill>
+            <skill code="skill.java">Java</skill>
+            <skill code="skill.perl">Perl</skill>
+            <skill code="skill.sql">SQL</skill>
+            <skill code="skill.bash">Bash</skill>
+            <skill code="skill.cgi">CGI Scripting</skill>
+            <skill code="skill.cobol">COBOL</skill>
+            <skill code="skill.com">COM+/MTS</skill>
+            <skill code="skill.coldfusion">Coldfusion</skill>
+            <skill code="skill.dcom">DCOM</skill>
+            <skill code="skill.delphi">Delphi</skill>
+            <skill code="skill.hps">HPS</skill>
+        </skillgroup>
+        <skillgroup code="skillgroup.web" en_US="Web">
+            <skill code="skill.css">CSS</skill>
+            <skill code="skill.html">HTML</skill>
+            <skill code="skill.j2ee">J2EE</skill>
+            <skill code="skill.jsp">JSP</skill>
+            <skill code="skill.javascript">Javascript</skill>
+            <skill code="skill.struts">Struts</skill>
+            <skill code="skill.xml">XML</skill>
+        </skillgroup>
+        <skillgroup code="skillgroup.server" en_US="Server">
+            <skill code="skill.apache">Apache</skill>
+            <skill code="skill.iis">IIS</skill>
+            <skill code="skill.tomcat">Tomcat</skill>
+            <skill code="skill.weblogic">Weblogic</skill>
+            <skill code="skill.websphere">Websphere</skill>
+        </skillgroup>
+        <skillgroup code="skillgroup.database" en_US="Database">
+            <skill code="skill.access">Access</skill>
+            <skill code="skill.db2">DB2</skill>
+            <skill code="skill.informix">Informix</skill>
+            <skill code="skill.oracle">Oracle</skill>
+            <skill code="skill.sql.server">SQL Server</skill>
+            <skill code="skill.sybase">Sybase</skill>
+        </skillgroup>
+        <skillgroup code="skillgroup.os" en_US="OS">
+            <skill code="skill.linux">Linux</skill>
+            <skill code="skill.unix">Unix</skill>
+            <skill code="skill.nt4">NT 4.0</skill>
+            <skill code="skill.os2">OS/2</skill>
+            <skill code="skill.vax.vms">VAX/VMS</skill>
+            <skill code="skill.windows.2000">Windows 2000</skill>
+        </skillgroup>
+        <skillgroup code="skillgroup.applications" en_US="Applications">
+            <skill code="skill.aris">ARIS</skill>
+            <skill code="skill.autosys">Autosys</skill>
+            <skill code="skill.business.objects">Business Objects</skill>
+            <skill code="skill.control.m">Control-M</skill>
+            <skill code="skill.crystal.reports">Crystal Reports</skill>
+            <skill code="skill.essbase">Essbase</skill>
+            <skill code="skill.hyperion">Hyperion</skill>
+            <skill code="skill.peoplesoft">Peoplesoft</skill>
+            <skill code="skill.rframe">Rframe</skill>
+            <skill code="skill.secam">Secam</skill>
+            <skill code="skill.sun.accounts">Sun Accounts</skill>
+        </skillgroup>
+    </skillgroup>
+    <skillgroup code="skillgroup.business" en_US="Business">
+        <skill code="skill.accounting">Accounting</skill>
+        <skill code="skill.capital.markets">Capital Markets</skill>
+        <skill code="skill.credit.management">Credit Management</skill>
+        <skill code="skill.financial.control.processes">Financial Control Processes</skill>
+        <skill code="skill.front.office.processes">Front Office Processes</skill>
+        <skill code="skill.ibd">IBD</skill>
+        <skill code="skill.m.and.a">M&amp;A</skill>
+        <skill code="skill.market.structure">Market structure</skill>
+        <skill code="skill.operations.processes">Operations Processes</skill>
+        <skill code="skill.private.equities">Private Equities</skill>
+        <skill code="skill.product.control.processes">Product Control Processes</skill>
+        <skill code="skill.risk.management">Risk Management</skill>
+        <skill code="skill.treasury.processes">Treasury Processes</skill>
+    </skillgroup>
+    <skillgroup code="skillgroup.methodologies" en_US="Methodologies">
+        <skill code="skill.bpr">BPR</skill>
+        <skill code="skill.ipms">IPMS</skill>
+        <skill code="skill.jsp">JSP</skill>
+        <skill code="skill.mascot">Mascot</skill>
+        <skill code="skill.prince.2">Prince 2</skill>
+        <skill code="skill.rup">RUP</skill>
+        <skill code="skill.ssadm">SSADM</skill>
+        <skill code="skill.uml">UML</skill>
+        <skill code="skill.yordon">Yordon</skill>
+    </skillgroup>
+    <skillgroup code="skillgroup.subject.matter" en_US="Subject Matter">
+        <skillgroup code="skillgroup.finance" en_US="Finance">
+            <skill code="skill.eq">EQ</skill>
+            <skill code="skill.fid">FID</skill>
+            <skill code="skill.derivatives">Derivitives</skill>
+            <skill code="skill.commodities">Commodities</skill>
+            <skill code="skill.fx">FX</skill>
+            <skill code="skill.trading.technologies">Trading Technologies</skill>
+            <skill code="skill.accounting.systems">Accounting Systems</skill>
+            <skill code="skill.settlements.systems">Settlements Systems</skill>
+            <skill code="skill.exchange.links">Exchange Links</skill>
+        </skillgroup>
+    </skillgroup>
+</skills>

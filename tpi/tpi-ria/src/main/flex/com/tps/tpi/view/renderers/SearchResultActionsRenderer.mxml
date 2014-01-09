@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	horizontalGap="0"
+	horizontalScrollPolicy="off"
+	width="125">
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.events.FetchProfileEvent;
+			import com.tps.tpi.events.DisplayProfileEvent;
+			import com.tps.tpi.view.EmbeddedAssets;
+			
+			private function showProfile( ):void
+			{
+				dispatchEvent( new FetchProfileEvent( FetchProfileEvent.FETCH_PERSON_BY_ID, data.id ) );
+			}
+		]]>
+	</mx:Script>
+	
+	
+	<mx:LinkButton label="Full Profile" fontSize="11" click="showProfile( )" />
+	<mx:Image source="{ EmbeddedAssets.V_DOTTED_SEPARATOR }" />
+	<mx:LinkButton label="Save"  fontSize="11" />
+</mx:HBox>

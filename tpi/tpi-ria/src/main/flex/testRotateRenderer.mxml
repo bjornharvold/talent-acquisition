@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="300" height="120" 
+	xmlns:mxeffects="com.adobe.ac.mxeffects.*"
+	creationComplete="onCC()"
+	backgroundColor="0xEEEEEE">
+	
+<mx:Script>
+	<![CDATA[
+		import com.adobe.ac.mxeffects.CubeRotate;
+		
+		private var _selectedIndex:int = 0;
+		[Bindable]
+		public function get selectedIndex():int
+		{
+			return _selectedIndex;
+		}
+		public function set selectedIndex( value:int ):void
+		{
+			
+			var cr:CubeRotate = new CubeRotate( cont.getChildAt( _selectedIndex ) );
+			cr.siblings = [ cont.getChildAt( value ) ];
+			cr.direction = "LEFT";
+			cr.buildMode = "POPUP";
+			cr.horizontalLightingLocation="LEFT";
+			cr.duration = 600;
+			cr.suspendBackgroundProcessing = true;
+			cr.play();
+			
+			cont.getChildAt( _selectedIndex ).visible = false;
+			cont.getChildAt( value ).visible = true;
+			_selectedIndex = value;
+			}		
+			
+			
+		private function onCC():void
+		{
+			
+		}
+		
+	]]>
+</mx:Script>
+	
+	<mx:Canvas id="cont" y="10">
+		<mx:HBox id="first" backgroundColor="0x00ff00" 
+			width="300" height="100"
+			 >
+			<mx:Button label="Left" click="selectedIndex=2" />
+			<mx:Button label="Right" click="selectedIndex=1" />
+			<mx:Label text="One" />
+		</mx:HBox>
+		
+		<mx:HBox id="second" backgroundColor="0xff0000" 
+			width="300" height="100"
+			visible="false" >
+			<mx:Button label="Left" click="selectedIndex=0" />
+			<mx:Button label="Right" click="selectedIndex=2" />
+			<mx:Label text="Two" />
+		</mx:HBox>
+		
+		<mx:HBox id="third" backgroundColor="0x0000FF" 
+			width="300" height="100"
+			visible="false" >
+			<mx:Button label="Left" click="selectedIndex=1" />
+			<mx:Button label="Right" click="selectedIndex=0" />
+			<mx:Label text="Three" />
+		</mx:HBox>
+	</mx:Canvas>
+</mx:Canvas>

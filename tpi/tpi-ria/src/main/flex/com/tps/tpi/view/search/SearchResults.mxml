@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="100%"
+	creationComplete="onCreationComplete()" 
+	xmlns:components="com.tps.tpi.view.components.*" 
+	xmlns:mx1="org.efflex.mx.*"
+	>
+	
+	
+	<mx:Script>
+		<![CDATA[
+        import mx.utils.ObjectUtil;
+
+        import com.tps.tpi.view.renderers.ResourceBadgeRenderer;
+
+        import mx.events.ListEvent;
+        import mx.controls.Alert;
+
+        import com.tps.tpi.view.events.CubeSideChangeEvent;
+
+        import mx.collections.ArrayCollection;
+
+        import com.tps.tpi.model.vo.SearchResultItem;
+
+        [Bindable]
+        private var results:ArrayCollection;
+
+        //we need to store this here for use instead of digging for it
+        //when needed.
+        private var groupCubeIndex:int = 0;
+
+        /**
+         * @private
+         *
+         *
+         */
+        private function onCreationComplete():void
+        {
+            var locArray:Array = new Array();
+            var searchItem:SearchResultItem;
+
+            //this work to be negated by use of Remoting, maybe, but
+            //certainly to be moved to dataTranslate/Delgate layer
+            for each(var resource:XML in xml.resource)
+            {
+                searchItem = new SearchResultItem();
+                searchItem.resourceXML = resource;
+                locArray.push(searchItem);
+            }
+            results = new ArrayCollection(locArray);
+
+            //add cubeSidelistener
+            addEventListener(CubeSideChangeEvent.TYPE, onCubeSideChanged);
+
+        }
+
+        private function onCubeSideChanged(event:CubeSideChangeEvent):void
+        {
+            var found:Boolean = false;
+            var sri:SearchResultItem = ResourceBadgeRenderer(event.target).searchResultItem;
+            for each(var data:SearchResultItem in resultTileList.selectedItems)
+            {
+                if (data.resourceXML.@uid == sri.resourceXML.@uid)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                groupCubeIndex = event.newIndex;
+                updateAllSelectedCubes();
+            }
+        }
+
+        /**
+         * updates all cubes to current group index
+         *
+         */
+        private function updateAllSelectedCubes():void
+        {
+            for each(var s:Object in resultTileList.selectedItems)
+            {
+                (s as SearchResultItem).cubeIndex = groupCubeIndex;
+            }
+        }
+
+        private function onChange():void
+        {
+            if (resultTileList.selectedItems.length > 1)
+            {
+                updateAllSelectedCubes();
+            }
+            else
+            {
+                //length is one, lets set the cube index based on this solo choice
+                groupCubeIndex = ( resultTileList.selectedItem as SearchResultItem).cubeIndex;
+            }
+        }
+			
+			
+		]]>
+	</mx:Script>
+	
+	<!-- temp bake in of sample data -->
+	<mx:XML source="/assets/mockData/searchResults.xml" id="xml" />
+	
+	<!-- offscreenExtraRowsOrColumns was set so the effects can be delayed some while scrolling -->
+	<components:SearchTileList
+		id="resultTileList"
+		dataProvider="{ results }"
+		itemRenderer="com.tps.tpi.view.renderers.ResourceBadgeRenderer"
+		direction="horizontal"
+		allowMultipleSelection="true"
+		width="100%" 
+		height="100%"
+		selectionColor="#E2FFE3"
+		borderThickness="0"
+		useRollOver="false"
+		offscreenExtraRowsOrColumns="6"
+		change="onChange()" />
+		
+
+</mx:Canvas>

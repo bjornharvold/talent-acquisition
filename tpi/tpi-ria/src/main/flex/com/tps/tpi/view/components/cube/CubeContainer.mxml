@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	xmlns:mxeffects="com.adobe.ac.mxeffects.*" 
+	xmlns:cube="com.tps.tpi.view.components.cube.*"
+	>
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.events.EffectEvent;
+        import com.adobe.ac.mxeffects.CubeRotate;
+
+        import mx.events.FlexEvent;
+        import mx.events.StateChangeEvent;
+        import mx.core.UIComponent;
+
+        import com.tps.tpi.model.objects.lite.PersonLite;
+
+        import mx.effects.easing.Quartic;
+        import mx.effects.easing.Sine;
+        import mx.effects.easing.Cubic;
+        import mx.events.IndexChangedEvent;
+        import mx.effects.easing.Quadratic;
+
+        import com.tps.tpi.model.vo.SearchResultItem;
+
+
+        /**
+         * we will use a local typed var instead of data
+         */
+        private var personLiteIsDirty:Boolean;
+        private var _personLite:PersonLite;
+        [Bindable]
+        public function get personLite():PersonLite
+        {
+            return _personLite;
+        }
+
+        public function set personLite(value:PersonLite):void
+        {
+            if (value)
+            {
+                _personLite = value;
+                personLiteIsDirty = true;
+                invalidateProperties();
+            }
+        }
+
+        private var oldSelectedIndex:int = 0;
+        private var selectedIndexDirty:Boolean;
+        private var _selectedIndex:int = 0;
+        public function get selectedIndex():int
+        {
+            return _selectedIndex;
+        }
+
+        public function set selectedIndex(value:int):void
+        {
+            if (value != _selectedIndex)
+            {
+                oldSelectedIndex = _selectedIndex;
+                _selectedIndex = value;
+                selectedIndexDirty = true;
+                invalidateProperties();
+            }
+        }
+
+        /**
+         * if the personLite instance changed, do NOT show
+         * the animation.  But we must show the correct side of the cube
+         * If the selectedIndex changes independent of teh
+         * personLite instance, show the animatioon
+         */
+
+        override protected function commitProperties():void
+        {
+            if (personLiteIsDirty)
+            {
+                personLiteIsDirty = false;
+                _selectedIndex = personLite.cubeIndex;
+                getChildAt(oldSelectedIndex).visible = false;
+                getChildAt(_selectedIndex).visible = true;
+            }
+            else if (selectedIndexDirty)
+            {
+                getChildAt(oldSelectedIndex).visible = false;
+                selectedIndexDirty = false;
+                var cr:CubeRotate = new CubeRotate(getChildAt(oldSelectedIndex));
+                cr.siblings = [ getChildAt(_selectedIndex) ];
+                cr.direction = "LEFT";
+                cr.buildMode = "ADD";
+                cr.horizontalLightingLocation = "LEFT";
+                cr.duration = 550;
+                cr.smooth = true;
+                cr.distortion = 10;
+                //cr.suspendBackgroundProcessing=true;
+                cr.easingFunction = Cubic.easeOut;
+                cr.addEventListener(EffectEvent.EFFECT_END, onRotateEnd );
+                cr.play();
+
+                
+                //trace( "Animaton in cube fired " + selectedIndex + " " + visible );
+            }
+
+        }
+        
+        private function onRotateEnd( event:EffectEvent ):void
+        {
+        	CubeRotate( event.target ).removeEventListener(EffectEvent.EFFECT_END,onRotateEnd );
+        	getChildAt(oldSelectedIndex).visible = false;
+            getChildAt(_selectedIndex).visible = true;
+        }
+			
+		]]>
+	</mx:Script>
+	
+	<cube:Contact id="first" 
+		width="255" height="90"
+		backgroundColor="#EDEAE2"
+		personLite="{ personLite }"
+		visible="true" />
+	
+	<cube:Skills id="second"  
+		width="255" height="90"
+		backgroundColor="#EDEAE2"
+		personLite="{ personLite }"
+		visible="false" />
+		
+	<cube:Language id="third"  
+		width="255" height="90"
+		backgroundColor="#EDEAE2"
+		personLite="{ personLite }"
+		visible="false" />
+</mx:Canvas>

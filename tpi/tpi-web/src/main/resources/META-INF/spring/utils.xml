@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <!-- os cache -->
+    <bean id="cacheManager" class="com.tps.tpi.cache.impl.OSCacheManager" init-method="init">
+        <property name="enabled" value="${cache.enabled}"/>
+        <property name="cacheRefreshInSeconds" value="${cache.refresh.seconds}"/>
+    </bean>
+
+    <bean id="cacheAdministrator" class="com.opensymphony.oscache.general.GeneralCacheAdministrator" destroy-method="destroy">
+        <constructor-arg type="java.util.Properties" value="${oscache.property.path}"/>
+    </bean>
+
+    <bean id="mapper" class="org.dozer.DozerBeanMapper">
+      <property name="mappingFiles">
+        <list>
+          <value>dozer-bean-mappings.xml</value>
+        </list>
+      </property>
+        <property name="customConverters">
+            <list>
+                <bean class="com.tps.tpi.converter.AddressConverter">
+                    <property name="dao" ref="addressDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.AffiliationConverter">
+                    <property name="dao" ref="affiliationDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.AwardConverter">
+                    <property name="dao" ref="awardDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.BiographyCityConverter">
+                    <property name="dao" ref="biographyCityDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.BiographyConverter">
+                    <property name="dao" ref="biographyDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.BiographyDepartmentConverter">
+                    <property name="dao" ref="biographyDepartmentDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.BiographySkillConverter">
+                    <property name="dao" ref="biographySkillDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.BiographySkillLiteConverter">
+                    <property name="dao" ref="biographySkillDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.BiographySkillEndorsementConverter">
+                    <property name="dao" ref="biographySkillEndorsementDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.BiographySkilledRoleConverter">
+                    <property name="dao" ref="biographySkilledRoleDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.CertificationConverter">
+                    <property name="dao" ref="certificationDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.CityConverter">
+                    <property name="dao" ref="cityDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.CompanyConverter">
+                    <property name="dao" ref="companyDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.CompanyTitleConverter">
+                    <property name="dao" ref="companyTitleDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.CoverageConverter">
+                    <property name="dao" ref="coverageDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.DegreeConverter">
+                    <property name="dao" ref="degreeDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.DepartmentConverter">
+                    <property name="dao" ref="departmentDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.EducationCertificationConverter">
+                    <property name="dao" ref="educationCertificationDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.EducationConverter">
+                    <property name="dao" ref="educationDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.EndorsementConverter">
+                    <property name="dao" ref="endorsementDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.HistoryConverter">
+                    <property name="dao" ref="historyDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.InterestConverter">
+                    <property name="dao" ref="interestDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.LanguageConverter">
+                    <property name="dao" ref="languageDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.LanguageLiteConverter">
+                    <property name="dao" ref="languageDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.LanguageEndorsementConverter">
+                    <property name="dao" ref="languageEndorsementDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.PatentConverter">
+                    <property name="dao" ref="cityDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.PersonAddressConverter">
+                    <property name="dao" ref="personAddressDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.PersonConverter">
+                    <property name="dao" ref="personDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.PersonLiteConverter">
+                    <property name="dao" ref="personDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.PositionConverter">
+                    <property name="dao" ref="positionDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.PositionEndorsementConverter">
+                    <property name="dao" ref="positionEndorsementDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.ProductConverter">
+                    <property name="dao" ref="productDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.ProjectConverter">
+                    <property name="dao" ref="projectDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.ProjectEndorsementConverter">
+                    <property name="dao" ref="projectEndorsementDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.PublicationConverter">
+                    <property name="dao" ref="publicationDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.RegionConverter">
+                    <property name="dao" ref="regionDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.SchoolConverter">
+                    <property name="dao" ref="schoolDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.SearchComponentConverter">
+                    <property name="dao" ref="searchComponentDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.SearchComponentGroupConverter">
+                    <property name="dao" ref="searchComponentGroupDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.SearchConverter">
+                    <property name="dao" ref="searchDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.SkillConverter">
+                    <property name="dao" ref="skillDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.SkilledRoleConverter">
+                    <property name="dao" ref="skilledRoleDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+                <bean class="com.tps.tpi.converter.TitleConverter">
+                    <property name="dao" ref="titleDao"/>
+                    <property name="mapper" ref="mapper"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+
+</beans>

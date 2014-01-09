@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	height="40"
+	width="100%">
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.EmbeddedAssets;
+		]]>
+	</mx:Script>
+	
+	<mx:HBox horizontalCenter="0"
+		verticalGap="1"  
+		verticalCenter="0" 
+		height="40" 
+		verticalAlign="middle" 
+		horizontalAlign="center" 
+		horizontalGap="0">
+		<mx:Label text="&#0169;2009 People Data Solutions, LLC" />
+		<mx:LinkButton label="Terms of Use" />
+		<mx:Image source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+		<mx:LinkButton label="Privacy Policy" />
+		<mx:Image source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+		<mx:LinkButton label="Help" />
+		<mx:Image source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+		<mx:LinkButton label="Feedback" />
+		<mx:Image source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+		<mx:LinkButton label="GTE Corporate Site" />
+	</mx:HBox>
+	
+</mx:Canvas>

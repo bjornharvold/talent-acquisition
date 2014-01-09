@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="265" 
+	height="170"
+	dropShadowEnabled="false"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off" 
+	xmlns:cube="com.tps.tpi.view.components.cube.*" 
+	xmlns:mxeffects="com.adobe.ac.mxeffects.*"
+	implements="mx.controls.listClasses.IDropInListItemRenderer">
+
+	<!-- we implemented IDropInListItemRenderer here to get teh listData property
+		we needed this to detect when the list owner of this renderer is visible
+		in order to not react to changes in teh data
+		kind of a kludgy hack, but works
+	-->
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.events.FetchProfileEvent;
+
+        import mx.controls.listClasses.BaseListData;
+        import mx.controls.listClasses.ListData;
+        import mx.controls.listClasses.ListItemRenderer;
+
+        import com.tps.tpi.model.objects.lite.PersonLite;
+        import com.adobe.ac.mxeffects.effectClasses.CubeRotateInstance;
+
+        import mx.events.EffectEvent;
+        import mx.controls.Alert;
+
+        import com.adobe.ac.mxeffects.CubeRotate;
+        import com.tps.tpi.events.CubeSideChangeEvent;
+
+        import mx.effects.easing.Quadratic;
+        import mx.events.ListEvent;
+
+        import com.tps.tpi.view.EmbeddedAssets;
+
+        //----------------------------------
+        //  listData....fullfilling the contract
+        //----------------------------------
+        /**
+         *  @private
+         *  Storage for the listData property.
+         *  we needed to implement the
+         */
+        private var _listData:ListData;
+
+        [Bindable("dataChange")]
+        /**
+         *  The implementation of the <code>listData</code> property
+         *  as defined by the IDropInListItemRenderer interface.
+         *
+         *  @see mx.controls.listClasses.IDropInListItemRenderer
+         */
+        public function get listData():BaseListData
+        {
+            return _listData;
+        }
+
+        /**
+         *  @private
+         */
+        public function set listData(value:BaseListData):void
+        {
+            _listData = ListData(value);
+        }
+
+        /**
+         * we will use a local typed var instead of data
+         */
+        [Bindable]
+        public var personLite:PersonLite;
+
+        private var dataIsDirty:Boolean;
+
+        override public function set data(value:Object):void
+        {
+
+            super.data = value;
+            if (value && listData && listData.owner.visible)
+            {
+                personLite = value as PersonLite;
+
+                dataIsDirty = true;
+                invalidateProperties();
+
+            }
+        }
+
+        override protected function commitProperties():void
+        {
+            super.commitProperties();
+
+            if (dataIsDirty)
+            {
+                dataIsDirty = false;
+                switch (personLite.employmentType)
+                {
+                    case "CONSULTANT": headerContainer.styleName = "resourceBadgeHeaderConsultant"; break;
+                    case "CONTRACTOR": headerContainer.styleName = "resourceBadgeHeaderConsultant"; break;
+                    case "GTE": headerContainer.styleName = "resourceBadgeHeaderGTE"; break;
+                    case "VENDOR": headerContainer.styleName = "resourceBadgeHeaderVendor"; break;
+                    default : headerContainer.styleName = "resourceBadgeHeaderOther"; break;
+                }
+            }
+        }
+
+        /**
+         * here we will tell those above that we changed
+         * so we can set all selected to same
+         */
+        private function onSectionChange(event:ListEvent):void
+        {
+
+            var cubeEvent:CubeSideChangeEvent = new CubeSideChangeEvent();
+            cubeEvent.newIndex = event.target.selectedIndex;
+            dispatchEvent(cubeEvent);
+            //cubeholder.selectedIndex = event.target.selectedIndex;
+            personLite.cubeIndex = event.target.selectedIndex;
+        }
+
+
+        private function effectEnd(event:EffectEvent):void
+        {
+
+        }
+
+        private function onMouseDown(event:MouseEvent):void
+        {
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+        }
+
+        private function openProfile():void
+        {
+
+            dispatchEvent(new FetchProfileEvent(FetchProfileEvent.FETCH_PERSON_BY_ID, personLite.id));
+
+        }
+		]]>
+	</mx:Script>
+	
+	<mx:Style>
+		.myDropDownStyle
+		{
+			text-align:left;
+			font-size:11;
+		}
+	</mx:Style>
+	
+        
+    <mx:Canvas 
+    	x="5" 
+    	y="5"
+    	width="255" 
+		height="160"
+		backgroundColor="0xFFFFFF"
+		dropShadowEnabled="true"
+		borderColor="#D5C9B2"
+		borderStyle="solid"
+		borderThickness="1"
+		horizontalScrollPolicy="off"
+		verticalScrollPolicy="off"
+		>
+    	
+	    
+		<!-- the canvases are introduced to maintain white bkgrnd and allow rest of UI to 
+			take on color by parent...eg selected, mouseover....
+		-->
+		<mx:Canvas id="headerContainer" height="40" width="255">
+			<mx:Label id="resourceName" 
+				x="3" y="5" 
+				text="{  personLite.firstName + ' ' + personLite.lastName }"
+				fontSize="11"
+				fontWeight="bold"
+				color="#0D61B5"
+				click="openProfile()"
+				mouseDown="onMouseDown( event )"/>
+				
+			<mx:Label x="3" y="22" 
+				text="{ resourceManager.getString('resources', 'employment.type.' + personLite.employmentType ) + ' - ' + personLite.currentBiographySkilledRole }"/>
+				
+			<!--<mx:Label x="150" y="22" text="{ searchResultItem.cubeIndex }" />-->
+			
+		</mx:Canvas>
+		
+		<!-- we inject these two points seperately as they can have different outcomes
+			as a renderer -->
+		<cube:CubeContainer id="cubeholder" y="40" 
+			width="255" x="0" height="90"
+			personLite="{ personLite }"
+			selectedIndex="{ personLite.cubeIndex }" />
+				
+		
+		<mx:Canvas backgroundColor="#FFFFFF" 
+			y="130" height="28" 
+			width="255" x="0" 
+			horizontalScrollPolicy="off">
+			
+			<mx:ComboBox id="cubeChanger" 
+				x="5" 
+				y="4" 
+				width="80"
+				height="18"
+				paddingLeft="0"
+				paddingRight="0"
+				paddingTop="5"
+				change="onSectionChange( event )"
+				mouseDown="onMouseDown( event )"
+				selectedIndex="{ personLite.cubeIndex }"
+				dropdownStyleName="myDropDownStyle"
+				fontSize="11"
+				textAlign="left"
+				fontWeight="normal" >
+				<mx:dataProvider >
+					<mx:Array>
+						<mx:String>Contact</mx:String>
+						<mx:String>Skills</mx:String>
+						<mx:String>Language</mx:String>
+					</mx:Array>
+				</mx:dataProvider>
+			</mx:ComboBox>
+			<mx:LinkButton x="100" y="6" label="Add to Group"/>
+			<mx:Image x="172" y="9" source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+			<mx:LinkButton x="167" y="6" label="Save to Contacts" />
+			
+		</mx:Canvas>
+		
+	</mx:Canvas>
+	
+</mx:Canvas>

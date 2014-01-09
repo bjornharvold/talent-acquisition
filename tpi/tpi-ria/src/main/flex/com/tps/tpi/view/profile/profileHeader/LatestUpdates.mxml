@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProfilePanel xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	label="LATEST UPDATES PROVIDED BY"
+	>
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.PersonDto;
+        import mx.collections.ArrayCollection;
+
+
+        [Bindable]
+        public var person:PersonDto;
+
+        [Bindable]
+        private var tempData:ArrayCollection = new ArrayCollection([
+            {
+                company:"Metrobank",
+                date:"12/2/2009"
+            },
+            {
+                company:"Metrobank",
+                date:"06/12/2009"
+            },
+            {
+                company:"Metrobank",
+                date:"04/23/2007"
+            }
+        ]);
+			
+		]]>
+	</mx:Script>
+	
+	<mx:DataGrid showHeaders="false"
+		selectable="false"
+		dataProvider="{ tempData }"
+		width="155"
+		height="100%"
+		verticalGridLines="false"
+		alternatingItemColors="[0xFFFFFF,0xFFFFFF]"
+		borderStyle="none"
+		>
+		
+	</mx:DataGrid>
+</ProfilePanel>

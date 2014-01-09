@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	label="RESOURCES" 
+	width="400" height="300">
+	
+	<mx:Label text="Resources content" />
+</mx:Canvas>

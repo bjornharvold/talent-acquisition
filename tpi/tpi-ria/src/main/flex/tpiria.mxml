@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" 
+	xmlns:controller="com.tps.tpi.controller.*" 
+	xmlns:delegates="com.tps.tpi.controller.delegates.*" 
+	xmlns:view="com.tps.tpi.view.*"
+	width="100%"
+	height="100%"  
+	minWidth="980"
+	minHeight="700"
+	verticalGap="0"
+	xmlns:common="com.tps.tpi.view.common.*" 
+	xmlns:swiz="http://swiz.swizframework.org"
+	preinitialize="onPreInitialize()"
+	 verticalScrollPolicy="off" xmlns:main="com.tps.tpi.view.main.*">
+
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.dto.AffiliationDto;
+        import com.tps.tpi.model.objects.dto.SchoolDto;
+        import com.tps.tpi.model.objects.dto.DegreeDto;
+        import com.tps.tpi.model.objects.dto.LanguageDto;
+        import com.tps.tpi.model.objects.dto.CertificationDto;
+        import com.tps.tpi.model.objects.dto.EducationDto;
+        import com.tps.tpi.model.objects.dto.ProductDto;
+        import com.tps.tpi.model.objects.dto.RegionDto;
+        import com.tps.tpi.model.objects.dto.DepartmentDto;
+        import com.tps.tpi.model.objects.dto.TitleDto;
+        import com.tps.tpi.model.objects.dto.CompanyTitleDto;
+        import com.tps.tpi.model.objects.dto.CompanyDto;
+        import com.tps.tpi.model.objects.dto.CityDto;
+        import com.tps.tpi.model.objects.dto.PatentDto;
+        import com.tps.tpi.model.objects.dto.AwardDto;
+        import com.tps.tpi.model.objects.dto.PublicationDto;
+        import com.tps.tpi.model.objects.dto.BiographyDepartmentDto;
+        import com.tps.tpi.model.objects.dto.BiographySkillDto;
+        import com.tps.tpi.model.objects.dto.BiographyCityDto;
+        import com.tps.tpi.model.objects.dto.BiographySkilledRoleDto;
+        import com.tps.tpi.model.objects.dto.CoverageDto;
+        import com.tps.tpi.model.objects.dto.ProjectDto;
+        import com.tps.tpi.model.objects.dto.PositionDto;
+        import com.tps.tpi.model.presentation.ApplicationModel;
+
+        import mx.logging.LogEventLevel;
+
+        import com.tps.tpi.model.vo.FlashParams;
+        import com.tps.tpi.events.ApplicationStartupEvent;
+
+        import org.swizframework.Swiz;
+
+        import mx.rpc.remoting.mxml.RemoteObject;
+
+        [Autowire]
+        [Bindable]
+        public var appModel:ApplicationModel;
+
+        /** yeah, like huh
+         * insure these are baked into the SWF
+         */
+        public var a:PositionDto;
+        public var b:ProjectDto;
+        public var c:CoverageDto;
+        public var d:BiographySkilledRoleDto;
+        public var e:BiographyCityDto;
+        public var f:BiographySkillDto;
+        public var g:BiographyDepartmentDto;
+        public var h:PublicationDto;
+        public var i:AwardDto;
+        public var j:PatentDto;
+        public var k:ProjectDto;
+        public var l:CityDto;
+        public var m:CompanyDto;
+        public var n:CompanyTitleDto;
+        public var o:TitleDto;
+        public var p:PositionDto;
+        public var r:DepartmentDto;
+        public var s:CoverageDto;
+        public var t:RegionDto;
+        public var u:ProductDto;
+        public var v:EducationDto;
+        public var w:CertificationDto;
+        public var aa:LanguageDto;
+        public var bb:DegreeDto;
+        public var cc:SchoolDto;
+        public var dd:AffiliationDto;
+
+        /**
+         * what to do when app is fully ready to go
+         * we capture teh connection info in flashvars and send it along
+         */
+        protected function onPreInitialize():void
+        {
+            var flashParams:FlashParams = new FlashParams();
+            flashParams.contextRoot = Application.application.parameters.contextRoot;
+            flashParams.port = Application.application.parameters.port;
+            flashParams.host = Application.application.parameters.host;
+
+            var appStartupEvent:ApplicationStartupEvent = new ApplicationStartupEvent(ApplicationStartupEvent.START_UP,
+                    flashParams);
+            //used systemManager here instead of Swiz to make sure this guy gets up there
+            systemManager.dispatchEvent(appStartupEvent);
+
+        }
+		]]>
+	</mx:Script>
+	
+	<!-- ======================================================================================= -->
+	<!-- 	logging setup	                                                     -->
+	<!-- ======================================================================================= -->
+	<mx:TraceTarget id="logTarget" 
+		level="{LogEventLevel.ALL}" 
+	    includeDate="true" 
+	    includeTime="true" 
+	    includeCategory="true" 
+	    includeLevel="true"
+	/>
+	
+	<!-- ======================================================================================= -->
+	<!-- 	External Resource Bundles 		                                                     -->
+	<!-- ======================================================================================= -->
+	<mx:Metadata>
+	[ResourceBundle("resources")]
+	</mx:Metadata>
+	
+	<!-- ======================================================================================= -->
+	<!-- 	External Style Sheet    		                                                     -->
+	<!-- ======================================================================================= -->
+	<mx:Style source="assets/css/global.css" />
+	<mx:Style source="assets/css/fonts.css" />
+
+	<!-- ======================================================================================= -->
+	<!-- 	The Swiz bean setup		                                                     -->
+	<!-- ======================================================================================= -->
+	<swiz:SwizConfig strict="true"
+		mediateBubbledEvents="true"
+		eventPackages="com.tps.tpi.events"
+		viewPackages="com.tps.tpi.view.main"
+		beanLoaders="{ [ BeansDefined ] }"
+		logEventLevel="{ LogEventLevel.ALL }" />
+
+		<main:MainView id="mainView"
+			y="90" 
+			 height="{ this.height - 90 }" 
+			 width="100%"
+			appModel="{ appModel }" />
+		
+	<common:Header height="90"
+		width="100%"
+		currentPerson="{ appModel.currentPerson }"
+		mainViewState="{ appModel.mainViewState }" />
+	
+</mx:Application>

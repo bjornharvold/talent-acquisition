@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.tps.tpi</groupId>
+    <artifactId>tpi</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>Talent Portfolio Intelligence</name>
+    <inceptionYear>2009</inceptionYear>
+    <organization>
+        <name>Talent Portfolio, LLC.</name>
+        <url>http://www.talentportofoliosolutions.com</url>
+    </organization>
+
+    <modules>
+        <module>tpi-ria</module>
+        <module>tpi-web</module>
+        <module>tpi-model</module>
+    </modules>
+
+    <issueManagement>
+        <system>Hudson</system>
+        <url>http://174.129.126.57:8082</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>1</id>
+            <name>Bjorn Harvold</name>
+            <email>bjorn@harvold.com</email>
+            <url>http://www.universalmind.com</url>
+            <organization>Universal Mind</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:svn:svn://174.129.126.57/tpi/trunk</connection>
+        <developerConnection>scm:svn:svn://174.129.126.57/tpi/trunk</developerConnection>
+    </scm>
+
+    <build>
+        <defaultGoal>compile</defaultGoal>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.0-beta-4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.2</version>
+                <configuration>
+                    <username>bjorn</username>
+                    <password>bjorn</password>
+                    <!--<goals>install</goals>-->
+                    <!--<connectionType>connection</connectionType>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>hxcel</id>
+            <name>HXCEL Repository</name>
+            <url>http://hxcel.com:8081/nexus/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>hxcel-snapshots</id>
+            <name>HXCEL Repository</name>
+            <url>http://hxcel.com:8081/nexus/content/groups/public-snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>hxcel-plugins</id>
+            <url>http://hxcel.com:8081/nexus/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </releases>
+        </pluginRepository>
+        <pluginRepository>
+            <id>hxcel-plugins-snapshots</id>
+            <url>http://hxcel.com:8081/nexus/content/groups/public-snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>hxcel-releases</id>
+            <name>HXCEL Repository</name>
+            <url>http://hxcel.com:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>hxcel-snapshots</id>
+            <name>Internal Snapshots</name>
+            <url>http://hxcel.com:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <configuration>
+                    <formats>
+                        <format>xml</format>
+                        <format>html</format>
+                    </formats>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <sourceEncoding>utf-8</sourceEncoding>
+                    <minimumTokens>100</minimumTokens>
+                    <targetJdk>1.5</targetJdk>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>

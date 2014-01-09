@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets:WidgetBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:widgets="com.tps.tpi.view.search.widgets.*" 
+	type="{ SearchComponentTypeCd.LOCATION }"
+	title="{ resourceManager.getString('resources', 'search.location' )}" xmlns:location="com.tps.tpi.view.search.widgets.location.*">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.SearchComponentGroupDto;
+			import com.tps.tpi.model.objects.enums.SearchComponentGroupTypeCd;
+			import com.tps.tpi.model.objects.enums.SearchComponentTypeCd;
+			
+			import mx.collections.ArrayCollection;
+			import mx.collections.ListCollectionView;
+			
+			
+			override protected function onAddSearchParams( event:Event ):void
+			{
+				var newParamsRow:LocationParams = new LocationParams();
+				newParamsRow.addEventListener( 'addSearchParams' , onAddSearchParams );
+				newParamsRow.addEventListener( 'removeSearchParams' , onRemoveSearchParams );
+				searches.addChild( newParamsRow );
+			}
+			
+			override protected function onRemoveSearchParams( event:Event ):void
+			{
+				if( event.target != searchParams )
+				{
+					var params:LocationParams = event.target as LocationParams;
+					params.removeEventListener( 'searchParams', onAddSearchParams );
+					params.removeEventListener( 'removeSearchParams', onRemoveSearchParams );
+					searches.removeChild( params );
+					
+				}
+			}
+			
+			override public function get params():SearchComponentGroupDto
+			{
+				_params = new SearchComponentGroupDto();
+				_params.type = SearchComponentGroupTypeCd.LOCATION.name
+				
+				_params.components =  new ArrayCollection();
+				
+				for each( var locs:LocationParams in searches.getChildren() )
+				{
+					_params.components.addItem( locs.params );
+				}
+				
+				
+				return _params;
+			}
+			
+			//////////////////////
+			// overrides
+			///////////////////////
+			
+			override protected function commitProperties():void
+			{
+				super.commitProperties();
+				
+				if( searchComponentIsDirty )
+				{
+					searchComponentIsDirty = false;
+					//ok...do some work here
+				}
+			}
+			
+			
+		]]>
+	</mx:Script>
+	
+	<mx:VBox id="searches" verticalGap="0"
+			 y="5" width="100%">
+		
+		<location:LocationParams id="searchParams"
+				 addSearchParams="onAddSearchParams( event )"
+				 removeSearchParams="onRemoveSearchParams( event )"/>
+	</mx:VBox>
+	
+</widgets:WidgetBase>

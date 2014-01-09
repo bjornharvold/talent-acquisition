@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold
+  -->
+
+<roles>
+    <role>
+        <name>ROLE_ADMINISTRATOR</name>
+        <description>Administrator</description>
+    </role>
+    <role>
+        <name>ROLE_USER</name>
+        <description>Application user</description>
+    </role>
+</roles>

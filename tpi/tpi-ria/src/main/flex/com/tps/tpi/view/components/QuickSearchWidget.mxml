@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Form xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	verticalGap="0"
+	paddingBottom="0"
+	paddingLeft="0"
+	paddingRight="0"
+	paddingTop="0" xmlns:components="com.tps.tpi.view.components.*">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.events.QuickSearchEvent;
+			
+			private function onSubmitQuickSearch():void
+			{
+				if( searchTerms.text.length > 3 )
+				{
+					dispatchEvent( new QuickSearchEvent( QuickSearchEvent.QUICK_SEARCH, searchTerms.text, searchGroup.selectedValue as int) );
+				}				
+			}
+		]]>
+	</mx:Script>
+		<mx:FormItem direction="horizontal" 
+			defaultButton="{ goButton }" 
+			horizontalGap="5"
+			verticalCenter="0">
+			<mx:Label text="{ resourceManager.getString('resources','form.search') }" height="15" paddingTop="4" />
+			<mx:TextInput id="searchTerms" width="150" />
+			<mx:Button label="{ resourceManager.getString('resources','form.GO') }" id="goButton" click="onSubmitQuickSearch()" />
+		</mx:FormItem>	
+		<mx:FormItem direction="horizontal" horizontalGap="5" paddingLeft="45">
+			<mx:RadioButtonGroup id="searchGroup" />
+			<mx:RadioButton label="{ resourceManager.getString('resources','form.name') }" 
+				labelPlacement="right" 
+				selected="true"
+				value="{ QuickSearchEvent.NAME_SEARCH }"
+				groupName="searchGroup" />
+			<mx:RadioButton label="{ resourceManager.getString('resources','form.keyword') }" 
+				labelPlacement="right"
+				value="{ QuickSearchEvent.KEYWORD_SEARCH }"
+				groupName="searchGroup"   />
+			<components:AdvancedSearchLink />
+		</mx:FormItem> 
+	
+</mx:Form>

@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<certifications>
+  <certification>
+    <longname>Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Accredited Business Accountant</shortname>
+    <code>ABA</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname>Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Accredited Tax Advisor</shortname>
+    <code>ATA</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname>Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Accredited Tax Preparer</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname>Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Elder Care Specialist</shortname>
+    <code>ECS</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname>The American College of Forensic Examiners Institute of Forensic Science</longname>
+    <shortname>Certified Forensic Accountant</shortname>
+    <code>Cr.FA</code>
+    <description>http://www.acfei.com</description>
+  </certification>
+  <certification>
+    <longname>The Disaster Recovery Institute International</longname>
+    <shortname>Associate Business Continuity Professional</shortname>
+    <code>ABCP</code>
+    <description>http://www.drii.org</description>
+  </certification>
+  <certification>
+    <longname>The Disaster Recovery Institute International</longname>
+    <shortname>Certified Functional Continuity Professional</shortname>
+    <code>CFCP</code>
+    <description>http://www.drii.org</description>
+  </certification>
+  <certification>
+    <longname>The Disaster Recovery Institute International</longname>
+    <shortname>Certified Business Continuity Professional</shortname>
+    <code>CBCP</code>
+    <description>http://www.drii.org</description>
+  </certification>
+  <certification>
+    <longname>The Disaster Recovery Institute International</longname>
+    <shortname>Master Business Continuity Professional</shortname>
+    <code>MBCP</code>
+    <description>http://www.drii.org</description>
+  </certification>
+  <certification>
+    <longname>The American College</longname>
+    <shortname>Chartered Financial Consultant</shortname>
+    <code>ChFC</code>
+    <description>http://www.theamericancollege.edu</description>
+  </certification>
+  <certification>
+    <longname>The American College</longname>
+    <shortname>Financial Services Specialist</shortname>
+    <code>FSS</code>
+    <description>http://www.theamericancollege.edu</description>
+  </certification>
+  <certification>
+    <longname>The American College</longname>
+    <shortname>Chartered Life Underwriter</shortname>
+    <code>CLU</code>
+    <description>http://www.theamericancollege.edu</description>
+  </certification>
+  <certification>
+    <longname>The American College</longname>
+    <shortname>Chartered Advisor for Senior Living</shortname>
+    <code>CASL</code>
+    <description>http://www.theamericancollege.edu</description>
+  </certification>
+  <certification>
+    <longname>The American College</longname>
+    <shortname>Registered Employee Benefits Consultant</shortname>
+    <code>REBC</code>
+    <description>http://www.theamericancollege.edu</description>
+  </certification>
+  <certification>
+    <longname>The American College</longname>
+    <shortname>Chartered Leadership Fellow</shortname>
+    <code>CLF</code>
+    <description>http://www.theamericancollege.edu</description>
+  </certification>
+  <certification>
+    <longname>The American College</longname>
+    <shortname>Chartered Advisor in Philanthropy</shortname>
+    <code>CAP</code>
+    <description>http://www.theamericancollege.edu</description>
+  </certification>
+  <certification>
+    <longname>The American Society of Pension Professionals &amp; Actuaries</longname>
+    <shortname>Qualified Plan Financial Consultant</shortname>
+    <code>QPFC</code>
+    <description>http://www.asppa.org</description>
+  </certification>
+  <certification>
+    <longname>The American Society of Pension Professionals &amp; Actuaries</longname>
+    <shortname>Qualified 401(k) Administrator</shortname>
+    <code>QKA</code>
+    <description>http://www.asppa.org</description>
+  </certification>
+  <certification>
+    <longname>The American Society of Pension Professionals &amp; Actuaries</longname>
+    <shortname>Qualified Pension Administrator</shortname>
+    <code>QPA</code>
+    <description>http://www.asppa.org</description>
+  </certification>
+  <certification>
+    <longname>The American Society of Pension Professionals &amp; Actuaries</longname>
+    <shortname>Certified Pension Consultant</shortname>
+    <code>CPC</code>
+    <description>http://www.asppa.org</description>
+  </certification>
+  <certification>
+    <longname>The American Society of Pension Professionals &amp; Actuaries,"Fellow</longname>
+    <shortname>Life and Health Claims"</shortname>
+    <code>FSPA</code>
+    <description>http://www.asppa.org</description>
+  </certification>
+  <certification>
+    <longname>The International Claim Association,"Associate</longname>
+    <shortname>Life and Health Claims"</shortname>
+    <code>ALHC</code>
+    <description>http://www.claim.org</description>
+  </certification>
+  <certification>
+    <longname>The International Claim Association,"Fellow</longname>
+    <shortname>Life and Health Claims"</shortname>
+    <code>FLHC</code>
+    <description>http://www.claim.org</description>
+  </certification>
+  <certification>
+    <longname>Knowledge Management Consortium International</longname>
+    <shortname>Certificate in Knowledge and Innovation Management</shortname>
+    <code>CKIM</code>
+    <description>http://www.kmci.org</description>
+  </certification>
+  <certification>
+    <longname>Knowledge Management Consortium International</longname>
+    <shortname>Advanced Certificate in Knowledge and Innovation Management</shortname>
+    <code>NA</code>
+    <description>http://www.kmci.org</description>
+  </certification>
+  <certification>
+    <longname>The International Knowledge Management Institute</longname>
+    <shortname>Certified Knowledge Specialist</shortname>
+    <code>CKS</code>
+    <description>http://www.kminstitute.org</description>
+  </certification>
+  <certification>
+    <longname>The International Knowledge Management Institute</longname>
+    <shortname>Certified Knowledge Manager</shortname>
+    <code>CKM</code>
+    <description>http://www.kminstitute.org</description>
+  </certification>
+  <certification>
+    <longname>The International Knowledge Management Institute</longname>
+    <shortname>Master Certified Knowledge Manager</shortname>
+    <code>MCKM</code>
+    <description>http://www.kminstitute.org</description>
+  </certification>
+  <certification>
+    <longname>The International Council on Systems Engineering</longname>
+    <shortname>Certified Systems Engineering Professional</shortname>
+    <code>CSEP</code>
+    <description>http://www.incose.org</description>
+  </certification>
+  <certification>
+    <longname>International Facility Management Association</longname>
+    <shortname>Certified Facility Manager</shortname>
+    <code>CFM</code>
+    <description>http://www.ifma.org</description>
+  </certification>
+  <certification>
+    <longname>International Facility Management Association</longname>
+    <shortname>Facility Management Professional</shortname>
+    <code>FMP</code>
+    <description>http://www.ifma.org</description>
+  </certification>
+  <certification>
+    <longname>The Investment Management Consultants Association</longname>
+    <shortname>Certified Investment Management Consultant</shortname>
+    <code>CIMC</code>
+    <description>http://www.imca.org</description>
+  </certification>
+  <certification>
+    <longname>The National Association of State Boards of Accountancy</longname>
+    <shortname>International Uniform Certified Public Accountant</shortname>
+    <code>IQEX</code>
+    <description>http://www.nasba.org</description>
+  </certification>
+  <certification>
+    <longname>The International Research Association</longname>
+    <shortname>Licensed International Financial Analyst</shortname>
+    <code>LIFA</code>
+    <description>http://www.the-ira.org</description>
+  </certification>
+  <certification>
+    <longname>The Market Technicians Association</longname>
+    <shortname>Chartered Market Technician</shortname>
+    <code>CMT</code>
+    <description>http://www.mta.org</description>
+  </certification>
+  <certification>
+    <longname>The National Management Classification Society</longname>
+    <shortname>Industrial Security Professional</shortname>
+    <code>ISP</code>
+    <description>http://www.ncms-isp.org</description>
+  </certification>
+  <certification>
+    <longname>The National Federation of Paralegal Associates</longname>
+    <shortname>PACE - Registered Paralegal</shortname>
+    <code>RP</code>
+    <description>http://www.paralegals.org</description>
+  </certification>
+  <certification>
+    <longname>The Product Development and Management Association</longname>
+    <shortname>New Product Development Professional</shortname>
+    <code>NPDP</code>
+    <description>http://www.pdma.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Assessment 101 Online Certification</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Bottomline on ROI Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Business Academy Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Career Planning and Talent Management Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Coaching Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Certified Professional in Learning and Performance</shortname>
+    <code>CPLP</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Designing Learning Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>E-Learning Instructional Design Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Facilitating Organizational Change Certiciate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Human Performance Improvement Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Managing the Learning Function Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Managing Organizational Knowledge Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Measuring and Evaluating Learning Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Rapid Interactive Design for E-Learning Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>ROI Skill Building Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Test Design and Delivery Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>American Society for Training and Development</longname>
+    <shortname>Training Certificate</shortname>
+    <code>NA</code>
+    <description>http://www.astd.org</description>
+  </certification>
+  <certification>
+    <longname>International Information Systems Security Certification Consortium</longname>
+    <shortname>Associate of (ISC)2</shortname>
+    <code>NA</code>
+    <description>https://www.isc2.org</description>
+  </certification>
+  <certification>
+    <longname>International Information Systems Security Certification Consortium</longname>
+    <shortname>Systems Security Certified Practitioner</shortname>
+    <code>SSCP</code>
+    <description>https://www.isc2.org</description>
+  </certification>
+  <certification>
+    <longname>International Information Systems Security Certification Consortium</longname>
+    <shortname>Certification and Accreditation Professional</shortname>
+    <code>CAP</code>
+    <description>https://www.isc2.org</description>
+  </certification>
+  <certification>
+    <longname>International Information Systems Security Certification Consortium</longname>
+    <shortname>Certified Information Systems Security Professional</shortname>
+    <code>CISSP</code>
+    <description>https://www.isc2.org</description>
+  </certification>
+  <certification>
+    <longname>International Information Systems Security Certification Consortium</longname>
+    <shortname>Certified Information Systems Security Professional (Concentration in Architecture)</shortname>
+    <code>CISSP</code>
+    <description>https://www.isc2.org</description>
+  </certification>
+  <certification>
+    <longname>International Information Systems Security Certification Consortium</longname>
+    <shortname>Certified Information Systems Security Professional (Concentration in Engineering)</shortname>
+    <code>CISSP</code>
+    <description>https://www.isc2.org</description>
+  </certification>
+  <certification>
+    <longname>International Information Systems Security Certification Consortium</longname>
+    <shortname>Certified Information Systems Security Professional (Concentration in Management)</shortname>
+    <code>CISSP</code>
+    <description>https://www.isc2.org</description>
+  </certification>
+  <certification>
+    <longname>Storage Networking Industry Association</longname>
+    <shortname>SNIA Certified Professional</shortname>
+    <code>SCP</code>
+    <description>http://www.snia.org</description>
+  </certification>
+  <certification>
+    <longname>Storage Networking Industry Association</longname>
+    <shortname>SNIA Certified Systems Engineer</shortname>
+    <code>SCSE</code>
+    <description>http://www.snia.org</description>
+  </certification>
+  <certification>
+    <longname>Storage Networking Industry Association</longname>
+    <shortname>SNIA Certified Architect</shortname>
+    <code>SCA</code>
+    <description>http://www.snia.org</description>
+  </certification>
+  <certification>
+    <longname>Storage Networking Industry Association</longname>
+    <shortname>SNIA Certified Storage Networking Expert</shortname>
+    <code>SCSN-E</code>
+    <description>http://www.snia.org</description>
+  </certification>
+  <certification>
+    <longname>WorldatWork Society of Certified Professionals</longname>
+    <shortname>Certified Compensation Professional</shortname>
+    <code>CCP</code>
+    <description>http://www.worldatworksociety.org</description>
+  </certification>
+  <certification>
+    <longname>WorldatWork Society of Certified Professionals</longname>
+    <shortname>Certified Benefits Professional</shortname>
+    <code>CBP</code>
+    <description>http://www.worldatworksociety.org</description>
+  </certification>
+  <certification>
+    <longname>WorldatWork Society of Certified Professionals</longname>
+    <shortname>Global Remuneration Professional</shortname>
+    <code>GRP</code>
+    <description>http://www.worldatworksociety.org</description>
+  </certification>
+  <certification>
+    <longname>WorldatWork Society of Certified Professionals</longname>
+    <shortname>Work-Life Certified Professional</shortname>
+    <code>WLCP</code>
+    <description>http://www.worldatworksociety.org</description>
+  </certification>
+  <certification>
+    <longname>The American Institute of Certified Public Accounts</longname>
+    <shortname>Personal Financial Specialist</shortname>
+    <code>PFS</code>
+    <description>http://www.aicpa.org</description>
+  </certification>
+  <certification>
+    <longname>The American Institute of Certified Public Accounts</longname>
+    <shortname>Certified Public Accountant</shortname>
+    <code>CPA</code>
+    <description>http://www.aicpa.org</description>
+  </certification>
+  <certification>
+    <longname>The American Institute of Certified Public Accounts</longname>
+    <shortname>Accredited in Business Valuation</shortname>
+    <code>ABV</code>
+    <description>http://www.aicpa.org</description>
+  </certification>
+  <certification>
+    <longname>The American Payroll Association</longname>
+    <shortname>Fundamental Payroll Certification</shortname>
+    <code>FPC</code>
+    <description>http://www.americanpayroll.org</description>
+  </certification>
+  <certification>
+    <longname>The American Payroll Association</longname>
+    <shortname>Certified Payroll Professional</shortname>
+    <code>CPP</code>
+    <description>http://www.americanpayroll.org</description>
+  </certification>
+  <certification>
+    <longname>The American Purchasing Society</longname>
+    <shortname>Certified Purchasing Professional</shortname>
+    <code>CPP</code>
+    <description>http://www.american-purchasing.org</description>
+  </certification>
+  <certification>
+    <longname>The American Purchasing Society</longname>
+    <shortname>Certified Professional Purchasing Manager</shortname>
+    <code>CPPM</code>
+    <description>http://www.american-purchasing.org</description>
+  </certification>
+  <certification>
+    <longname>The Information Systems Examination Board</longname>
+    <shortname>Certificate in Application Management Essentials</shortname>
+    <code>NA</code>
+    <description>http://www.bcs.org</description>
+  </certification>
+  <certification>
+    <longname>The Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Accredited Business Accountant</shortname>
+    <code>ABA</code>
+    <description>http://www.acatcredentials.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>The Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Accredited Tax Advisor</shortname>
+    <code>ATA</code>
+    <description>http://www.acatcredentials.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>The Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Accredited Tax Preparer</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>The Accreditation Council for Accountancy and Taxation</longname>
+    <shortname>Accredited Retirement Advisor</shortname>
+    <code>ARA</code>
+    <description>http://www.acatcredentials.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Certified Forensic Accountant</shortname>
+    <code>Cr.FA</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Certified in Homeland Security</shortname>
+    <code>CHS</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Certified Medical Investigator</shortname>
+    <code>CMI</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Certified Forensic Nurse</shortname>
+    <code>CFN</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Certified Forensic Consultant</shortname>
+    <code>CFC</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Sensitive Security Information Certified</shortname>
+    <code>SSI</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Certified in Disaster Preparedness</shortname>
+    <code>CDP-I</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Certified Forensic Physician</shortname>
+    <code>CFP</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Accredited Forensic Counselor</shortname>
+    <code>AFC</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Forensic Social Worker</shortname>
+    <code>NA</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>American College of Forensic Examiners</longname>
+    <shortname>Master Forensic Social Worker</shortname>
+    <code>NA</code>
+    <description>http://www.acfei.com/</description>
+  </certification>
+  <certification>
+    <longname>The American Institute of Certified Public Accountants</longname>
+    <shortname>Personal Financial Specialist</shortname>
+    <code>PFS</code>
+    <description>http://pfp.aicpa.org/</description>
+  </certification>
+  <certification>
+    <longname>The American Institute of Certified Public Accountants</longname>
+    <shortname>Certified Public Accountant</shortname>
+    <code>CPA</code>
+    <description>http://pfp.aicpa.org/</description>
+  </certification>
+  <certification>
+    <longname>American Society for Industrial Security</longname>
+    <shortname>Certified Protection Professional</shortname>
+    <code>CPP</code>
+    <description>http://www.asisonline.org/</description>
+  </certification>
+  <certification>
+    <longname>American Society for Industrial Security</longname>
+    <shortname>Professional Certified Investigator</shortname>
+    <code>PCI</code>
+    <description>http://www.asisonline.org/</description>
+  </certification>
+  <certification>
+    <longname>American Society for Industrial Security</longname>
+    <shortname>Physical Security Professional</shortname>
+    <code>PSP</code>
+    <description>http://www.asisonline.org/</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Biomedical Auditor</shortname>
+    <code>CBA</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Calibration Technician</shortname>
+    <code>CCT</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Hazard Analysis and Critical Control Point Auditor</shortname>
+    <code>CHA</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Manager of Quality/Organizational Excellence</shortname>
+    <code>CMQ/OE</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Pharmaceutical GMP Professional</shortname>
+    <code>CPGP</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Quality Auditor</shortname>
+    <code>CQA</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Quality Engineer</shortname>
+    <code>CQE</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Quality Improvement Associate</shortname>
+    <code>CQIA</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Quality Inspector</shortname>
+    <code>CQI</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Quality Process Analyst</shortname>
+    <code>CQPA</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Quality Technician</shortname>
+    <code>CQT</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Reliability Engineer</shortname>
+    <code>CRE</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Six Sigma Black Belt</shortname>
+    <code>CSSBB</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Six Sigma Green Belt</shortname>
+    <code>CSSGB</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>American Society for Quality</longname>
+    <shortname>Certified Software Quality Engineer</shortname>
+    <code>CSQE</code>
+    <description>http://www.asq.org/index.html</description>
+  </certification>
+  <certification>
+    <longname>Association for Financial Professionals</longname>
+    <shortname>Certified Treasury Professional</shortname>
+    <code>CTP</code>
+    <description>http://www.afponline.org/</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Accredited Business Accountant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Accredited Forensic Counselor</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Accredited Retirement Advisor</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Accredited Tax Advisor</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Accredited Tax Preparer</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Accredited in Business Valuation</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Advanced Certificate in Knowledge and Innovation Management</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Assessment 101 Online Certification</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Associate Business Continuity Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Associate of (ISC)2</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Bottomline on ROI Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Business Academy Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Career Planning and Talent Management Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certificate in Application Management Essentials</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certificate in Knowledge and Innovation Management</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certification and Accreditation Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Benefits Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Biomedical Auditor</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Business Continuity Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Calibration Technician</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Compensation Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Facility Manager</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Forensic Accountant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Forensic Consultant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Forensic Nurse</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Forensic Physician</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Functional Continuity Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Information Systems Security Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Information Systems Security Professional (Concentration in Management)</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Information Systems Security Professional (Concentration in Engineering)</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Information Systems Security Professional (Concentration in Architecture)</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Investment Management Consultant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Knowledge Specialist</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Knowledge Manager</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Manager of Quality/Organizational Excellence</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Medical Investigator</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Payroll Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Pension Consultant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Pharmaceutical GMP Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Professional in Learning and Performance</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Professional Purchasing Manager</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Protection Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Public Accountant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Purchasing Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Quality Auditor</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Quality Engineer</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Quality Improvement Associate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Quality Inspector</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Quality Process Analyst</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified Systems Engineering Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified in Disaster Preparedness</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Certified in Homeland Security</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Chartered Advisor for Senior Living</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Chartered Advisor in Philanthropy</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Chartered Financial Consultant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Chartered Leadership Fellow</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Chartered Life Underwriter</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Chartered Market Technician</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Coaching Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Designing Learning Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>E-Learning Instructional Design Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Elder Care Specialist</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Facilitating Organizational Change Certiciate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Facility Management Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Financial Services Specialist</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Forensic Social Worker</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Fundamental Payroll Certification</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Global Remuneration Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Hazard Analysis and Critical Control Point Auditor</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Human Performance Improvement Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Industrial Security Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>International Uniform Certified Public Accountant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Licensed International Financial Analyst</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Life and Health Claims"</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Managing Organizational Knowledge Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Managing the Learning Function Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Master Business Continuity Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Master Certified Knowledge Manager</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Master Forensic Social Worker</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Measuring and Evaluating Learning Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>New Product Development Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>PACE - Registered Paralegal</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Personal Financial Specialist</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Physical Security Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Professional Certified Investigator</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Qualified 401(k) Administrator</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Qualified Pension Administrator</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Qualified Plan Financial Consultant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>ROI Skill Building Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Rapid Interactive Design for E-Learning Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Registered Employee Benefits Consultant</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>SNIA Certified Architect</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>SNIA Certified Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>SNIA Certified Storage Networking Expert</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>SNIA Certified Systems Engineer</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Sensitive Security Information Certified</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Sun Certified Java Programmer</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Systems Security Certified Practitioner</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Test Design and Delivery Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Training Certificate</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+  <certification>
+    <longname/>
+    <shortname>Work-Life Certified Professional</shortname>
+    <code>ATP</code>
+    <description>http://www.acatcredentials.org</description>
+  </certification>
+</certifications>

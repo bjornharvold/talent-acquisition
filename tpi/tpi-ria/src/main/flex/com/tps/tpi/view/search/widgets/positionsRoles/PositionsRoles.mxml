@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets:WidgetBase	 xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:components="com.tps.tpi.view.components.*"
+	type="{ SearchComponentTypeCd.POSITION_ROLES }"
+	title="{ resourceManager.getString('resources', 'search.position_roles' )}" 
+	xmlns:positionsRoles="com.tps.tpi.view.search.widgets.positionsRoles.*" 
+	xmlns:widgets="com.tps.tpi.view.search.widgets.*"
+	>
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.events.RemoveSearchEvent;
+			import com.tps.tpi.model.objects.dto.SearchComponentGroupDto;
+			import com.tps.tpi.model.objects.enums.SearchComponentGroupTypeCd;
+			import com.tps.tpi.model.objects.enums.SearchComponentTypeCd;
+			import com.tps.tpi.view.EmbeddedAssets;
+			import com.tps.tpi.view.events.ExclusionChangedEvent;
+			import com.tps.tpi.view.search.widgets.positionsRoles.PositionsAndRolesParams;
+			
+			import mx.collections.ArrayCollection;
+			import mx.collections.ListCollectionView;
+			import mx.controls.Alert;
+			import mx.controls.CheckBox;
+			import mx.utils.ObjectUtil;
+			
+			
+			
+			
+			override protected function onAddSearchParams( event:Event ):void
+			{
+
+				var newParamsRow:PositionsAndRolesParams = new PositionsAndRolesParams();
+				newParamsRow.addEventListener( 'addSearchParams' , onAddSearchParams );
+				newParamsRow.addEventListener( 'removeSearchParams' , onRemoveSearchParams );
+				searches.addChild( newParamsRow );
+				
+			}
+			
+			override protected function onRemoveSearchParams( event:Event ):void
+			{
+				if( event.target != searchParams )
+				{
+					var params:PositionsAndRolesParams = event.target as PositionsAndRolesParams;
+					params.removeEventListener( 'searchParams', onAddSearchParams );
+					params.removeEventListener( 'removeSearchParams', onRemoveSearchParams );
+					searches.removeChild( params );
+					
+				}
+			}
+			
+			override public function get params():SearchComponentGroupDto
+			{
+				_params = new SearchComponentGroupDto();
+				_params.type = SearchComponentGroupTypeCd.POSITION_ROLES.name;
+				
+				_params.components = new ArrayCollection();
+				for each( var pr:PositionsAndRolesParams in searches.getChildren() )
+				{
+					_params.components.addItem( pr.params );
+				}
+				
+				return _params;
+			}
+			
+			/**
+			 * override to marshal the big changes into one cylce
+			 */
+			override protected function commitProperties():void
+			{
+				super.commitProperties();
+				
+				if( searchComponentIsDirty )
+				{
+					searchComponentIsDirty = false;
+					//ok...do some work here
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Label x="-3" 
+			  y="5"
+			  styleName="advancedSearchLabel"
+			  text="{ resourceManager.getString('resources','form.title' ) +
+			  				'/' +
+							  resourceManager.getString('resources','form.role' ) +
+							  '/' +
+							  resourceManager.getString('resources','form.level' ) }" />
+	
+	<mx:VBox id="searches" verticalGap="0"
+		y="5" width="100%">
+		<positionsRoles:PositionsAndRolesParams id="searchParams" height="40"
+			addSearchParams="onAddSearchParams( event )"
+			removeSearchParams="onRemoveSearchParams( event )" />
+		
+	</mx:VBox>
+	
+	
+</widgets:WidgetBase>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="300">
+	
+	<!--
+		used to display a general users profile, eg a profile from teh search results
+	-->
+	
+	
+</mx:Canvas>

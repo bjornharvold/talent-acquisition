@@ -1,0 +1,45 @@
+#
+# Copyright (c) 2009. All rights reserved. Bjorn Harvold.
+#
+
+# postgres database
+#database.url=jdbc:postgresql://localhost/tpi
+#database.username=postgres
+#database.password=postgres
+#database.driverClassName=org.postgresql.Driver
+#database.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# mysql database
+database.url=jdbc:mysql://localhost:3306/tpi
+database.username=tpiuser
+database.password=tpi
+database.driverClassName=com.mysql.jdbc.Driver
+database.dialect=org.hibernate.dialect.MySQL5Dialect
+
+# email
+email.sender=Talent Portfolio Solutions LLC
+email.username=bjorn@harvold.com
+email.password=lactose8
+email.host=smtp.gmail.com
+email.from=do-not-reply@tps.com
+email.replyto=do-not-reply@tps.com
+email.user.activation.subject=Activation email from Talent Portfolio Solutions LLC
+email.user.password.reset.subject=Password reset notification
+
+# site - used by email to send links
+site.host=localhost
+site.port=8080
+
+# for creation of reference data
+data.creation.enabled=true
+
+# specifies whether to recreate database or just update. valid values are "create" and "update"
+hibernate.hbm2ddl.auto=create
+
+# search
+hibernate.search.path=/opt/tpi/lucene/indexes
+
+#caching
+oscache.property.path=classpath:oscache.properties
+cache.enabled=true
+cache.refresh.seconds=60

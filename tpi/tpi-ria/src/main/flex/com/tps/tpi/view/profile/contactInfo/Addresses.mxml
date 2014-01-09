@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" height="300"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="ADDRESSES" >
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.dto.PersonAddressDto;
+
+        import mx.collections.ListCollectionView;
+
+        [Bindable]
+        private var homeAddy:PersonAddressDto;
+        [Bindable]
+        private var workAddy:PersonAddressDto;
+        [Bindable]
+        private var vacaAddy:PersonAddressDto;
+
+        /**
+         * we will need to create a DP for th DG
+         * manually
+         */
+        private var _addresses:ListCollectionView;
+        [Bindable]
+        public function set addresses(value:ListCollectionView):void
+        {
+            if (value)
+            {
+                _addresses = value;
+                for each(var add:PersonAddressDto in value)
+                {
+                    switch (add.address.type)
+                    {
+                        case "HOME": homeAddy = add; break;
+                        case "WORK": workAddy = add; break;
+                        case "VACATION":vacaAddy = add; break;
+                    }
+                }
+
+            }
+
+        }
+
+        public function get addresses():ListCollectionView
+        {
+            return _addresses;
+        }
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<mx:Grid width="100%">
+				<mx:GridRow width="100%">
+					<mx:GridItem width="50%">
+						<mx:Label styleName="profileDataGridHeaderStyle" text="Office" />
+					</mx:GridItem>
+					<mx:GridItem width="50%">
+						<mx:Label styleName="profileDataGridHeaderStyle" text="Home" />
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow width="100%">
+					<mx:GridItem width="150">
+						<mx:VBox>
+							<mx:Label text="{ workAddy.address.address1 }" />
+							<mx:Label text="{ workAddy.address.address2 }" 
+								visible="{ workAddy.address.address2.length > 0 }" 
+								includeInLayout="{ workAddy.address.address2.length > 0 }" />
+							<mx:Label text="{ workAddy.address.cityName + ', ' + workAddy.address.state + ' ' + workAddy.address.zip } " />
+						</mx:VBox>
+					</mx:GridItem>
+					<mx:GridItem width="150">
+						<mx:VBox>
+							<mx:Label text="{ homeAddy.address.address1 }" />
+							<mx:Label text="{ homeAddy.address.address2 }" 
+								visible="{ homeAddy.address.address2.length > 0 }" 
+								includeInLayout="{ homeAddy.address.address2.length > 0 }" />
+							<mx:Label text="{ homeAddy.address.cityName + ', ' + homeAddy.address.state + ' ' + homeAddy.address.zip} " />
+						</mx:VBox>
+					</mx:GridItem>
+				</mx:GridRow>
+			</mx:Grid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

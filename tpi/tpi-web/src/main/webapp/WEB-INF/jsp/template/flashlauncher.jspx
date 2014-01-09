@@ -1,0 +1,66 @@
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold.
+  -->
+
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:spring="http://www.springframework.org/tags"
+          xmlns:spring-form="http://www.springframework.org/tags/form"
+          xmlns:security="http://www.springframework.org/security/tags"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:x="http://java.sun.com/jsp/jstl/xml"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns:tiles="http://tiles.apache.org/tags-tiles"
+          xmlns:oscache="http://www.opensymphony.com/oscache"
+          xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0">
+    <!--<jsp:output doctype-root-element="html"-->
+    <!--doctype-public="-//W3C//DTD XHTML 1.1//EN"-->
+    <!--doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"/>-->
+    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"/>
+
+    <tiles:importAttribute name="swf"/>
+    <spring:message code="application.name" text="TPI" var="appName"/>
+    <spring:message code="build.number" text="No build number" var="version"/>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title><spring:message code="company.name" text="TPS"/> : <spring:message code="page.home.title" text="No title available"/></title>
+
+        <tiles:insertAttribute name="header"/>
+
+        <script type="text/javascript">
+            <![CDATA[
+            $(document).ready(function() {
+                var flashvars = {
+                    host: "${pageContext.request.serverName}",
+                    port: "${pageContext.request.serverPort}",
+                    contextRoot: "${pageContext.request.contextPath}",
+                    version: "${version}"
+                };
+                var params = {
+                    allowScriptAccess:"always",
+                    quality:"high",
+                    bgcolor:"#f6f6f6",
+                    allowFullScreen:"true"
+                };
+                var attributes = {
+                    applicationName:"${appName}"
+                };
+
+                swfobject.embedSWF("${pageContext.request.contextPath}/static/${swf}", "swf", "100%", "100%", "9.0.0", "/static/expressInstall.swf", flashvars, params, attributes);
+            });
+            ]]>
+        </script>
+    </head>
+
+    <body>
+
+    <div id="swf">
+        <p>This content requires the Adobe Flash Player. <a href="http://www.adobe.com/go/getflash/">Get Flash</a></p>
+    </div>
+
+    </body>
+    </html>
+
+</jsp:root>

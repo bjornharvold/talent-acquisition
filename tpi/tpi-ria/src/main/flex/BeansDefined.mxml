@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<swiz:BeanLoader xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:swiz="http://swiz.swizframework.org"
+	xmlns:util="org.swizframework.util.*" 
+	xmlns:vo="com.tps.tpi.model.vo.*"
+	xmlns:controller="com.tps.tpi.controller.*" 
+	xmlns:model="com.tps.tpi.model.presentation.*"
+	xmlns:presentation="com.tps.tpi.model.presentation.*" xmlns:delegates="com.tps.tpi.controller.delegates.*">
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.presentation.ProfileModel;
+
+        import com.tps.tpi.model.presentation.LoginViewModel;
+		
+		]]>
+	</mx:Script>
+	<model:ApplicationModel id="applicationModel" />
+	
+	<!-- presentation models -->
+	<presentation:DashboardModel id="dashboardModel" />
+	<presentation:MyAccountModel id="myAccountModel" />
+<!--	<presentation:ProfileModel id="personalProfileModel" dispatcher="{dispatcher}" />
+	<presentation:ProfileModel id="readOnlyProfileModel" dispatcher="{dispatcher}" />
+-->	
+	<presentation:SearchModel id="searchModel" />
+	
+	<!--<presentation:ProfessionalBioModel id="professionalBioModel" dispatcher="{dispatcher}" />
+	<presentation:PositionsAndRolesModel id="positionsAndRolesModel" />
+	<presentation:EducationModel id="educationModel" />
+	<presentation:ContactPersonalModel id="contactPersonalModel" />-->
+	
+	<swiz:Prototype id="personalProfileModel"
+		classReference="{ ProfileModel }"
+		constructorArguments="{ dispatcher }"
+		singleton="true" />
+		
+	<swiz:Prototype id="readOnlyProfileModel"
+		classReference="{ ProfileModel }"
+		constructorArguments="{ dispatcher }"
+		singleton="true" />
+		
+		
+	<swiz:Prototype id="loginViewModel"
+		classReference="{ LoginViewModel }"
+		constructorArguments="{ dispatcher }"
+		singleton="true" />
+		
+	<!-- controllers -->
+	<controller:ApplicationController id="appController" />
+	<controller:LoginController id="loginController" />
+	<controller:ProfileController id="profileController" />
+	<controller:BiographyController id="biographyController" />
+	<controller:SearchController id="searchController" />
+	<controller:UserController id="userController" />
+	
+	<!-- delegates -->
+	<delegates:LoginDelegate id="loginDelegate" />
+	<delegates:ProfileDelegate id="profileDelegate" />
+	<delegates:BiographyDelegate id="biographyDelegate" />
+	<delegates:SearchDelegate id="searchDelegate" />
+	<delegates:UserDelegate id="userDelegate" />
+	
+	<!-- beaners -->
+	<vo:FlashParams id="flashParams" />
+	
+	<!-- custom channel set, because I am not compiling against services.xml -->
+	<util:DynamicChannelSet id="myAmfChannel">
+		<util:serverName>{ flashParams.host }</util:serverName>
+		<util:serverPort>{ flashParams.port }</util:serverPort>
+		<util:contextRoot>{ flashParams.contextRoot }</util:contextRoot>
+	</util:DynamicChannelSet>
+		   
+	<!-- person service --> 
+	<mx:RemoteObject id="userService" 
+		 endpoint="http://{flashParams.host}:{flashParams.port}{ flashParams.contextRoot }/messagebroker/amf"
+		 destination="userService"
+		 showBusyCursor="true"/>
+	<!--<mx:RemoteObject id="dummyprofileService" 
+		 channelSet="{myAmfChannel}"
+		 destination="dummyProfileService"
+		 showBusyCursor="true"/>-->
+	<mx:RemoteObject id="profileService" 
+		 endpoint="http://{flashParams.host}:{flashParams.port}{ flashParams.contextRoot }/messagebroker/amf"
+		 destination="remotingProfileService"
+		 showBusyCursor="true"/>
+	<mx:RemoteObject id="searchService" 
+		 endpoint="http://{flashParams.host}:{flashParams.port}{ flashParams.contextRoot }/messagebroker/amf"
+		 destination="remotingSearchService"
+		 showBusyCursor="true"/>
+		 
+	
+	<!-- login service -->
+	<mx:HTTPService id="loginService"
+            url="http://{ flashParams.host + ':' + flashParams.port }/j_spring_security_check"	/> 
+		 
+</swiz:BeanLoader>

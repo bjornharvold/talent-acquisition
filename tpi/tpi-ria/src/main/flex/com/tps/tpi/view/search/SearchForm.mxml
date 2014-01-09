@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="100%" xmlns:search="com.tps.tpi.view.search.*" 
+	xmlns:components="com.tps.tpi.view.components.*">
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.EmbeddedAssets;
+		]]>
+	</mx:Script>
+	
+	
+	
+	<mx:HBox left="30"
+		width="205"
+		horizontalGap="0" 
+		verticalAlign="middle" horizontalAlign="center" y="10">
+		<mx:LinkButton label="Save This Search" fontSize="11"/>
+		<mx:Image source="{EmbeddedAssets.V_DOTTED_SEPARATOR}" />
+		<mx:LinkButton label="Recall Search" fontSize="11" />
+	</mx:HBox>	
+	
+	
+		
+	<mx:VBox
+		left="30"
+		top="180"
+		verticalGap="1"
+		backgroundAlpha="0"
+		horizontalAlign="center"
+		styleName="dropShadowContainer"
+		borderThickness="0">	
+			
+		<search:SearchWidget width="205"  >
+			<components:BulletedLabel text="SKILLS, KNOWLEDGE &amp; EXPERTISE"
+				width="100%" />
+			<components:SearchSkillBox text="Java" width="100%" />
+			<mx:Label text="+ Add another" color="#1C61B5" />
+		</search:SearchWidget>
+			
+		<search:SearchWidget width="205"  >
+			<components:BulletedLabel text="LOCATION" width="100%"  />
+			<components:SearchSkillBox text="London, UK" width="100%"  />
+			<mx:Label text="+ Add another" color="#1C61B5" />
+		</search:SearchWidget>
+
+		<search:SearchWidget width="205"  >
+			<components:BulletedLabel text="POSITIONS &amp; ROLES" width="100%"  />
+			<components:SearchSkillBox text="Developer" width="100%"  />
+			<mx:Label text="+ Add another" color="#1C61B5" />
+		</search:SearchWidget>
+		
+				
+		<search:SearchWidget width="205" >
+			<mx:HBox >
+				<mx:Image source="{ EmbeddedAssets.ICON_ADD }" />
+				<mx:Label paddingTop="5" text="Add more search widgets" color="#526270" fontSize="10" />
+			</mx:HBox>
+			
+		</search:SearchWidget>
+	
+	</mx:VBox>
+	
+	<!-- list here for proper z-index for drop shadow -->
+	<search:KeywordForm left="30"
+		width="205" 
+ 		top="40">
+			
+	</search:KeywordForm>
+	
+</mx:Canvas>

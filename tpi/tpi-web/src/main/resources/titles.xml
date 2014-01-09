@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<titles>
+    <title>
+        <longname>Chief Operating Officer</longname>
+        <shortname>CEO</shortname>
+        <code>title.ceo</code>
+        <description>Corporate Executive Officer</description>
+    </title>
+    <title>
+        <longname>Chairman</longname>
+        <shortname>Chairman</shortname>
+        <code>title.chairman</code>
+        <description>Chairman</description>
+    </title>
+    <title>
+        <longname>Board</longname>
+        <shortname>Board</shortname>
+        <code>title.board</code>
+        <description>Board</description>
+    </title>
+    <title>
+        <longname>CFO</longname>
+        <shortname>CFO</shortname>
+        <code>title.cfo</code>
+        <description>CFO</description>
+    </title>
+    <title>
+        <longname>CAO</longname>
+        <shortname>CAO</shortname>
+        <code>title.cao</code>
+        <description>CAO</description>
+    </title>
+    <title>
+        <longname>CIO</longname>
+        <shortname>CIO</shortname>
+        <code>title.cio</code>
+        <description>CIO</description>
+    </title>
+    <title>
+        <longname>Senior Advisor</longname>
+        <shortname>Senior Advisor</shortname>
+        <code>title.senior.advisor</code>
+        <description>Senior Advisor</description>
+    </title>
+    <title>
+        <longname>Partner</longname>
+        <shortname>Partner</shortname>
+        <code>title.partner</code>
+        <description>Partner</description>
+    </title>
+    <title>
+        <longname>Managing Director</longname>
+        <shortname>Managing Director</shortname>
+        <code>title.managing.director</code>
+        <description>Managing Director</description>
+    </title>
+    <title>
+        <longname>Executive Director</longname>
+        <shortname>Executive Director</shortname>
+        <code>title.executive.director</code>
+        <description>Executive Director</description>
+    </title>
+    <title>
+        <longname>Vice President</longname>
+        <shortname>Vice President</shortname>
+        <code>title.vice.president</code>
+        <description>Vice President</description>
+    </title>
+    <title>
+        <longname>Assistant Vice President</longname>
+        <shortname>Assistant Vice President</shortname>
+        <code>title.assistant.vice.president</code>
+        <description>Assistant Vice President</description>
+    </title>
+    <title>
+        <longname>Associate</longname>
+        <shortname>Associate</shortname>
+        <code>title.associate</code>
+        <description>Associate</description>
+    </title>    
+</titles>

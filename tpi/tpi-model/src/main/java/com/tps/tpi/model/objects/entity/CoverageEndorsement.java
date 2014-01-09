@@ -1,0 +1,56 @@
+package com.tps.tpi.model.objects.entity;
+
+import com.tps.tpi.model.hibernate.EnumUserType;
+import org.hibernate.annotations.*;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.CascadeType;
+import java.io.Serializable;
+
+/**
+ * User: Bjorn Harvold
+ * Date: Oct 2, 2009
+ * Time: 2:27:59 PM
+ * Responsibility: Endorsements are available for coverage; meaning another person can give this person an endorsement
+ */
+@Entity
+@TypeDefs(
+        {
+                @TypeDef(name = "recordCreatorType",
+                        typeClass = EnumUserType.class,
+                        parameters = {@Parameter(name = "enumClassName", value = "com.tps.tpi.model.objects.enums.RecordCreatorTypeCd")}
+                ),
+                @TypeDef(name = "recordStatusType",
+                        typeClass = EnumUserType.class,
+                        parameters = {@Parameter(name = "enumClassName", value = "com.tps.tpi.model.objects.enums.RecordStatusTypeCd")}
+                )
+        }
+)
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+public class CoverageEndorsement extends AbstractEntity implements Serializable {
+    private final static long serialVersionUID = 39L;
+    private Coverage coverage;
+    private Endorsement endorsement;
+
+    @ManyToOne(optional = false, targetEntity = Coverage.class)
+    @JoinColumn
+    public Coverage getCoverage() {
+        return coverage;
+    }
+
+    public void setCoverage(Coverage coverage) {
+        this.coverage = coverage;
+    }
+
+    @ManyToOne(optional = false, targetEntity = Endorsement.class, cascade = CascadeType.ALL)
+    @JoinColumn
+    public Endorsement getEndorsement() {
+        return endorsement;
+    }
+
+    public void setEndorsement(Endorsement endorsement) {
+        this.endorsement = endorsement;
+    }
+}

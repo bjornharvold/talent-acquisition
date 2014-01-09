@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<degrafa:GraphicBorderSkin 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:degrafa="http://www.degrafa.com/2007"
+	width="400" height="300" 
+	xmlns:geometry="com.degrafa.geometry.*" xmlns:decorators="decorators.*">
+	
+	
+	<mx:Script>
+        <![CDATA[
+            
+            [Bindable]
+            private var awidth:Number;
+            
+            [Bindable]
+            private var aheight:Number;
+            
+            
+            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+            {
+                
+                super.updateDisplayList(unscaledWidth, unscaledHeight);
+                awidth = unscaledWidth;
+                aheight = unscaledHeight;
+            }
+            
+        ]]>
+    </mx:Script>
+    
+   <degrafa:strokes>
+   		<degrafa:SolidStroke id="greyStroke" color="#333333" weight="10" alpha="1" />
+   </degrafa:strokes> 
+    
+    <degrafa:VerticalLine y="0" y1="{ aheight }" stroke="{ greyStroke }" >
+    	
+	   <degrafa:decorators>
+	   		<degrafa:SVGDashLine data="8,10"  />
+	   	
+	   </degrafa:decorators>
+    </degrafa:VerticalLine>
+</degrafa:GraphicBorderSkin>

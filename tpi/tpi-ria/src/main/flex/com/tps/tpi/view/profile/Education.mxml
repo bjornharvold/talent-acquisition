@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	label="EDUCATION" 
+	width="400" height="300"
+	 paddingBottom="15"
+	 paddingTop="15"
+	 paddingRight="20"
+	 paddingLeft="0"
+	 verticalGap="15"
+	 horizontalScrollPolicy="off"
+	 verticalScrollPolicy="off"
+	show="onShow()"
+	xmlns:education="com.tps.tpi.view.profile.education.*">
+	
+	<mx:Script>
+		<![CDATA[
+        import mx.controls.Alert;
+
+        import com.tps.tpi.events.FetchProfileEvent;
+        import com.tps.tpi.model.presentation.IEducationModel;
+
+        [Bindable]
+        public var educationModel:IEducationModel;
+
+        public var userId:String;
+
+        [Bindable]
+        public var editable:Boolean = false;
+
+
+        private function onShow():void
+        {
+            if (!educationModel.education)
+            {
+                dispatchEvent(new FetchProfileEvent(FetchProfileEvent.FETCH_EDUCATION, userId, editable));
+            }
+        }
+			
+		]]>
+	</mx:Script>
+	
+	<education:EducationHistory
+		width="100%"
+		degrees="{ educationModel.education.degrees }"
+		editable="{ editable }"
+		visible="{ editable || educationModel.education.degrees  }"
+		includeInLayout="{ editable || educationModel.education.degrees }"  />
+
+	<education:Certifications
+		width="100%"
+		certifications="{ educationModel.education.educationCertifications }"
+		editable="{ editable }"
+		visible="{ editable || educationModel.education.educationCertifications  }"
+		includeInLayout="{ editable || educationModel.education.educationCertifications }"  />
+	
+	<education:Languages
+		width="100%"
+		languages="{ educationModel.education.languages }"
+		editable="{ editable }"
+		visible="{ editable || educationModel.education.languages  }"
+		includeInLayout="{ editable || educationModel.education.languages }"  />
+	
+	
+</mx:VBox>

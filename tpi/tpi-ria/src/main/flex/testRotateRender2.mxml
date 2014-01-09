@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="300" height="100" 
+	xmlns:pv3dEffects="ws.tink.flex.pv3dEffects.*" 
+	xmlns:mxeffects="com.adobe.ac.mxeffects.*">
+	
+
+	<mx:Script>
+		<![CDATA[
+			import com.adobe.ac.mxeffects.DistortionConstants;
+			import mx.events.EffectEvent;
+			import mx.controls.Alert;
+			import mx.events.IndexChangedEvent;
+			import com.adobe.ac.mxeffects.CubeRotate;
+			
+			
+			public function rotate( fromIndex:int, toIndex:int ):void
+			{
+				
+				var hideEffect:CubeRotate = new CubeRotate( stack.getChildAt( fromIndex ) );
+				hideEffect.siblings = [stack.getChildAt( toIndex ) ];
+				
+				hideEffect.direction = fromIndex > toIndex ? "LEFT" : "RIGHT";
+				hideEffect.duration = 500;
+				hideEffect.smooth = true;
+				hideEffect.buildMode = DistortionConstants.REPLACE; 
+				stack.selectedChild.setStyle('hideEffect', hideEffect);
+				hideEffect.siblings = [stack.getChildAt( toIndex ) ];
+				hideEffect.target = stack.getChildAt( fromIndex );
+				stack.selectedIndex = toIndex;
+//				hideEffect.addEventListener(EffectEvent.EFFECT_END, endEffect );
+				
+			}
+			
+			private function endEffect( event:EffectEvent ):void
+			{
+				trace( event.effectInstance.effect.className );
+				
+			}
+			private var _selectedIndex:int = 0;
+			public function get selectedIndex():int
+			{
+				return _selectedIndex;
+			}
+			public function set selectedIndex( value:int ):void
+			{
+				if( value < 0 || value > stack.getChildren().length )
+					throw( new Error( "dfsdfg" ) );
+				
+				_selectedIndex = value;
+				rotate( stack.selectedIndex, _selectedIndex ); 
+				
+			}
+			
+			
+			
+		]]>
+	</mx:Script>
+	
+	
+	
+	<mx:ViewStack id="stack" width="300" height="75" 
+		>
+		<mx:Canvas id="first" backgroundColor="0x0ff000" width="300" height="100"  >
+		</mx:Canvas>
+		<mx:Canvas id="second" backgroundColor="0xff0000" width="300" height="100" >
+		</mx:Canvas>
+		<mx:Canvas id="third" backgroundColor="0x0000ff" width="300" height="100">
+		</mx:Canvas>
+	</mx:ViewStack>
+	
+	<mx:Button label="1" y="78" x="0"  click="selectedIndex = 0" />
+	<mx:Button label="2" y="78" x="33" click="selectedIndex = 1" />
+	<mx:Button label="3" y="78" x="66" click="selectedIndex = 2" />
+
+</mx:Canvas>

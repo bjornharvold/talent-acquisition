@@ -1,0 +1,55 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:spring="http://www.springframework.org/tags"
+          xmlns:spring-form="http://www.springframework.org/tags/form"
+          xmlns:security="http://www.springframework.org/security/tags"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:x="http://java.sun.com/jsp/jstl/xml"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns:tiles="http://tiles.apache.org/tags-tiles"
+          xmlns:custom="urn:jsptagdir:/WEB-INF/tags/custom"
+          xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0">
+    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"/>
+
+    <div class="module_600">
+        <spring:message var="altEdit" code="button.edit" text="Edit"/>
+        <spring:message var="altClose" code="button.close" text="Close"/>
+
+        <div class="page_header overview">
+            <div class="titleName"><spring:message code="page.user.title" text="Overview"/></div>
+            <div class="editEntity">
+                <security:authorize ifAllGranted="ROLE_ADMINISTRATOR">
+                    <a href="/secure/user/${user.id}/form"><img src="/static/images/icons/edit_pen.png" alt="${altEdit}" title="${altEdit}" border="0"/></a>
+                </security:authorize>
+            </div>
+        </div>
+
+        <div class="module_550">
+            <table cellpadding="2" cellspacing="0" border="0" width="100%" class="content_table">
+                <tbody>
+                <tr class="rowStyle1">
+                    <td width="25%" class="content_item_header"><spring:message code="user.username" text="Username"/>:</td>
+                    <td width="75%" class="content_item">${user.username}</td>
+                </tr>
+                <tr class="rowStyle2">
+                    <td class="content_item_header"><spring:message code="user.email" text="E-mail"/>:</td>
+                    <td class="content_item">${user.email}</td>
+                </tr>
+                <tr class="rowStyle1">
+                    <td class="content_item_header"><spring:message code="user.status" text="Status"/>:</td>
+                    <td class="content_item"><spring:message code="dropdown.UserStatusCd.${user.status}" text="Unknown status"/></td>
+                </tr>
+                <tr class="rowStyle2">
+                    <td class="content_item_header"><spring:message code="table.date.created" text="Created"/>:</td>
+                    <td class="content_item"><fmt:formatDate value="${user.createdDate}" dateStyle="long"/></td>
+                </tr>
+                <tr class="rowStyle1">
+                    <td class="content_item_header"><spring:message code="table.date.updated" text="Updated"/>:</td>
+                    <td class="content_item"><fmt:formatDate value="${user.lastUpdate}" dateStyle="long"/></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</jsp:root>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	xmlns:components="com.tps.tpi.view.components.*"
+	label="HONORS &amp; AWARDS " >
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.dto.AwardDto;
+        import com.tps.tpi.utils.DateUtils;
+
+        import mx.controls.dataGridClasses.DataGridColumn;
+        import mx.collections.ListCollectionView;
+
+        private var _awards:ListCollectionView;
+        public function set awards(value:ListCollectionView):void
+        {
+            if (value)
+            {
+                _awards = value;
+                dg.dataProvider = _awards;
+                this.height = _awards.length * 25 + 65;
+            }
+        }
+
+
+        private function getYear(data:Object, column:DataGridColumn):String
+        {
+            return DateUtils.formatDateYear(( data as AwardDto).issuedDate);
+
+        }
+		]]>
+	</mx:Script>
+	
+	
+	<containers:readUI>
+			<mx:DataGrid styleName="profileDataGrid" width="100%" id="dg" >
+				<mx:columns>
+					<mx:DataGridColumn headerText="Issuer" dataField="issuer">
+						<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label
+									text="{ data.issuer }" 
+									paddingLeft="5"
+									/>
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Award Name" dataField="awardName" />
+					<mx:DataGridColumn headerText="Year" labelFunction="getYear" />
+				</mx:columns>
+				
+			</mx:DataGrid>
+			
+	</containers:readUI>
+
+</containers:ContentFormStack>

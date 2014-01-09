@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="300" 
+	xmlns:controls="flexlib.controls.*" 
+	xmlns:search="com.tps.tpi.view.search.*"
+	creationComplete="onCreationComplete()" 
+	xmlns:containers="flexlib.containers.*" xmlns:tabBarClasses="flexlib.controls.tabBarClasses.*">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.events.AddNewSearchEvent;
+			import com.tps.tpi.events.CubeSideChangeEvent;
+			import com.tps.tpi.events.RemoveSearchEvent;
+			import com.tps.tpi.events.ViewSearchResultEvent;
+			import com.tps.tpi.model.constants.CubeSideIndex;
+			import com.tps.tpi.model.constants.SearchResultsViewIndex;
+			import com.tps.tpi.model.objects.dto.SearchDto;
+			import com.tps.tpi.view.EmbeddedAssets;
+			
+			import flexlib.controls.tabBarClasses.SuperTab;
+			import flexlib.events.SuperTabEvent;
+			
+			import mx.collections.ListCollectionView;
+			import mx.collections.Sort;
+			import mx.collections.SortField;
+			import mx.controls.Alert;
+			import mx.events.IndexChangedEvent;
+			import mx.events.ItemClickEvent;
+			import mx.events.ListEvent;
+
+        [Bindable]
+        public var currentSearchResult:SearchDto;
+
+        private var _currentSearchResultIndex:int;
+        [Bindable]
+        public function get currentSearchResultIndex():int
+        {
+            return _currentSearchResultIndex;
+        }
+
+        public function set currentSearchResultIndex(value:int):void
+        {
+            _currentSearchResultIndex = value;
+            resetTabs();
+
+        }
+
+        private var _searchResults:ListCollectionView;
+        [Bindable]
+        public function get searchResults():ListCollectionView
+        {
+            return _searchResults;
+        }
+
+        public function set searchResults(value:ListCollectionView):void
+        {
+            _searchResults = value;
+        }
+
+        private function onCreationComplete():void
+        {
+        }
+
+
+        /**
+         * @private
+         * here we add a new tab or switch to the requested
+         * search results tab. When we switch we inject new
+         * <code>SearchResult</code> instance
+         *
+         */
+        private function onSearchesChange(event:ItemClickEvent):void
+        {
+            dispatchEvent(new ViewSearchResultEvent(ViewSearchResultEvent.EVENT_TYPE, event.index));
+        }
+
+        private function onAddTab():void
+        {
+
+            dispatchEvent(new AddNewSearchEvent());
+        }
+
+        /**
+         * @private
+         *
+         * a bit of a kludgy hack to get the selected tab to update properly
+         *
+         */
+        private function resetTabs():void
+        {
+            //				searches.selectedIndex = -1;
+            //				searches.selectedIndex = currentSearchResultIndex;
+            //				SuperTabBar( searches.mx_internal::getTabBar() ).selectedIndex = -1;
+            //				SuperTabBar( searches.mx_internal::getTabBar() ).selectedIndex = currentSearchResultIndex;
+            //				SuperTabBar( searches.mx_internal::getTabBar() ).resetTabs();
+        }
+
+        /**
+         * switch to the particular view in the results stack
+         * tile, list, table...see <code>SearchResultsViewIndex</code>
+         */
+        public function switchToView(value:int):void
+        {
+            currentSearchResult.currentResultsViewType = value;
+
+        }
+
+        /**
+         * @private
+         *
+         * here we will handle to user request to change the view style
+         *
+         */
+        private function onDataViewChange(event:ItemClickEvent):void
+        {
+            switchToView(event.item.value);
+
+        }
+
+        /**
+         * handle what to do when a tab is closed by the user
+         * we need to remove that search result and rest the tabs
+         */
+        private function onTabClose(event:SuperTabEvent):void
+        {
+            event.preventDefault();
+            dispatchEvent(new RemoveSearchEvent(RemoveSearchEvent.EVENT_TYPE, event.tabIndex));
+        }
+
+        /**
+         * respond to user request to change
+         * all of the cube sides at once
+         */
+        private function onGlobalSideChange(event:ListEvent):void
+        {
+            dispatchEvent(new CubeSideChangeEvent(CubeSideChangeEvent.CHANGE_GLOBAL, event.target.selectedItem.value))
+            event.target.selectedIndex = -1;
+        }
+
+        /**
+         * here we need to sort the data for the tiled results
+         * there is no sort control built in for the tiled list
+         */
+        private function onSortTiles(event:ListEvent):void
+        {
+            var s:Sort = new Sort();
+            switch (event.target.selectedItem.toString())
+            {
+                case "Name": s.fields = [ new SortField("lastName", false, true), new SortField("lastName", false, true) ]; break;
+                case "Match": s.fields = [ new SortField("relevancy", false, true) ]; break;
+
+            }
+
+            currentSearchResult.persons.sort = s;
+            currentSearchResult.persons.refresh();
+
+
+        }
+		]]>
+	</mx:Script>
+	
+	
+		
+	<search:SearchResultsStack top="23"
+		left="0"
+		right="0"
+		bottom="0"
+		backgroundColor="0xFFFFFF"
+		borderColor="0xbdbdbd"
+		borderStyle="solid"
+		borderThickness="1"
+		searchResult="{ currentSearchResult }"
+		selectedIndex="{ currentSearchResult.currentResultsViewType }" />
+		
+		
+	<mx:HBox height="24" 
+		right="0"
+		width="450" 
+		horizontalGap="8"
+		paddingLeft="10"
+		paddingRight="10"
+		paddingBottom="1"
+		backgroundColor="0xFFFFFF"
+		verticalAlign="bottom"
+		borderColor="0xBDBDBD"
+		borderSides="top,left,right"
+		borderStyle="solid" >
+		<mx:ComboBox height="19" width="70" paddingLeft="0" paddingRight="0">
+			<mx:dataProvider>
+				<mx:String>Actions</mx:String>
+				<mx:String>Print</mx:String>
+				<mx:String>Export</mx:String>
+			</mx:dataProvider>
+		</mx:ComboBox>
+		<mx:ComboBox height="19" 
+			width="85" 
+			paddingLeft="0" 
+			paddingRight="0"
+			enabled="{ currentSearchResult.currentResultsViewType == SearchResultsViewIndex.TILE }"
+			prompt="Jump To"
+			selectedIndex="-1"
+			change="onGlobalSideChange( event )">
+			<mx:dataProvider>
+				<mx:Array>
+					<mx:Object value="{ CubeSideIndex.CONTACT }" label="Contact" />
+					<mx:Object value="{ CubeSideIndex.SKILLS }" label="Skills" />
+					<mx:Object value="{ CubeSideIndex.LANGUAGES }" label="Languages" />
+				</mx:Array>
+			</mx:dataProvider>
+		</mx:ComboBox>
+		<mx:Label text="Sort By" />
+		<mx:ComboBox height="19" 
+			width="70" 
+			paddingLeft="0" 
+			paddingRight="0"
+			change="onSortTiles( event )"
+			enabled="{ currentSearchResult.currentResultsViewType == SearchResultsViewIndex.TILE }" >
+			<mx:dataProvider>
+				<mx:Array>
+					<mx:String>Match</mx:String>
+					<mx:String>Name</mx:String>
+				</mx:Array>
+			</mx:dataProvider>
+		</mx:ComboBox>
+	
+		<mx:Label text="View"  />
+		<mx:ToggleButtonBar id="viewType" 
+			height="19"
+			toggleOnClick="false"
+			creationComplete="viewType.selectedIndex = 2"
+			itemClick="onDataViewChange( event )"
+			styleName="viewTypeToggleButtonBar"
+			enabled="{ currentSearchResult.persons != null }" >
+			<mx:dataProvider>
+				<mx:Array>
+					<mx:Object value="{ SearchResultsViewIndex.LIST }"  />
+					<mx:Object value="{ SearchResultsViewIndex.TABLE }"/>
+					<mx:Object value="{ SearchResultsViewIndex.TILE }" />
+				</mx:Array>
+			</mx:dataProvider>
+		</mx:ToggleButtonBar>
+	</mx:HBox>	
+		
+	<containers:ButtonScrollingCanvas 
+		height="25"
+		width="350"
+		buttonWidth="20"
+		verticalScrollPolicy="off" >
+		<tabBarClasses:SuperTab label="Add" 
+			icon="{ EmbeddedAssets.ICON_ADD_GREEN }"
+			closePolicy="{ SuperTab.CLOSE_NEVER }"
+			left="{ searches.width + 4 }"
+			click="onAddTab()"
+			width="65"
+			height="25"
+			styleName="addNewSearchButton" />
+			
+		<controls:SuperTabBar id="searches" 
+			height="25"
+			tabWidth="75"
+			dragEnabled="false"
+			closePolicy="close_always"
+			editableTabLabels="false"
+			labelField="name"
+			dataProvider="{ searchResults }"
+			selectedIndex="{ currentSearchResultIndex }"
+			itemClick="onSearchesChange( event )"
+			tabClose="onTabClose( event )" />
+		
+	</containers:ButtonScrollingCanvas>
+</mx:Canvas>

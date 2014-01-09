@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="140"
+	styleName="dropShadowContainer"
+	borderColor="#FFFFFF" xmlns:components="com.tps.tpi.view.components.*">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.events.QuickSearchEvent;
+			
+			private function onSubmit():void
+			{
+				dispatchEvent( new QuickSearchEvent( QuickSearchEvent.QUICK_SEARCH, key.text ) );
+			}
+		]]>
+	</mx:Script>
+	<mx:Label text="START A NEW DETAILED SEARCH" 
+		color="#526270"  
+		y="10" x="10"
+		fontSize="10"/>
+	<mx:Label text="Use commas to seperate items" 
+		color="#A8A8A8"  
+		y="35" x="10"
+		fontSize="10" />
+	<mx:FormItem y="60" left="10" 
+		right="10"
+		paddingLeft="0"
+		paddingTop="0"
+		paddingRight="0"
+		paddingBottom="0"
+		 defaultButton="{sub}" >
+		
+		<mx:TextInput id="key" cornerRadius="6" 
+			borderStyle="inset"
+			borderColor="#D7D7D7"
+			borderThickness="1"
+			width="100%"/>
+	</mx:FormItem>
+	<components:AdvancedSearchLink x="1" y="106" />
+	<mx:Button id="sub" y="103" label="VIEW RESULTS" 
+		right="10"
+		click="onSubmit()"/>
+</mx:Canvas>

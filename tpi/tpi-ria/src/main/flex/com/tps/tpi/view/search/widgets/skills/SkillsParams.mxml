@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets:WidgetParamsBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+						  xmlns:widgets="com.tps.tpi.view.search.widgets.*"
+						  creationComplete="onCreationComplete()"
+						  height="40"
+						  width="100%">
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.SearchComponentDto;
+			import com.tps.tpi.model.objects.enums.BooleanTypeCd;
+			import com.tps.tpi.model.objects.enums.LanguageCd;
+			import com.tps.tpi.model.objects.enums.LanguageLevelCd;
+			import com.tps.tpi.model.objects.enums.ProficiencyCd;
+			import com.tps.tpi.model.objects.enums.SearchComponentFieldNameCd;
+			
+			
+			/**
+			 * handle the user gesture to exclude
+			 * the search param entered
+			 */
+			override protected function onExclusionChange( event:Event ):void
+			{
+				if( CheckBox( event.target ).selected )
+				{
+					//exclusionNote.visible = exclusionNote.includeInLayout = true;
+					skill.styleName = "redTextInput";
+				}
+				else
+				{
+					//exclusionNote.visible = exclusionNote.includeInLayout =false;
+					skill.styleName = "";
+					
+				}
+				
+			}
+			/**
+			 * 
+			 * expose the search params to parent for
+			 * gathering them up
+			 */
+			override public function get params():SearchComponentDto
+			{
+				_params = new SearchComponentDto();
+				_params.searchMap = new Object();
+				_params.searchMap[ SearchComponentFieldNameCd.SKILL_EXPERTISE ]= skill.text;
+				_params.searchMap[ SearchComponentFieldNameCd.SKILL_PROFICIENCY ]= proficiency.selectedItem.data.name;
+//				params[ SearchComponentFieldNameCd. ]= term.selectedItem.data.name;
+				_params.searchMap[ SearchComponentFieldNameCd.GLOBAL_EXACT_MATCH ]= exactMatchChoice ? BooleanTypeCd.TRUE.name : BooleanTypeCd.FALSE.name; 
+				_params.searchMap[ SearchComponentFieldNameCd.GLOBAL_EXCLUDE ]= exclusionChoice.selected ? BooleanTypeCd.TRUE.name : BooleanTypeCd.FALSE.name;
+				return _params;
+			}
+			
+			private function onCreationComplete():void
+			{
+				var comboData:Array = [];
+				for each( var prof:ProficiencyCd in ProficiencyCd.constants )
+				{
+					comboData.push( { label:resourceManager.getString('resources','skill.proficiency.' + prof.name ),
+						data:prof } );
+				} 
+				proficiency.dataProvider = comboData.sortOn( "label", Array.CASEINSENSITIVE );
+				
+				comboData = [];
+				comboData.push( resourceManager.getString('resources','number.lessThan') + ' ' + resourceManager.getString('resources', 'number.1') );
+					
+				for( var i:int = 1; i < 11; i++  )
+				{
+					comboData.push( resourceManager.getString('resources', 'number.' + i) );
+				} 
+				comboData.push( resourceManager.getString('resources','number.10') + resourceManager.getString('resources', 'number.plus') );
+				term.dataProvider = comboData;
+				
+				
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:TextInput id="skill"
+				  height="18" 
+				  width="150"/>
+	
+	<mx:ComboBox id="proficiency"
+				 height="18"
+				 width="90"
+				 styleName="advancedSearchCombo"/>
+	
+	<mx:ComboBox id="term"
+				 height="18"
+				 width="60"
+				 styleName="advancedSearchCombo" />
+	
+	
+	<mx:Button styleName="removeSearchCriteriaButton" click="onRemoveSearchParms( event )" />
+	<mx:Button styleName="addSearchCriteriaButton" click="onAddSearchParams( event )"  />
+	<mx:Spacer width="100%" />
+	<mx:CheckBox id="exactMatchChoice" 
+				 label="{ resourceManager.getString('resources','form.exactMatch') }"
+				 fontSize="11"  />
+	<mx:CheckBox id="exclusionChoice" 
+				 label="{ resourceManager.getString('resources','form.exclude') }"
+				 fontSize="11"
+				 change="onExclusionChange( event )"  />
+	
+</widgets:WidgetParamsBase>

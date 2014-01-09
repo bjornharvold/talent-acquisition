@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack  
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	horizontalScrollPolicy="off" 
+	verticalScrollPolicy="off" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	label="SUMMARY" 
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	xmlns:states="com.degrafa.states.*">
+	
+	<mx:Metadata>
+		[Event(name="saveChangesEvent", type="com.tps.tpi.view.events.SaveEvent" )]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.events.CancelEditEvent;
+			import com.tps.tpi.view.events.SaveEvent;
+			import mx.controls.Alert;
+			
+			[Bindable]
+			public var summary:String;
+			
+			
+			
+			private function onValidChange( event:Event ):void
+			{
+				currentState = READ_STATE;
+				dispatchEvent( new SaveEvent( editSummary.summary ) );
+			}
+			
+			private function onCancel( event:CancelEditEvent ):void
+			{
+				currentState = READ_STATE;
+			}
+		]]>
+		
+	</mx:Script>
+		
+		<containers:readUI>
+				<mx:Text id="readSummary" text="{ summary }" 
+					width="100%" selectable="false" 
+					 />
+		</containers:readUI>
+		<containers:editUI>
+			<professionalBio:EditSummary id="editSummary"  
+				height="100%" width="100%"  
+				validChange="onValidChange( event )"
+				cancelEdit="onCancel( event )"
+				summary="{ summary }" />
+		</containers:editUI>
+	
+</containers:ContentFormStack>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300"	>
+	
+	<!-- this is quite literally a blank view currently 
+		
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.events.LoginEvent;
+			import com.tps.tpi.model.objects.entityy.presentation.ILoginViewModel;
+			import com.tps.tpi.model.objects.entityy.vo.Login;
+			import com.tps.tpi.utils.FormUtils;
+			
+			[Autowire]
+			public var loginModel:ILoginViewModel;
+			
+			/**
+			 * Resets the form back to an empty state
+			 */
+			private function onReset():void
+			{
+				username.setFocus();
+				FormUtils.resetForm( loginForm );
+				invalidText.visible = false;
+			}
+			
+			/**
+			 * Validates our form with the array of validators
+			 */
+			private function validateForm():void
+			{
+				loginButton.enabled = FormUtils.validateForm( validators );
+			}
+			
+			/**
+			 * Submit handler, creates the login object and dispatches the login event
+			 */
+			private function onSubmit():void
+			{
+				loginModel.login( username.text, password.text );
+				loginButton.enabled = false;
+			}
+			
+			private function loginResult( info:Object ):void
+			{
+				onReset();
+			}
+			
+			private function loginFault( info:Object ):void
+			{
+				username.setFocus();
+				FormUtils.resetForm( loginForm );
+				invalidText.visible = true;
+				
+			}
+			
+			
+		]]>
+	</mx:Script>
+	-->
+	<!-- View effects 
+	<mx:Fade id="fadeIn" alphaFrom="0" alphaTo="1" />
+	<mx:Fade id="fadeOut" alphaFrom="1" alphaTo="0" />-->
+	
+	<!-- Form validators one way...prolly just as weel as use one and modify it as needed
+	<mx:Array id="validators">
+		<mx:StringValidator source="{username}" 
+			property="text"
+			minLength="1"
+			required="true" 
+			requiredFieldError="Please enter a username" />
+		<mx:StringValidator source="{password}" 
+			property="text"
+			minLength="1"
+			required="true" 
+			requiredFieldError="Please enter a password" />
+	</mx:Array>
+
+	<mx:Panel  layout="vertical" 
+		horizontalCenter="0" 
+		verticalCenter="0"
+		styleName="gtePanel">
+		<mx:Form id="loginForm" defaultButton="{ loginButton }" >
+			<mx:FormItem direction="horizontal" 
+				required="true"
+				label="User Name:">
+				<mx:TextInput id="username"  change="validateForm();" text="asdf"  />
+			</mx:FormItem>
+			<mx:FormItem direction="horizontal" 
+				required="true" 
+				label="Password:">
+				<mx:TextInput id="password" displayAsPassword="true" change="validateForm();" text="asdf"   />
+			</mx:FormItem>
+			<mx:FormItem direction="horizontal">
+				<mx:Button id="loginButton" 
+					fontSize="12"
+					label="Login" 
+					enabled="false" 
+					click="onSubmit();" />
+				<mx:Button label="Reset" 
+					fontSize="12"
+					click="onReset();" />
+
+			</mx:FormItem>
+			<mx:FormItem id="invalidText" 
+				visible="{ loginModel.loginErrorMessageIsVisible }" 
+				direction="horizontal" 
+				horizontalGap="0"
+				showEffect="{fadeIn}" hideEffect="{fadeOut}">
+				<mx:Image horizontalAlign="center" source="{ EmbeddedAssets.ERROR_IMAGE} " />
+				<mx:Label text="Invalid username/password" styleName="errorText" />
+			</mx:FormItem>
+			
+		</mx:Form>
+	
+	</mx:Panel>
+	
+	-->
+</mx:Canvas>

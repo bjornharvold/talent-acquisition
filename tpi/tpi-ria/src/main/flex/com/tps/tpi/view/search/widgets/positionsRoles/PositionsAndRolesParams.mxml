@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets:WidgetParamsBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:widgets="com.tps.tpi.view.search.widgets.*"
+	height="40"
+	width="100%"
+	creationComplete="onCreationComplete()"
+	direction="vertical"
+	>
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.SearchComponentDto;
+			import com.tps.tpi.model.objects.enums.BooleanTypeCd;
+			import com.tps.tpi.model.objects.enums.PositionRoleTypeCd;
+			import com.tps.tpi.model.objects.enums.SearchComponentFieldNameCd;
+			import com.tps.tpi.view.events.ExclusionChangedEvent;
+			
+			/**
+			 * handle the user gesture to exclude
+			 * the search param entered
+			 */
+			override protected function onExclusionChange( event:Event ):void
+			{
+				if( CheckBox( event.target ).selected )
+				{
+					exclusionNote.visible = exclusionNote.includeInLayout = true;
+					searchValue.styleName = "redTextInput";
+				}
+				else
+				{
+					exclusionNote.visible = exclusionNote.includeInLayout =false;
+					searchValue.styleName = "";
+					
+				}
+				
+			}
+			
+			/**
+			 * 
+			 * expose the search params to parent for
+			 * gathering them up
+			 */
+			override public function get params():SearchComponentDto
+			{
+				_params = new SearchComponentDto();
+				_params.searchMap = new Object();
+				_params.searchMap[ SearchComponentFieldNameCd.POSITION_ROLE_TYPE ]= paramtype.selectedItem.data.name ;
+				_params.searchMap[ SearchComponentFieldNameCd.POSITION_ROLE ]= searchValue.text ;
+				_params.searchMap[ SearchComponentFieldNameCd.GLOBAL_EXACT_MATCH ]= exactMatchChoice.selected ? BooleanTypeCd.TRUE.name : BooleanTypeCd.FALSE.name ;
+				_params.searchMap[ SearchComponentFieldNameCd.GLOBAL_EXCLUDE ]= exclusionChoice.selected ? BooleanTypeCd.TRUE.name : BooleanTypeCd.FALSE.name;
+				return _params;
+			}
+			
+			private function onCreationComplete():void
+			{
+				var comboData:Array = [];
+				for each( var prType:PositionRoleTypeCd in PositionRoleTypeCd.constants )
+				{
+					comboData.push( { label:resourceManager.getString('resources','form.' + prType.name.toLowerCase() ),
+										data:prType });
+				} 
+				paramtype.dataProvider = comboData;
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<mx:HBox paddingLeft="85">
+		<mx:Label id="exclusionNote" 
+				  text="{ resourceManager.getString('resources','form.excludeProfiles') }" 
+				  visible="false" 
+				  includeInLayout="false"
+				  fontSize="10"
+				  x="88"
+				  top="2" />
+	</mx:HBox>
+	<mx:HBox width="100%">
+		
+		
+		<mx:ComboBox id="paramtype" 
+			height="18"
+			x="0"
+			bottom="5"
+			width="80">
+		</mx:ComboBox>
+		
+		<mx:TextInput id="searchValue" 
+			height="18" 
+			width="200"
+			x="90"
+			bottom="5" />
+		
+		<mx:Button styleName="removeSearchCriteriaButton" click="onRemoveSearchParms( event )" />
+		<mx:Button styleName="addSearchCriteriaButton" click="onAddSearchParams( event )"  />
+		<mx:Spacer width="100%" />
+		<mx:CheckBox id="exactMatchChoice" 
+					 label="{ resourceManager.getString('resources','form.exactMatch') }"
+					 fontSize="11"  />
+		<mx:CheckBox id="exclusionChoice" 
+					 label="{ resourceManager.getString('resources','form.exclude') }"
+					 fontSize="11"
+					 change="onExclusionChange( event )"  />
+	</mx:HBox>
+</widgets:WidgetParamsBase>

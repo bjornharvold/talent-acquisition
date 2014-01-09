@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets:WidgetParamsBase xmlns:mx="http://www.adobe.com/2006/mxml" 
+						  xmlns:widgets="com.tps.tpi.view.search.widgets.*"
+						  height="140"
+						  verticalAlign="top">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.model.objects.dto.SearchComponentDto;
+			import com.tps.tpi.model.objects.enums.BooleanTypeCd;
+			import com.tps.tpi.model.objects.enums.PositionRoleTypeCd;
+			import com.tps.tpi.model.objects.enums.SearchComponentFieldNameCd;
+			import com.tps.tpi.view.events.ExclusionChangedEvent;
+			
+			/**
+			 * handle the user gesture to exclude
+			 * the search param entered
+			 */
+			override protected function onExclusionChange( event:Event ):void
+			{
+				if( CheckBox( event.target ).selected )
+				{
+//					exclusionNote.visible = exclusionNote.includeInLayout = true;
+//					searchValue.styleName = "redTextInput";
+				}
+				else
+				{
+//					exclusionNote.visible = exclusionNote.includeInLayout =false;
+//					searchValue.styleName = "";
+					
+				}
+				
+			}
+			
+			/**
+			 * 
+			 * expose the search params to parent for
+			 * gathering them up
+			 */
+			override public function get params():SearchComponentDto
+			{
+				_params = new SearchComponentDto();
+				_params.searchMap = new Object();
+				_params.searchMap[ SearchComponentFieldNameCd.LOCATION_ADDRESS ]= streetAddress.text;
+				_params.searchMap[ SearchComponentFieldNameCd.LOCATION_CITY ]= city.text;
+				_params.searchMap[ SearchComponentFieldNameCd.LOCATION_COUNTRY ]= country.selectedItem;
+				_params.searchMap[ SearchComponentFieldNameCd.LOCATION_STATE ]= state.selectedItem;
+				//_params.searchMap[ SearchComponentFieldNameCd.LOCATION_FLOOR ]= floorSuite.text;
+				//_params.searchMap[ SearchComponentFieldNameCd.LOCATION_TIMEZONE ]= state.selectedItem;
+				
+				_params.searchMap[ SearchComponentFieldNameCd.GLOBAL_EXACT_MATCH ]= exactMatchChoice.selected ? BooleanTypeCd.TRUE.name : BooleanTypeCd.FALSE.name ;
+				_params.searchMap[ SearchComponentFieldNameCd.GLOBAL_EXCLUDE ]= exclusionChoice.selected ? BooleanTypeCd.TRUE.name : BooleanTypeCd.FALSE.name;
+				return _params;
+			}
+			
+			private function onCreationComplete():void
+			{
+//				var comboData:Array = [];
+//				for each( var prType:PositionRoleTypeCd in PositionRoleTypeCd.constants )
+//				{
+//					comboData.push( { label:resourceManager.getString('resources','form.' + prType.name.toLowerCase() ),
+//						data:prType });
+//				} 
+//				paramtype.dataProvider = comboData;
+			}
+			
+		]]>
+	</mx:Script>
+	
+	<mx:Form 
+			 borderColor="0xB8B8B8"
+			 borderThickness="1"
+			 borderStyle="solid" 
+			 paddingBottom="5" 
+			 paddingLeft="5" 
+			 paddingRight="5" 
+			 paddingTop="5">
+		<mx:FormItem direction="horizontal" 
+					 indicatorGap="0">
+			<mx:FormItem direction="vertical" 
+						 verticalGap="0" 
+						 horizontalAlign="left">
+				<mx:Label text="Street Address" />
+				<mx:TextInput id="streetAddress" width="180" height="18" />
+			</mx:FormItem>
+			<mx:FormItem direction="vertical" 
+						 verticalGap="0" 
+						 horizontalAlign="left" >
+				<mx:Label text="Floor/Suite" />
+				<mx:TextInput id="floorSuite" width="80" height="18"  />
+			</mx:FormItem>
+		</mx:FormItem>
+
+		<mx:FormItem direction="horizontal" 
+					 indicatorGap="0">
+			<mx:FormItem direction="vertical" 
+						 verticalGap="0" 
+						 indicatorGap="0"
+						 horizontalAlign="left">
+				<mx:Label text="City" />
+				<mx:TextInput id="city" width="180" height="18" />
+			</mx:FormItem>
+			<mx:FormItem direction="vertical" 
+						 verticalGap="0" 
+						 indicatorGap="0"
+						 horizontalAlign="left">
+				<mx:Label text="State/Province" />
+				<mx:ComboBox id="state" height="18" width="80">
+					
+				</mx:ComboBox>
+			</mx:FormItem>
+		</mx:FormItem>
+
+		<mx:FormItem direction="horizontal" 
+					 indicatorGap="0">
+			<mx:FormItem direction="vertical" 
+						 verticalGap="0" 
+						 indicatorGap="0" >
+				<mx:Label text="Country/Region" />
+				<mx:ComboBox id="country" height="18" width="180">
+					
+				</mx:ComboBox>
+			</mx:FormItem>
+			<mx:FormItem direction="vertical" 
+						 verticalGap="0" 
+						 indicatorGap="0"
+						 horizontalAlign="left" >
+				<mx:Label text="Zip" />
+				<mx:TextInput id="zip" width="80" height="18" />
+			</mx:FormItem>
+		</mx:FormItem>
+	</mx:Form>
+	
+	<mx:Button styleName="removeSearchCriteriaButton" click="onRemoveSearchParms( event )" />
+	<mx:Button styleName="addSearchCriteriaButton" click="onAddSearchParams( event )"  />
+	<mx:Spacer width="100%" />
+	<mx:CheckBox id="exactMatchChoice" 
+				 label="{ resourceManager.getString('resources','form.exactMatch') }"
+				 fontSize="11"  />
+	<mx:CheckBox id="exclusionChoice" 
+				 label="{ resourceManager.getString('resources','form.exclude') }"
+				 fontSize="11"
+				 change="onExclusionChange( event )"  />
+	
+</widgets:WidgetParamsBase>

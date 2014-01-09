@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <!-- here we define the custom entity-2-dto mappings for our business domain -->
+    <configuration>
+        <stop-on-errors>true</stop-on-errors>
+        <date-format>MM/dd/yyyy HH:mm</date-format>
+        <wildcard>true</wildcard>
+        <trim-strings>false</trim-strings>
+        
+        <custom-converters>
+
+            <converter type="com.tps.tpi.converter.AddressConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Address</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.AddressDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.AffiliationConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Affiliation</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.AffiliationDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.AwardConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Award</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.AwardDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.BiographyCityConverter">
+                <class-a>com.tps.tpi.model.objects.entity.BiographyCity</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.BiographyCityDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.BiographyConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Biography</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.BiographyDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.BiographyDepartmentConverter">
+                <class-a>com.tps.tpi.model.objects.entity.BiographyDepartment</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.BiographyDepartmentDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.BiographySkillConverter">
+                <class-a>com.tps.tpi.model.objects.entity.BiographySkill</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.BiographySkillDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.BiographySkillLiteConverter">
+                <class-a>com.tps.tpi.model.objects.entity.BiographySkill</class-a>
+                <class-b>com.tps.tpi.model.objects.lite.BiographySkillLite</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.BiographySkillEndorsementConverter">
+                <class-a>com.tps.tpi.model.objects.entity.BiographySkillEndorsement</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.BiographySkillEndorsementDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.BiographySkilledRoleConverter">
+                <class-a>com.tps.tpi.model.objects.entity.BiographySkilledRole</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.BiographySkilledRoleDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.CertificationConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Certification</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.CertificationDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.CityConverter">
+                <class-a>com.tps.tpi.model.objects.entity.City</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.CityDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.CompanyConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Company</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.CompanyDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.CompanyTitleConverter">
+                <class-a>com.tps.tpi.model.objects.entity.CompanyTitle</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.CompanyTitleDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.CoverageConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Coverage</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.CoverageDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.DegreeConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Degree</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.DegreeDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.DepartmentConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Department</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.DepartmentDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.EducationConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Education</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.EducationDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.EducationCertificationConverter">
+                <class-a>com.tps.tpi.model.objects.entity.EducationCertification</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.EducationCertificationDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.EndorsementConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Endorsement</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.EndorsementDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.HistoryConverter">
+                <class-a>com.tps.tpi.model.objects.entity.History</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.HistoryDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.InterestConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Interest</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.InterestDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.LanguageConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Language</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.LanguageDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.LanguageLiteConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Language</class-a>
+                <class-b>com.tps.tpi.model.objects.lite.LanguageLite</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.LanguageEndorsementConverter">
+                <class-a>com.tps.tpi.model.objects.entity.LanguageEndorsement</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.LanguageEndorsementDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.PatentConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Patent</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.PatentDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.PersonAddressConverter">
+                <class-a>com.tps.tpi.model.objects.entity.PersonAddress</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.PersonAddressDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.PersonConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Person</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.PersonDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.PersonLiteConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Person</class-a>
+                <class-b>com.tps.tpi.model.objects.lite.PersonLite</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.PositionConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Position</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.PositionDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.PositionEndorsementConverter">
+                <class-a>com.tps.tpi.model.objects.entity.PositionEndorsement</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.PositionEndorsementDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.ProductConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Product</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.ProductDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.ProjectConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Project</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.ProjectDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.ProjectEndorsementConverter">
+                <class-a>com.tps.tpi.model.objects.entity.ProjectEndorsement</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.ProjectEndorsementDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.PublicationConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Publication</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.PublicationDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.RegionConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Region</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.RegionDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.SchoolConverter">
+                <class-a>com.tps.tpi.model.objects.entity.School</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.SchoolDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.SearchConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Search</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.SearchDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.SearchComponentConverter">
+                <class-a>com.tps.tpi.model.objects.entity.SearchComponent</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.SearchComponentDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.SearchComponentGroupConverter">
+                <class-a>com.tps.tpi.model.objects.entity.SearchComponentGroup</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.SearchComponentGroupDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.SkillConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Skill</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.SkillDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.SkilledRoleConverter">
+                <class-a>com.tps.tpi.model.objects.entity.SkilledRole</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.SkilledRoleDto</class-b>
+            </converter>
+
+            <converter type="com.tps.tpi.converter.TitleConverter">
+                <class-a>com.tps.tpi.model.objects.entity.Title</class-a>
+                <class-b>com.tps.tpi.model.objects.dto.TitleDto</class-b>
+            </converter>
+            
+        </custom-converters>
+    </configuration>
+
+</mappings>

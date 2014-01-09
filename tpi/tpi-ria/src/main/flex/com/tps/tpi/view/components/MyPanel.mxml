@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" width="400" height="300" 
+	xmlns:degrafa="http://www.degrafa.com/2007"
+	borderStyle="none"
+	title="TESTING 1 2">
+	
+	 
+	<degrafa:Surface>
+		<degrafa:strokes>
+			<degrafa:SolidStroke id="bo" color="#00ff00" />
+		</degrafa:strokes>
+		<degrafa:GeometryGroup>
+		
+		<degrafa:RegularRectangle stroke="{bo}"   top="0" bottom="0" left="0" right="0">
+		
+		</degrafa:RegularRectangle>
+		
+		
+	</degrafa:GeometryGroup>
+	</degrafa:Surface>
+	
+</mx:Panel>

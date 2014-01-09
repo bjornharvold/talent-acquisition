@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" 
+	xmlns:viewStackEffects="org.efflex.mx.viewStackEffects.*" 
+	xmlns:mx1="org.efflex.mx.*" 
+	xmlns:pv3dEffects="ws.tink.flex.pv3dEffects.*" 
+	xmlns:renderers="com.pds.gte.view.renderers.*" 
+	xmlns:controls="com.adobe.ac.controls.*" 
+	xmlns:local="*" 
+	>
+	<mx:Script>
+		<![CDATA[
+			import mx.effects.easing.Bounce;
+			import mx.effects.easing.Quartic;
+			import mx.effects.easing.Quadratic;
+			
+			[Bindable]
+			private var currentIndex:int;
+			
+			private function changeit():void
+			{
+				
+				currentIndex = 2;
+				
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Button  label="1" click="currentIndex = 0" />
+	<mx:Button label="2" x="40" click="currentIndex = 1" /> 
+	<mx:Button label="3" x="80" click="currentIndex = 2" />
+	 <mx:VBox x="100" y="100" width="300" height="800" backgroundColor="#FFFFFF">
+		 <mx:Repeater id="rpt" dataProvider="{ new Array(20)}" recycleChildren="true" >
+			<local:testRotateRenderer selectedIndex="{ currentIndex }" />
+		 </mx:Repeater>
+	</mx:VBox> 
+</mx:Application>

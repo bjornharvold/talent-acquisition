@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" height="300"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="LANGUAGES" xmlns:renderers="com.tps.tpi.view.renderers.*">
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ListCollectionView;
+			
+			
+			private var _languages:ListCollectionView;
+			public function set languages( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_languages = value;
+					dg.dataProvider = _languages;
+					this.height = _languages.length * 25 + 65;
+				}
+			}
+			
+			
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<ProfileDataGrid id="dg">
+				<columns>
+					<mx:DataGridColumn headerText="Language" dataField="type" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ resourceManager.getString('resources', 'language.' + data.type ) }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Verbal" dataField="verbal" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label text="{ resourceManager.getString('resources', 'language.proficiency.' + data.verbal ) }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Read/Write" dataField="readwrite" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label text="{ resourceManager.getString('resources', 'language.proficiency.' + data.readwrite ) }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Endorsements" >
+						<mx:itemRenderer>
+							<mx:Component>
+								<renderers:EndorsementsItemRenderer endorsementsKey="languageEndorsements" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+				</columns>
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	 label="PROFESSIONAL BIO"
+	 verticalGap="15"
+	 paddingBottom="15"
+	 paddingTop="15"
+	 paddingRight="20"
+	 paddingLeft="0"
+	 width="100%"
+	 horizontalScrollPolicy="off"
+	 verticalScrollPolicy="off"
+	 xmlns:components="com.tps.tpi.view.components.*" 
+	 xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	 xmlns:containers="com.tps.tpi.containers.*"
+	 creationComplete="onCreationComplete()"
+	 show="onShow()" >
+	 
+	 <mx:Script>
+		<![CDATA[
+         import com.tps.tpi.view.events.SaveEvent;
+
+         import mx.controls.Alert;
+
+         import com.tps.tpi.events.FetchProfileEvent;
+         import com.tps.tpi.model.presentation.IProfessionalBioModel;
+
+         [Bindable]
+         public var bioModel:IProfessionalBioModel;
+
+         public var userId:String;
+
+         [Bindable]
+         public var editable:Boolean = false;
+
+         private function onCreationComplete():void
+         {
+             dispatchEvent(new FetchProfileEvent(FetchProfileEvent.FETCH_PROFESSIONALBIO, userId, editable));
+         }
+
+         private function onShow():void
+         {
+             if (!bioModel.professionalBio)
+             {
+                 dispatchEvent(new FetchProfileEvent(FetchProfileEvent.FETCH_PROFESSIONALBIO, userId, editable));
+             }
+         }
+
+         private function onSaveSummary(event:SaveEvent):void
+         {
+             bioModel.updateSummary(event.data);
+         }
+			
+		]]>
+	</mx:Script>
+
+		<professionalBio:Summary
+			width="100%"
+			height="100%"
+			summary="{ bioModel.professionalBio.summary }"
+			saveChangesEvent="onSaveSummary( event )"
+			editable="{ editable }"
+			visible="{ editable || bioModel.professionalBio.summary  }"
+			includeInLayout="{ editable || bioModel.professionalBio.summary }" >
+		</professionalBio:Summary>
+	
+		<professionalBio:WorkPreferences
+			width="100%"
+			minHeight="50"
+			roles="{ bioModel.professionalBio.biographySkilledRoles }"
+			locations="{ bioModel.professionalBio.biographyCities }"
+			departments="{ bioModel.professionalBio.biographyDepartments }"
+			editable="{ editable }"
+			visible="{ editable || ( bioModel.professionalBio.summary &amp;&amp; bioModel.professionalBio.biographyCities &amp;&amp; bioModel.professionalBio.biographyDepartments )  }"
+			includeInLayout="{ editable || ( bioModel.professionalBio.summary &amp;&amp; bioModel.professionalBio.biographyCities &amp;&amp; bioModel.professionalBio.biographyDepartments ) }" />
+		
+		<professionalBio:Skills
+			width="100%"
+			skills="{ bioModel.professionalBio.biographySkills } "
+			editable="{ editable }"
+			visible="{ editable || bioModel.professionalBio.biographySkills  }"
+			includeInLayout="{ editable || bioModel.professionalBio.biographySkills }" />
+			
+		<professionalBio:Patents
+			width="100%"
+			patents="{ bioModel.professionalBio.patents }"
+			editable="{ editable }"
+			visible="{ editable || bioModel.professionalBio.patents  }"
+			includeInLayout="{ editable || bioModel.professionalBio.patents }"/>
+			
+		<professionalBio:HonorsAwards
+			width="100%"
+			awards="{ bioModel.professionalBio.awards }"
+			editable="{ editable }"
+			visible="{ editable || bioModel.professionalBio.awards  }"
+			includeInLayout="{ editable || bioModel.professionalBio.awards }"/>
+			
+		<professionalBio:Publications
+			width="100%"
+			publications="{ bioModel.professionalBio.publications }"
+			editable="{ editable }"
+			visible="{ editable || bioModel.professionalBio.publications  }"
+			includeInLayout="{ editable || bioModel.professionalBio.publications }"/>
+	</mx:VBox>
+

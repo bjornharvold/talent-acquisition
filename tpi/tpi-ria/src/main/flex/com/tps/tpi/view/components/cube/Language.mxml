@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="255" height="90"
+	horizontalScrollPolicy="off">
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.objects.lite.PersonLite;
+
+        /**
+         * we will use a local typed var instead of data
+         */
+        [Bindable]
+        public var personLite:PersonLite;
+			
+			
+		]]>
+	</mx:Script>
+	
+	<mx:Grid x="0" horizontalScrollPolicy="off" width="255" 
+		height="90" 
+		verticalGap="0" 
+		horizontalGap="0" >
+		<mx:GridRow >
+			<mx:GridItem  width="95" >
+				<mx:Label text="Language" color="0x808080" truncateToFit="false"  />
+			</mx:GridItem>
+			<mx:GridItem  width="80" >
+				<mx:Label text="Verbal" color="0x808080" truncateToFit="false"  />
+			</mx:GridItem>
+			<mx:GridItem width="80" >
+				<mx:Label text="Read/Write" color="0x808080"  truncateToFit="false" />
+			</mx:GridItem>
+		</mx:GridRow>
+	
+	
+	
+	<!-- i know, repeater, but hey, much lighter then a DG, eh? -->
+	
+		<mx:Repeater id="skillsLoop" dataProvider="{ personLite.languages }" count="4">
+			<mx:GridRow>
+				<mx:GridItem width="90" >
+					<mx:Label truncateToFit="true"
+						width="90"
+						text="{ resourceManager.getString('resources', 'language.' + skillsLoop.currentItem.type )}"  />
+				</mx:GridItem>
+				<mx:GridItem width="80">
+					<mx:Label truncateToFit="true" 
+						width="80"
+						text="{ resourceManager.getString('resources', 'language.proficiency.' +  skillsLoop.currentItem.verbal ) }"  />
+				</mx:GridItem>
+				<mx:GridItem width="80">
+					<mx:Label truncateToFit="true" 
+						width="80"
+						text="{ resourceManager.getString('resources', 'language.proficiency.' +  skillsLoop.currentItem.readwrite ) }"  />
+				</mx:GridItem>
+			</mx:GridRow>
+		</mx:Repeater>
+	
+	</mx:Grid>
+</mx:Canvas>

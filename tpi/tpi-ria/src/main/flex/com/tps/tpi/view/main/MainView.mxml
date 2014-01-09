@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	width="400" height="300"
+	verticalScrollPolicy="auto" 
+	verticalGap="0"
+	xmlns:common="com.tps.tpi.view.common.*" 
+	xmlns:search="com.tps.tpi.view.search.*" xmlns:main="com.tps.tpi.view.main.*">
+	
+	<mx:Script>
+		<![CDATA[
+        import mx.controls.Alert;
+
+        import com.tps.tpi.model.presentation.ProfileModel;
+        import com.tps.tpi.model.presentation.ApplicationModel;
+
+        import org.swizframework.Swiz;
+
+        import com.tps.tpi.events.LoginEvent;
+
+
+        [Bindable]
+        public var appModel:ApplicationModel;
+
+        [Autowire(bean="personalProfileModel")]
+        [Bindable]
+        public var currentUsersProfile:ProfileModel;
+
+        [Autowire(bean="readOnlyProfileModel")]
+        [Bindable]
+        public var readOnlyProfile:ProfileModel;
+
+
+        private function onHideReadOnlyProfile():void
+        {
+            //readOnlyProfile.reset();
+        }
+			
+			
+		]]>
+	</mx:Script>
+	
+	
+	<!-- ======================================================================================= -->
+	<!-- 	Transistions                                               -->
+	<!-- ======================================================================================= -->
+	<mx:Fade id="fadeIn" alphaFrom="0" alphaTo="1" duration="125" />
+	<mx:Fade id="fadeOut" alphaFrom="1" alphaTo="0" duration="75" />
+		
+		<mx:ViewStack id="mainStack" 
+			left="0"
+			right="0"
+			bottom="40"
+			top="0"
+			height="100%"
+			width="100%"
+			selectedIndex="{ appModel.mainViewState }" 
+			backgroundColor="#F0E8D6" 
+			dropShadowEnabled="true" 
+			dropShadowColor="#000000"
+			resizeToContent="true">
+			
+			<main:DashboardView width="100%" height="100%"
+				 showEffect="{fadeIn}" 
+				currentPerson="{ appModel.currentPerson }"  />
+			<main:Profile  id="POProfileData" width="100%" height="100%"
+				 showEffect="{fadeIn}" 
+				profile="{ currentUsersProfile }" 
+				editable="true" />
+			<main:Search width="100%" height="100%"
+				 showEffect="{fadeIn}"  />
+			<search:AdvancedSearch width="100%" height="100%"
+				 showEffect="{fadeIn}"  />
+			<main:Profile id="readOnlyProfileData" width="100%" height="100%"
+				showEffect="{fadeIn}" 
+				profile="{ readOnlyProfile }"
+				editable="false"
+				hide="onHideReadOnlyProfile()"  />
+		</mx:ViewStack>
+		
+		<common:Footer bottom="0" height="40" width="100%" />
+</mx:VBox>

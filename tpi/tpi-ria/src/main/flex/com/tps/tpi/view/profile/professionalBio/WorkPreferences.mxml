@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" 
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="WORK PREFERENCES" >
+	
+	
+	<mx:Script>
+		<![CDATA[
+
+        import mx.collections.ListCollectionView;
+
+        private var _roles:ListCollectionView;
+        public function set roles(value:ListCollectionView):void
+        {
+            if (value)
+            {
+                _roles = value;
+                rolesList.text = makeList(value, "skilledRole");
+            }
+        }
+
+        public function get roles():ListCollectionView
+        {
+            return _roles;
+        }
+
+        private var _locations:ListCollectionView;
+        public function set locations(value:ListCollectionView):void
+        {
+            if (value)
+            {
+                _locations = value;
+                locationsList.text = makeList(value, "city");
+            }
+        }
+
+        public function get locations():ListCollectionView
+        {
+            return _locations;
+        }
+
+        private var _departments:ListCollectionView;
+        public function set departments(value:ListCollectionView):void
+        {
+            if (value)
+            {
+                _departments = value;
+                deptList.text = makeList(value, "department");
+            }
+
+        }
+
+        public function get departments():ListCollectionView
+        {
+            return _departments;
+        }
+
+
+        //******  THINGS TO GET IN ABSTRACT CLASS *************/
+        private function makeList(list:ListCollectionView, property:String):String
+        {
+            var tempText:String = "";
+            var len:int = list.length;
+            for (var i:int = 0; i < len; i++)
+            {
+                //we don't have things setup fully yniformly inthe data objects for this
+                //eg, do we really want to list ALL cities in a resource bundle?
+                //need ot leave code = null for things that are NOT in resource bundle
+                //					if( list[i][ property ]["code"] )
+                //						tempText += resourceManager.getString( "resources", list[i][ property ]["code"].toString() );
+                //					else
+                tempText += list[i][ property ]["shortName"].toString();
+                if (i < len - 1)
+                    tempText += ", ";
+            }
+            return tempText;
+        }
+
+        private function onValidChange(event:Event):void
+        {
+            currentState = READ_STATE;
+        }
+
+        private function onClick(event:MouseEvent):void
+        {
+            currentState = EDIT_STATE;
+        }
+			
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+		
+	
+			<mx:Grid id="readWorkPreferences"  click="onClick( event )">
+				<mx:GridRow>
+					<mx:GridItem>
+						<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.roles') }" />
+					</mx:GridItem>
+					<mx:GridItem>
+						<mx:Label id="rolesList" styleName="formItem" text="FILL ME IN" truncateToFit="true" />
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow>
+					<mx:GridItem>
+						<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.departments') }" />
+					</mx:GridItem>
+					<mx:GridItem>
+						<mx:Label id="deptList" styleName="formItem" text="FILL ME IN" truncateToFit="true" />
+					</mx:GridItem>
+				</mx:GridRow>
+				<mx:GridRow>
+					<mx:GridItem>
+						<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.locations') }" />
+					</mx:GridItem>
+					<mx:GridItem>
+						<mx:Label id="locationsList" styleName="formItem" text="FILL ME IN" truncateToFit="true" />
+					</mx:GridItem>
+				</mx:GridRow>
+			</mx:Grid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

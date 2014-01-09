@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<industries>
+    <industrygroup code="industrygroup.agricultural.production" en_US="Agricultural Production">
+        <industrygroup code="industrygroup.crops" en_US="Crops">
+            <industry code="industry.cash.grains" en_US="Cash Grains"/>
+            <industry code="industry.wheat" en_US="Wheat"/>
+            <industry code="industry.rice" en_US="Rice"/>
+            <industry code="industry.corn" en_US="Corn"/>
+            <industry code="industry.soybeans" en_US="Soybeans"/>
+            <industry code="industry.cash.grains" en_US="Cash Grains, nec"/>
+            <industry code="industry.field.crops.except.cash.grains" en_US="Field Crops, Except Cash Grains"/>
+            <industry code="industry.cotton" en_US="Cotton"/>
+            <industry code="industry.tobacco.growers" en_US="Tobacco Growers"/>
+            <industry code="industry.sugarcane.and.sugar.beets" en_US="Sugarcane And Sugar Beets"/>
+            <industry code="industry.potato.growers" en_US="Potato Growers"/>
+            <industry code="industry.agricultural.products" en_US="Agricultural Products"/>
+            <industry code="industry.field.crops.except.cash.grains" en_US="Field Crops, Except Cash Grains, nec"/>
+            <industry code="industry.vegetable.growers" en_US="Vegetable Growers"/>
+            <industry code="industry.vegetables.and.melons" en_US="Vegetables And Melons"/>
+            <industry code="industry.fruits.tree.nuts" en_US="Fruits &amp; Tree Nuts"/>
+            <industry code="industry.berry.crops" en_US="Berry Crops"/>
+            <industry code="industry.grapes.vineyards" en_US="Grapes/Vineyards"/>
+            <industry code="industry.tree.nuts" en_US="Tree Nuts"/>
+            <industry code="industry.citrus.fruits" en_US="Citrus Fruits"/>
+            <industry code="industry.deciduous.tree.fruits.orchards" en_US="Deciduous Tree Fruits/Orchards"/>
+            <industry code="industry.horticultural.specialties" en_US="Horticultural Specialties"/>
+            <industry code="industry.ornamental.nursery.products" en_US="Ornamental Nursery Products"/>
+            <industry code="industry.food.crops.grown.under.cover" en_US="Food Crops Grown Under Cover"/>
+            <industry code="industry.general.farms.primarily.crop" en_US="General Farms, Primarily Crop"/>
+        </industrygroup>
+        <industrygroup code="industrygroup.livestock" en_US="Livestock">
+            <industry code="industry.livestock.except.dairy.poultry" en_US="Livestock, Except Dairy &amp; Poultry"/>
+            <industry code="industry.beef.cattle.feedlots" en_US="Beef Cattle Feedlots"/>
+            <industry code="industry.beef.cattle.except.feedlots" en_US="Beef Cattle, Except Feedlots"/>
+            <industry code="industry.hogs" en_US="Hogs"/>
+            <industry code="industry.sheep.goats" en_US="Sheep &amp; Goats"/>
+            <industry code="industry.general.livestock.except.dairy.poultry" en_US="General Livestock, Except Dairy/Poultry"/>
+            <industry code="industry.dairy.farms" en_US="Dairy Farms"/>
+            <industry code="industry.poultry.and.eggs" en_US="Poultry &amp; Eggs"/>
+            <industry code="industry.broiler.fryer.roaster.chickens" en_US="Broiler, Fryer &amp; Roaster Chickens"/>
+            <industry code="industry.chicken.eggs" en_US="Chicken Eggs"/>
+            <industry code="industry.turkey.farms" en_US="Turkey Farms"/>
+            <industry code="industry.poultry.farms" en_US="Poultry Farms"/>
+            <industry code="industry.poultry.eggs" en_US="Poultry &amp; Eggs, nec"/>
+            <industry code="industry.animal.specialties" en_US="Animal Specialties"/>
+            <industry code="industry.fur.bearing.animals.rabbits" en_US="Fur Bearing Animals &amp; Rabbits"/>
+            <industry code="industry.horses.other.equines" en_US="Horses &amp; Other Equines"/>
+            <industry code="industry.aquaculture" en_US="Aquaculture"/>
+            <industry code="industry.animal.specialties" en_US="Animal Specialties, nec"/>
+            <industry code="industry.general.farms.primarily.animal" en_US="General Farms, Primarily Animal"/>
+        </industrygroup>
+    </industrygroup>
+    <industrygroup code="industrygroup.agricultural.services" en_US="Agricultural Services">
+        <industry code="industry.soil.preparation.services" en_US="Soil Preparation Services"/>
+        <industry code="industry.crop.services" en_US="Crop Services"/>
+        <industry code="industry.crop.planting.and.protecting" en_US="Crop Planting &amp; Protecting"/>
+        <industry code="industry.crop.harvesting" en_US="Crop Harvesting"/>
+        <industry code="industry.crop.preparation.services.for.market" en_US="Crop Preparation Services For Market"/>
+        <industry code="industry.cotton.ginning" en_US="Cotton Ginning"/>
+        <industry code="industry.veterinary.services" en_US="Veterinary Services"/>
+        <industry code="industry.veterinary.services.for.livestock" en_US="Veterinary Services for Livestock"/>
+        <industry code="industry.veterinary.services.specialties" en_US="Veterinary Services, Specialties"/>
+        <industry code="industry.animal.services.except.veterinary" en_US="Animal Services, Except Veterinary"/>
+        <industry code="industry.livestock.services.except.veterinary" en_US="Livestock Services, Except Veterinary"/>
+        <industry code="industry.animal.specialty.services" en_US="Animal Specialty Services"/>
+        <industry code="industry.farm.labor.management.services" en_US="Farm Labor &amp; Management Services"/>
+        <industry code="industry.farm.labor.contractors" en_US="Farm Labor Contractors"/>
+        <industry code="industry.farm.management.services" en_US="Farm Management Services"/>
+        <industry code="industry.landscape.horticultural.services" en_US="Landscape &amp; Horticultural Services"/>
+        <industry code="industry.landscape.counseling.planning" en_US="Landscape Counseling &amp; Planning"/>
+        <industry code="industry.lawn.garden.services" en_US="Lawn &amp; Garden Services"/>
+        <industry code="industry.ornamental.shrub.tree.services" en_US="Ornamental Shrub &amp; Tree Services"/>
+    </industrygroup>
+    <industrygroup code="industrygroup.forestry" en_US="Forestry">
+        <industry code="industry.timber.tracts" en_US="Timber Tracts"/>
+        <industry code="industry.forest.products" en_US="Forest Products"/>
+        <industry code="industry.forestry.services" en_US="Forestry Services"/>
+    </industrygroup>
+    <industrygroup code="industrygroup.fishing.hunting.trapping" en_US="Fishing, Hunting &amp; Trapping">
+        <industry code="industry.commercial.fishing" en_US="Commercial Fishing"/>
+        <industry code="industry.finfish" en_US="Finfish"/>
+        <industry code="industry.shellfish" en_US="Shellfish"/>
+        <industry code="industry.miscellaneous.marine.products" en_US="Miscellaneous Marine Products"/>
+        <industry code="industry.fish.hatcheries.preserves" en_US="Fish Hatcheries &amp; Preserves"/>
+        <industry code="industry.hunting.trapping.game.propagation" en_US="Hunting, Trapping &amp; Game Propagation"/>
+    </industrygroup>
+    <industrygroup code="industrygroup.metal.mining" en_US="Metal Mining">
+        <industry code="industry.iron.ores" en_US="Iron Ores"/>
+        <industry code="industry.copper.ores" en_US="Copper Ores"/>
+        <industry code="industry.lead.zinc.ores" en_US="Lead &amp; Zinc Ores"/>
+        <industry code="industry.gold.silver.ores" en_US="Gold &amp; Silver Ores"/>
+        <industry code="industry.gold.ores" en_US="Gold Ores"/>
+        <industry code="industry.silver.ores" en_US="Silver Ores"/>
+        <industry code="industry.ferroalloy.ores.except.vanadium" en_US="Ferroalloy Ores, Except Vanadium"/>
+        <industry code="industry.metal.mining.services" en_US="Metal Mining Services"/>
+        <industry code="industry.miscellaneous.metal.ores" en_US="Miscellaneous Metal Ores"/>
+        <industry code="industry.uranium.radium.vanadium.ores" en_US="Uranium Radium Vanadium Ores"/>
+        <industry code="industry.metal.ores" en_US="Metal Ores, nec"/>
+    </industrygroup>
+    <industrygroup code="industrygroup.service" en_US="Service">
+        <industrygroup code="industry.service.financial" en_US="Financial">
+            <industry code="industry.service.financial.banking" en_US="Banking"/>
+        </industrygroup>
+    </industrygroup>
+
+    <!-- todo complete here -->
+
+
+</industries>

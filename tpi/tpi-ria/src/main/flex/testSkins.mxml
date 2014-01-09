@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+	backgroundColor="0xFFFFFF"
+	layout="absolute" xmlns:components="com.pds.gte.view.components.*" xmlns:components1="com.tps.tpi.view.components.*" xmlns:containers="com.tps.tpi.containers.*" xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*">
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			
+		]]>
+	</mx:Script>
+	
+	<mx:Style>
+		/**
+		.navLinkBar
+		{
+			link-button-style-name:navBarButton;	
+		}
+		
+		.navBarButton
+		{
+			skin:ClassReference("assets.skins.NavBarLinkButtonSkin");
+			 cornerRadius: 0;
+			
+		}
+		
+		.dropShadowContainer
+		{
+			border-style:solid;
+			border-color:#D2C5AD;
+			background-color:#ffffff;
+			drop-shadow-enabled:true;
+			drop-shadow-color:#747474;	
+		}
+		
+		.solidBorderContainer
+		{
+			border-style:solid;
+			border-color:#D2C5AD;
+			background-color:#ffffff;
+		}
+		
+		LinkButton {
+		   cornerRadius: 6;
+		   paddingLeft: 2;
+		   paddingRight: 2;
+		   highlightAlphas: 0, 0;
+		   fillAlphas: 1, 1, 0, 0;
+		   fillColors: #e0eefa, #e0eefa, #ffffff, #eeeeee;
+		   color: #526270;
+		   borderColor: #e0eefa; border-thickness:0;
+		   skin:ClassReference("assets.skins.SkillButtonCloseSkin");
+		   border-skin:ClassReference("mx.skins.ProgrammaticSkin");
+		} */
+		
+		.myPanel
+		{
+			borderSkin:                    ClassReference("assets.skins.ContentPanelSkin");
+			border-thickness-bottom:0;
+			border-thickness-left:0;
+			border-thickness-top:0;
+			border-thickness-right:0;
+			border-thickness:0;
+			title-background-skin:ClassReference("mx.skins.ProgrammaticSkin");
+			contentBorderAlpha:1;
+			contentBorderThickness:1;
+			contentBorderColor:#333333;
+			padding-bottom:10;
+			padding-top:10;
+			padding-right:10;
+			padding-left:10;
+			header-height:15;
+			title-style-name:"myPanelTitleStyle";
+			border-alpha:0;
+			highlightAlphas:0,0;
+		}
+		
+		.myPanelTitleStyle
+		{
+			color:#00ff00;
+		}
+		
+	</mx:Style>
+	
+	
+<!--	<mx:LinkBar id="lb" 
+		styleName="navLinkBar" 
+		linkButtonStyleName="navBarButton" 
+		itemClick="lb.selectedIndex = event.index"
+		>
+		<mx:dataProvider>
+			<mx:Array>
+				<mx:String>Hello</mx:String>
+				<mx:String>Goodbye</mx:String>
+				<mx:String>Shizzle</mx:String>
+			</mx:Array>
+		</mx:dataProvider>
+	</mx:LinkBar>
+	
+	
+	<mx:LinkButton x="28" y="58" label="Test Me"
+		skin="assets.skins.NavBarLinkButtonSkin"
+		toggle="true"
+		buttonMode="true" />
+	
+	<components:ProfilePanel x="28" y="251" width="400" 
+		height="155" label="FOOLISHNESS" 
+		dropShadowEnabled="false"
+		direction="horizontal">
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+		<mx:Button />
+	</components:ProfilePanel>
+	<mx:ApplicationControlBar 
+		width="300" height="55"
+		borderSkin="assets.skins.NavBarSkin"  x="28" y="104"/>
+	
+		
+		<mx:ViewStack x="28" y="418" id="viewstack1" width="508" height="121" 
+			borderColor="#F0E8D6"
+		borderStyle="solid"
+		backgroundColor="#F0E8D6"
+		dropShadowEnabled="true"
+		 >
+			<mx:Canvas label="View 1" width="100%" height="100%">
+			</mx:Canvas>
+		</mx:ViewStack>
+		<components:SearchSkillBox x="255" y="32" text="Fee Fi Fo Fum" 	 />
+
+
+<mx:Panel title="Hello World" width="200" height="200" x="50" y="50" styleName="myPanel" leftOffset="-1">
+	
+	<mx:Button label="sdfasdf"/>
+</mx:Panel>	
+
+<mx:Panel
+    x="300" width="200" 
+	height="200" y="50" title="testing title"
+	cornerRadius="0"  >
+	<mx:Button label="First"/>
+        <mx:Button label="Second"/>
+        <mx:Button label="Third"/>
+</mx:Panel>-->
+<!-- 
+<professionalBio:Summary width="100%" height="100">
+	
+</professionalBio:Summary>--> 
+<!--<mx:ToggleButtonBar dataProvider="{testStack.leStack}" />
+<containers:FormStack
+ y="100" id="testStack" height="300" width="300">
+	<mx:VBox height="100%" width="100%" backgroundColor="0x00ff00">
+		<mx:Label text="one" />
+	</mx:VBox>
+	<mx:VBox height="100%" width="100%" backgroundColor="0xff0000">
+		<mx:Label text="two" />
+	</mx:VBox>
+		 
+</containers:FormStack>-->
+
+<!--
+<mx:Panel height="190" width="100%" backgroundColor="0x00ff00"
+	paddingBottom="0" paddingLeft="0" 
+		 paddingRight="0" paddingTop="0"
+		 headerHeight="18"
+		 borderThicknessBottom="0"
+		 borderThicknessLeft="0"
+		 borderThicknessRight="0">
+	
+	<mx:ViewStack height="100%" width="100%"
+		 paddingBottom="10" paddingLeft="10" 
+		 paddingRight="10" paddingTop="10"
+		 backgroundColor="0xff0000">
+		
+		<mx:Canvas horizontalScrollPolicy="off" verticalScrollPolicy="off" backgroundColor="0x0000ff">
+			<mx:DataGrid height="150" width="100%" 
+				verticalScrollPolicy="on" dataProvider="{ [ { foo:'500' }, { foo:'600' }, { foo:'808' }, { foo:'008' }, { foo:'555' },{ foo:'500' }, { foo:'600' }, { foo:'808' }, { foo:'008' }, { foo:'555' }] }" >
+				
+			</mx:DataGrid>
+		</mx:Canvas> 
+		
+		
+	</mx:ViewStack>
+</mx:Panel> -->
+
+<!-- ======================================================================================= -->
+	<!-- 	External Style Sheet    		                                                     -->
+	<!-- ======================================================================================= -->
+	<mx:Style source="assets/css/global.css" />
+	<mx:Style source="assets/css/fonts.css" />
+	
+<containers:ContentFormStack
+	height="250"
+	width="500"
+	dropShadowEnabled="true" 
+	label="THIS IS A TEST" >
+
+	<containers:readUI>
+		<mx:Canvas horizontalScrollPolicy="off" verticalScrollPolicy="off" backgroundColor="0x0000ff">
+			<mx:DataGrid height="150" width="100%" 
+				verticalScrollPolicy="on" dataProvider="{ [ { foo:'500' }, { foo:'600' }, { foo:'808' }, { foo:'008' }, { foo:'555' },{ foo:'500' }, { foo:'600' }, { foo:'808' }, { foo:'008' }, { foo:'555' }] }" >
+				
+			</mx:DataGrid>
+		</mx:Canvas> 
+	</containers:readUI>
+	
+	<containers:editUI>
+		<mx:Canvas>
+			<mx:Text text="it worked!!" >
+				
+			</mx:Text>
+		</mx:Canvas>
+	</containers:editUI>
+	
+	
+</containers:ContentFormStack>
+</mx:Application>

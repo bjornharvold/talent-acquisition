@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:ContentFormStack 
+	xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:containers="com.tps.tpi.containers.*"
+	width="400" height="300"
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	label="CERTIFICATIONS" >
+	
+	
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ListCollectionView;
+			
+			
+			private var _certifications:ListCollectionView;
+			public function set certifications( value:ListCollectionView ):void
+			{
+				if( value )
+				{
+					_certifications = value;
+					dg.dataProvider = _certifications;
+					this.height = _certifications.length * 25 + 65;
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<containers:readUI>
+			<ProfileDataGrid id="dg">
+				<columns>
+					<mx:DataGridColumn headerText="Title" dataField="title">
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.title }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Issued By" dataField="issuedBy">
+						<mx:itemRenderer>
+							<mx:Component>
+								<QuickSearchLabel text="{ data.issuedBy }"
+									baseData="{ data as AbstractDto }" />
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+					<mx:DataGridColumn headerText="Year Issued" >
+						
+						<mx:itemRenderer>
+							<mx:Component>
+								<mx:Label >
+									<mx:Script>
+									<![CDATA[
+											import com.tps.tpi.utils.DateUtils;
+											
+										]]>
+									</mx:Script>
+									<mx:text>{ DateUtils.formatDateYear( data.issueDate ) }</mx:text>
+								</mx:Label>
+							</mx:Component>
+						</mx:itemRenderer>
+					</mx:DataGridColumn>
+				</columns>
+			</ProfileDataGrid>
+	</containers:readUI>
+
+</containers:ContentFormStack>

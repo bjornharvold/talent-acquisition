@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	>
+	
+	<mx:Metadata>
+		[Event(name="exclusionChanged",type="com.tps.tpi.view.events.ExclusionChangedEvent")]
+		
+		[Event(name="addSearchParams",type="flash.events.Event")]
+
+		[Event(name="removeSearchParams",type="flash.events.Event")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.events.ExclusionChangedEvent;
+			
+			private function onExclusionChange( event:Event ):void
+			{
+				dispatchEvent( new ExclusionChangedEvent( exclusionChoice.selected ) );
+				
+			}
+			
+			private function onAddSearch():void
+			{
+				dispatchEvent( new Event("addSearchParams") );
+			}
+			
+			private function onRemoveSearch():void
+			{
+				dispatchEvent( new Event("removeSearchParams") );
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Button styleName="removeSearchCriteriaButton" click="onRemoveSearch()" />
+	<mx:Button styleName="addSearchCriteriaButton" click="onAddSearch()"  />
+	<mx:Spacer width="100%" />
+	<mx:CheckBox id="exactMatchChoice" 
+		label="{ resourceManager.getString('resources','form.exactMatch') }"
+		fontSize="11"  />
+	<mx:CheckBox id="exclusionChoice" 
+		label="{ resourceManager.getString('resources','form.exclude') }"
+		fontSize="11"
+		change="onExclusionChange( event )"  />
+</mx:HBox>

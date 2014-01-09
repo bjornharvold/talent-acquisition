@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="100%" 
+	xmlns:components="com.tps.tpi.view.components.*"
+	xmlns:widgets="com.tps.tpi.view.search.widgets.*"
+	creationComplete="onCreationComplete()"
+	horizontalGap="0"
+	paddingBottom="20">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.events.SearchEvent;
+			import com.tps.tpi.model.objects.dto.SearchDto;
+			import com.tps.tpi.model.objects.enums.SearchComponentTypeCd;
+			import com.tps.tpi.view.search.widgets.WidgetBase;
+			import com.tps.tpi.view.search.widgets.WidgetTitle;
+			import com.tps.tpi.view.search.widgets.languages.Languages;
+			import com.tps.tpi.view.search.widgets.location.Location;
+			import com.tps.tpi.view.search.widgets.positionsRoles.PositionsRoles;
+			import com.tps.tpi.view.search.widgets.skills.Skills;
+			
+			import mx.collections.ArrayCollection;
+			import mx.collections.ListCollectionView;
+			import mx.controls.Alert;
+			import mx.controls.Image;
+			import mx.core.DragSource;
+			import mx.core.UIComponent;
+			import mx.events.CloseEvent;
+			import mx.events.DragEvent;
+			import mx.managers.DragManager;
+			import mx.resources.ResourceBundle;
+			import mx.utils.StringUtil;
+			
+			import org.granite.collections.IMap;
+			
+			/**
+			 * we hold a list of search types addded
+			 * so that we can determine to add one or not
+			 */
+			private var searchWidgetTypes:Dictionary = new Dictionary( true );
+			
+			/**
+			 * flag to indicate we are in fact in drag mode and 
+			 * dragging a item.  used to be sure we do not accidentally drag some other UI item
+			 */
+			private var isDragging:Boolean;
+			
+			/**
+			 * setup the DP for the <code>Repeater</code> 
+			 * we need to sort it properly based on locale
+			 * not based on the code
+			 */
+			private function onCreationComplete():void
+			{
+				var len:int = SearchComponentTypeCd.constants.length;
+				var titles:Array = new Array( len );
+				var obj:Object;
+				
+				for( var i:int = 0; i < len; i++ )
+				{
+					obj = new Object();
+					obj.type = SearchComponentTypeCd.constants[ i ];
+					obj.label = resourceManager.getString('resources', 'search.' + SearchComponentTypeCd( SearchComponentTypeCd.constants[ i ] ).name.toLowerCase() );
+					titles[ i ] = obj;
+				}
+				allSearchTitles.dataProvider = titles.sortOn( "label", Array.CASEINSENSITIVE );
+			}
+			
+			/**
+			 * 
+			 * what to do when user dbl clicks the search widget title on the left
+			 */
+			protected function onSearchTitleClick( event:MouseEvent ):void
+			{
+				addAdvancedSearchWidget( WidgetTitle( event.target ).type );
+				
+			}
+			
+			/**
+			 * ok, lets add the UI piece in
+			 * need to add them in alpha order...yeehaw!
+			 */
+			protected function addAdvancedSearchWidget( type:SearchComponentTypeCd ):void
+			{
+				searchInstruct.visible = false;
+				
+				if( !searchWidgetTypes[ type] )
+				{
+				
+					switch( type )
+					{
+						case SearchComponentTypeCd.POSITION_ROLES:
+							var posRoles:PositionsRoles = new PositionsRoles();
+							posRoles.addEventListener( CloseEvent.CLOSE, closeSearchWidget, false, 0, true );
+							addNewWidget( posRoles );
+							break;
+						case SearchComponentTypeCd.LOCATION:
+							var loc:Location = new Location();
+							loc.addEventListener( CloseEvent.CLOSE, closeSearchWidget, false, 0, true );
+							addNewWidget( loc );
+							break;
+						case SearchComponentTypeCd.SKILLS_EXPERTISE:
+							var skillsWidget:Skills = new Skills();
+							skillsWidget.addEventListener( CloseEvent.CLOSE, closeSearchWidget, false, 0, true );
+							addNewWidget( skillsWidget );
+							break;
+						case SearchComponentTypeCd.LANGUAGE:
+							var lang:Languages = new Languages();
+							lang.addEventListener( CloseEvent.CLOSE, closeSearchWidget, false, 0, true );
+							addNewWidget( lang );
+							break;
+						
+						default :
+							throw new Error( "No advanced search component found" );
+					}
+				}
+				
+			}
+			
+			/**
+			 * @private
+			 * 
+			 * @param widget the instance to be added
+			 * 
+			 * some reuse
+			 * we need to sort the children based on name
+			 * 
+			 * ugh...scratch this..leaving code here for a bit in case
+			 * 
+			 * we kind of can't access widget.title as widget is not 
+			 * added to the stage and completed yet...doh!
+			 * 
+			 * aha....addChild with creationComplete handler calling sort, loop, find new pos, swap children...maybe....for now
+			 * we kill all and re-add
+			 */
+			private function addNewWidget( widget:WidgetBase ):void
+			{	
+//				for( var pos:int = 0; pos < advSearchBox.getChildren().length; pos++ )
+//				{
+//					if( widget.title.localeCompare( WidgetBase( advSearchBox.getChildAt( pos )).title ) < 0	)
+//					{Alert.show( pos.toString() );
+//						break;
+//					}
+//				}
+//				advSearchBox.addChildAt( widget, pos );
+				advSearchBox.addChild( widget );
+				searchWidgetTypes[ widget.type ] = true;
+				//the above calls invalidateProperties() so we need not
+				//widgetOrderIsDirty = true;
+				sortMyChildren();
+			}
+			
+			/**
+			 * suspect this will be not so performant
+			 */
+			private function sortMyChildren():void
+			{
+				var newWorldOrder:Array = advSearchBox.getChildren().sortOn( "title", Array.CASEINSENSITIVE );
+				advSearchBox.removeAllChildren();
+				for each( var ui:UIComponent in newWorldOrder)
+				{
+					advSearchBox.addChild( ui );
+				}
+				
+			}
+			
+			
+			
+			protected function closeSearchWidget( event:CloseEvent ):void
+			{
+				searchWidgetTypes[ WidgetBase( event.target ).type ] = false;
+				advSearchBox.removeChild( event.target as UIComponent );
+				
+			}
+			
+			
+			/**
+			 * @private
+			 * assemble the search params and send them off
+			 */
+			private function onViewResults():void
+			{
+				var allParams:Array = [];
+				var searchComp:SearchDto = new SearchDto();
+				
+				searchComp.groups = new ArrayCollection( );
+				
+				for each( var wb:WidgetBase in advSearchBox.getChildren() )
+				{
+					
+					searchComp.groups.addItem( wb.params );
+					
+				}
+				
+//				searchComp.company = ;
+//				searchComp.name = ;	
+//				searchComp.user = ;
+				
+				var advSearchEvent:SearchEvent = new SearchEvent( SearchEvent.SEARCH );
+				advSearchEvent.search = searchComp;
+				dispatchEvent( advSearchEvent );
+				
+			}
+			
+			
+			/**
+			 *@private
+			 *  drag and drop implementations
+			 * 
+			 */
+			private function onMouseDown( event:MouseEvent ):void
+			{
+				if( event.target is WidgetTitle)
+				{	
+					isDragging = true;	
+				}
+				
+			}
+			
+			/**
+			 * @private
+			 * what to do when the mouse is moved by user with mousedown on
+			 * if we are in fact dragging, fire it up
+			 * use the actual <code>WidgetTitle</code> to draw the proxy
+			 */
+			private function onMouseMove( event:MouseEvent ):void
+			{
+				if( isDragging  )
+				{
+					
+					// Get the drag initiator component from the event object.
+	                var dragInitiator:WidgetTitle = event.currentTarget as WidgetTitle;
+	    
+	                // Create a DragSource object.
+	                var dragSource:DragSource = new DragSource();
+	    
+	                // Add the data to the object.
+	                dragSource.addData( ( event.target as WidgetTitle ).type , 'type');
+	                
+	                var dragProxy:WidgetTitle = new WidgetTitle();
+	                dragProxy.type = ( event.target as WidgetTitle ).type;
+	                dragProxy.title = resourceManager.getString('resources', 'search.' + dragProxy.type.name.toLowerCase() );
+	                dragProxy.width = 200;
+	                dragProxy.height = 30;
+	    
+	                //Call the DragManager doDrag() method to start the drag. 
+	                DragManager.doDrag(dragInitiator, dragSource, event, dragProxy );
+				}
+			}
+			
+			/**
+			 * @private
+			 * handle the event fired when the user drags the widget title over the search box
+			 */
+			private function onDragEnter( event:DragEvent ):void
+			{
+				
+				if( event.dragSource.hasFormat( 'type' ) && !searchWidgetTypes[ event.dragSource.dataForFormat( "type" ) as SearchComponentTypeCd ] )
+				{
+					DragManager.acceptDragDrop( event.currentTarget as Canvas ); 
+				}
+			}
+			
+			/**
+			 * @private
+			 * handle the event fired when the user drops the widget title over the search box
+			 */
+			private function onDragDrop( event:DragEvent ):void
+			{
+				isDragging = false;
+				addAdvancedSearchWidget( event.dragSource.dataForFormat( "type" ) as SearchComponentTypeCd );
+				
+			}
+			
+			
+			
+			
+		]]>
+	</mx:Script>
+	
+	<!-- I know, but I need teh Box so the screen 'grows' and scrolls show correct
+		and I need a canvas to place the button
+	-->
+	
+	<mx:Canvas>
+		
+		<mx:Button label="{ resourceManager.getString('resources', 'form.viewResults.title') }"
+			x="850" 
+			width="90"
+			height="18"
+			y="6"
+			click="onViewResults()" />
+			
+		<mx:Canvas id="searchWidgets" 
+			x="40" y="30"
+			width="225"
+			styleName="dropShadowContainer">
+			
+			<mx:Label x="10" y="10" text="{ resourceManager.getString('resources','form.searchOptions.title') }" />
+			<mx:Label x="10" y="25" fontSize="10" text="{ resourceManager.getString('resources','form.searchOptions.message') }" />
+			
+			<mx:VBox
+				x="10"
+				width="205"
+				y="45"
+				paddingBottom="10">
+				
+				<mx:Repeater id="allSearchTitles" >
+					<widgets:WidgetTitle width="100%" 
+						height="25"
+						title="{ allSearchTitles.currentItem.label }" 
+						type="{ SearchComponentTypeCd( allSearchTitles.currentItem.type ) }"
+						toolTip="Fill me in...do we need tooltip info here?"
+						doubleClickEnabled="true"
+						doubleClick="onSearchTitleClick( event )"
+						mouseDown="onMouseDown( event )"
+						mouseMove="onMouseMove( event )"
+						  />
+				</mx:Repeater>
+			</mx:VBox>
+			
+		</mx:Canvas>
+	
+		<mx:Canvas id="theSearchBox" 
+			x="285" y="30"
+			width="655"
+			styleName="dropShadowContainer"
+			dragEnter="onDragEnter( event )"
+			dragDrop="onDragDrop( event )">
+			
+			<mx:Label x="10" left="10" y="10" text="{ resourceManager.getString('resources','form.advancedSearch.title') }" />
+			
+			<mx:LinkButton x="10" 
+						   y="10" 
+						   right="10" 
+						   label="{ resourceManager.getString('resources','form.recallSearch') }" />
+			
+			<mx:Text id="searchInstruct"
+				x="10"
+				width="400"
+				horizontalCenter="0"
+				verticalCenter="0"
+				text="{ resourceManager.getString('resources','form.advancedSearchInstructions')}" />
+			<mx:VBox id="advSearchBox" 
+				x="10" width="635"
+				y="30"
+				minHeight="300"
+				paddingBottom="10">
+				
+				
+				<!--<widgets:PositionsRoles id="posRoles" 
+					type="{ SearchComponentGroupTypeCd.POSITION_ROLES }" /> -->
+				
+			</mx:VBox>
+			
+		</mx:Canvas>
+		
+		<mx:Button label="{ resourceManager.getString('resources', 'form.viewResults.title') }"
+			x="850" 
+			width="90"
+			height="18"
+			y="{ theSearchBox.y + theSearchBox.height + 6 }"
+			click="onViewResults()" />
+	</mx:Canvas>
+</mx:HBox>

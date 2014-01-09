@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	 label="SEARCH"
+	 width="100%" height="100%" 
+	 xmlns:search="com.tps.tpi.view.search.*" 
+	 xmlns:containers="flexlib.containers.*"
+	 creationComplete="onCreationComplete()"
+	 backgroundColor="#B1A48E" 
+	 xmlns:components="com.tps.tpi.view.components.*">
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.view.EmbeddedAssets;
+        import com.tps.tpi.model.constants.SearchResultsViewIndex;
+        import com.tps.tpi.model.vo.SearchResult;
+        import com.tps.tpi.model.presentation.SearchModel;
+        import com.tps.tpi.view.search.GroupView;
+
+        import mx.events.ItemClickEvent;
+
+        import flexlib.controls.SuperTabBar;
+        import flexlib.controls.tabBarClasses.SuperTab;
+
+        import mx.events.IndexChangedEvent;
+
+        import com.tps.tpi.view.search.SearchResults;
+
+        import mx.events.FlexEvent;
+
+        import flexlib.containers.SuperTabNavigator;
+
+
+        [Autowire]
+        [Bindable]
+        public var searchModel:SearchModel;
+
+        private function onCreationComplete():void
+        {
+            groupTab.setClosePolicyForTab(groupTab.numChildren - 1, 'close_never');
+
+        }
+
+
+        /**
+         * @private
+         * here we add a new tab
+         *
+         */
+        private function onChange(event:IndexChangedEvent):void
+        {
+
+            //				if( event.newIndex == superTab.numChildren - 1 )
+            //				{
+            //
+            //					var searchResults:SearchResults = new SearchResults();
+            //					searchResults.label = "Search " + ( superTab.numChildren );
+            //					searchResults.setStyle("creationCompleteEffect",fadeIn );
+            //					searchResults.setStyle("showEffect",fadeIn );
+            //					searchResults.setStyle("hideEffect",fadeOut );
+            //
+            //					superTab.addChildAt( searchResults, superTab.numChildren - 1 );
+            //					//superTab.selectedChild = searchResults;
+            //
+            //
+            //					callLater( resetTabs, [ superTab ] );
+            //
+            //				}
+        }
+
+        /**
+         * @private
+         * here we add a new tab
+         *
+         */
+        private function onGroupChange(event:IndexChangedEvent):void
+        {
+
+            if (event.newIndex == groupTab.numChildren - 1)
+            {
+
+                var groupView:GroupView = new GroupView();
+                groupView.label = "Group " + ( groupTab.numChildren );
+                groupView.setStyle("creationCompleteEffect", fadeIn);
+                groupView.setStyle("showEffect", fadeIn);
+                groupView.setStyle("hideEffect", fadeOut);
+
+                groupTab.addChildAt(groupView, groupTab.numChildren - 1);
+                //superTab.selectedChild = searchResults;
+
+
+                callLater(resetTabs, [ groupTab ]);
+
+            }
+        }
+
+        /**
+         * @private
+         *
+         * a bit of a kludgy hack to get the selected tab to update properly
+         *
+         */
+        private function resetTabs(supTabNav:SuperTabNavigator):void
+        {
+            supTabNav.selectedIndex = -1;
+            supTabNav.selectedIndex = supTabNav.numChildren - 2;
+            SuperTabBar(supTabNav.mx_internal::getTabBar()).selectedIndex = -1;
+            SuperTabBar(supTabNav.mx_internal::getTabBar()).selectedIndex = supTabNav.numChildren - 2;
+            SuperTabBar(supTabNav.mx_internal::getTabBar()).resetTabs();
+
+        }
+
+
+        /**
+         * @private
+         *
+         * here we will handle to user request to change the view style
+         *
+         */
+        private function onDataViewChange(event:ItemClickEvent):void
+        {
+            searchUI.switchToView(event.item.value);
+
+        }
+			
+			
+			
+		]]>
+	</mx:Script>
+	
+	
+		<!-- this guy will be the search 'controller'
+			put your calls to the server here and inject the results into a SearchResults instance
+			
+			searches kicked of by user in SearchFrom should throw event and pass data 
+			a listener here will handle it
+		-->
+		
+		
+	<!-- ======================================================================================= -->
+	<!-- 	Transistions                                               -->
+	<!-- ======================================================================================= -->
+	<mx:Fade id="fadeIn" alphaFrom="0" alphaTo="1" duration="125" />
+	<mx:Fade id="fadeOut" alphaFrom="1" alphaTo="0" duration="125" />
+	
+		
+	
+	<mx:HDividedBox width="100%"  height="100%"
+		dividerSkin="@Embed('/assets/images/dividerButtonSkin.png')"
+		horizontalGap="8" 
+		liveDragging="true" >
+		
+		<search:SearchForm width="260"   />
+
+		<!-- this canvas group needs to be a single component exposing what interface properties are needed -->
+		<mx:Canvas width="100%"  
+			height="100%"
+			minWidth="850"
+			backgroundColor="#F0E8D6" >
+			<mx:Canvas left="10"
+					right="10"
+					top="5" 
+					bottom="105"  >
+				
+				<search:SearchResultsContainer id="searchUI"
+					width="100%" height="100%"
+					searchResults="{ searchModel.searchResults }"
+					currentSearchResultIndex="{ searchModel.currentSearchResultIndex }"
+					currentSearchResult="{ searchModel.currentSearchResult }" >
+				</search:SearchResultsContainer>
+			</mx:Canvas>
+			
+			<!-- the bottom bar area -->
+			<mx:Canvas backgroundColor="#EFEDE8" 
+				width="100%" 
+				bottom="0"  
+				height="100"
+				borderColor="#B1A48E"
+				borderThickness="1"
+				borderSides="top"
+				borderStyle="solid">
+				<components:TPSSuperTabNavigator id="groupTab" 
+					height="90"
+					left="10"
+					right="10"
+					y="5"
+					backgroundColor="#D4D4D4"
+					popUpButtonPolicy="on" 
+					change="onGroupChange( event )"
+					closePolicy="close_always"
+					editableTabLabels="false"
+					popUpButtonLabel="Got to Group"
+					popupButtonStyleName="groupsNavigatorPopupButton" >
+					
+					<search:GroupView label="Group 1"
+						width="100%" height="100%"
+						showEffect="{ fadeIn }" 
+						hideEffect="{ fadeOut }">
+						
+						<mx:HorizontalList width="100%" height="100%"
+							itemRenderer="mx.controls.Image" 
+							backgroundColor="#D4D4D4"
+							borderThickness="0"
+							rowHeight="55">
+							<mx:dataProvider>
+								<mx:Array>
+									<mx:String>assets/webimages/jeremytanner.png</mx:String>
+									<mx:String>assets/webimages/krishnaguha.png</mx:String>
+								</mx:Array>
+							</mx:dataProvider>
+						</mx:HorizontalList>
+					</search:GroupView>
+					<search:GroupView label="Group 2"
+						width="100%" height="100%"
+						showEffect="{ fadeIn }" 
+						hideEffect="{ fadeOut }">
+						
+						<mx:HorizontalList width="100%" height="100%"
+							itemRenderer="mx.controls.Image" 
+							backgroundColor="#D4D4D4"
+							borderThickness="0"
+							rowHeight="55">
+							<mx:dataProvider>
+								<mx:Array>
+									<mx:String>assets/webimages/sandysmith.png</mx:String>
+									<mx:String>assets/webimages/krishnaguha.png</mx:String>
+								</mx:Array>
+							</mx:dataProvider>
+						</mx:HorizontalList>
+						
+					</search:GroupView>
+					<mx:Canvas label="Add" 
+						icon="{ EmbeddedAssets.ICON_ADD_GREEN  }"   />
+				</components:TPSSuperTabNavigator>
+				
+				<mx:HBox height="20" right="80" verticalGap="0" >
+					<mx:LinkButton label="Save Group" />
+					<mx:Image source="{ EmbeddedAssets.V_DOTTED_SEPARATOR }" />
+					<mx:LinkButton label="View All" />
+					
+				</mx:HBox>
+			</mx:Canvas>
+		</mx:Canvas>
+	</mx:HDividedBox>
+	
+</mx:VBox>

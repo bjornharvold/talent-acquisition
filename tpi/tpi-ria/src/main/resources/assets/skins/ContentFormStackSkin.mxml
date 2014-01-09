@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<degrafa:GraphicBorderSkin
+	 xmlns:degrafa="http://www.degrafa.com/2007" 
+	 xmlns:mx="http://www.adobe.com/2006/mxml" 
+	 width="400" height="300">
+	 
+    
+	<degrafa:strokes>
+		<degrafa:SolidStroke color="#D2C5AD" id="tan" weight="1" alpha="1" /> 
+		<degrafa:SolidStroke color="#FFFFFF" id="wht" weight="1" alpha="1" /> 
+	</degrafa:strokes>
+	
+	<degrafa:fills>
+		<degrafa:SolidFill id="white" color="0xFFFFFF" alpha="0" />
+	</degrafa:fills>
+		
+	<degrafa:geometry>
+		<degrafa:GeometryComposition >
+			<degrafa:RegularRectangle
+	            id="selUp" 
+	            stroke="{ tan }"
+	            height="{ skinHeight - 15 }"
+	            width="{ skinWidth - 45 - 10 }"
+	            x="45"
+	            y="15" />
+	           <!-- this is to force mouse events to fire only in this content area -->
+	         <degrafa:RegularRectangle
+	         	fill="{ white }"
+	         	height="{ skinHeight - 15 }"
+	            width="{ skinWidth - 45 - 10 }"
+	            x="45"
+	            y="15" />
+		</degrafa:GeometryComposition>
+        
+    </degrafa:geometry>
+    
+	
+</degrafa:GraphicBorderSkin>

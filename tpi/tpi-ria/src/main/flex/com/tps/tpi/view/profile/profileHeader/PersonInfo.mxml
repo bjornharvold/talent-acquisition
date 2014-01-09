@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProfilePanel xmlns="com.tps.tpi.view.components.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300"
+	label="" >
+	
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.utils.DateUtils;
+        import com.tps.tpi.model.objects.dto.AbstractDto;
+        import com.tps.tpi.model.objects.dto.AbstractDtoBase;
+        import com.tps.tpi.model.objects.dto.PersonDto;
+
+        [Bindable]
+        public var person:PersonDto;
+			
+		]]>
+	</mx:Script>
+	
+	
+	<mx:Grid verticalGap="0">
+		<mx:GridRow >
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.role') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<mx:Label styleName="formItem"
+					text="{ resourceManager.getString( 'resources', 'employment.type.' + person.currentEmploymentType ) + ' - ' + resourceManager.getString( 'resources', person.currentBiographySkilledRole.skilledRole.code ) }" 
+					 />
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.department') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<mx:Label styleName="formItem" 
+					text="{ person.currentDepartment.shortName }"
+					/>
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.company') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<mx:Label styleName="formItem" 
+					text="Metrobank"
+					/>
+					<!-- was { person.currentCompanyTitle.companyName } -->
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.location') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<mx:Label styleName="formItem" 
+					text="{ person.currentLocation.shortName }"
+					 />
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.time_zone') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<mx:Label styleName="formItem" text="{ person.timezone }" />
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.phone') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<PhoneNumberLabel styleName="formItem" text="{ person.preferredPhone }" />
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.email') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<EmailLabel styleName="formItem" text="{ person.preferredEmail }" />
+			</mx:GridItem>
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem>
+				<mx:Label styleName="formHeader" text="{resourceManager.getString( 'resources','form.availability') }" />
+			</mx:GridItem>
+			<mx:GridItem>
+				<mx:Label styleName="formItem" text="{ DateUtils.formatDate( person.availability ) }" />
+			</mx:GridItem>
+		</mx:GridRow>
+	</mx:Grid>
+</ProfilePanel>

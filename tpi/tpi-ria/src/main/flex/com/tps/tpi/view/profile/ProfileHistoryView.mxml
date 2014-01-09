@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	 label="POSITIONS &amp; ROLES"
+	 width="400" height="300" 
+	 paddingBottom="15"
+	 paddingTop="15"
+	 paddingRight="20"
+	 paddingLeft="0"
+	 verticalGap="15"
+	 horizontalScrollPolicy="off"
+	 verticalScrollPolicy="off"
+	 xmlns:components="com.tps.tpi.view.components.*" 
+	 xmlns:professionalBio="com.tps.tpi.view.profile.professionalBio.*" 
+	 xmlns:containers="com.tps.tpi.containers.*"
+	 show="onShow()" xmlns:positionsRoles="com.tps.tpi.view.profile.positionsRoles.*">
+	 
+	 <mx:Script>
+		<![CDATA[
+         import com.tps.tpi.events.FetchProfileEvent;
+
+         import mx.controls.Alert;
+
+         import com.tps.tpi.model.presentation.IPositionsAndRolesModel;
+
+         [Bindable]
+         public var historyModel:IPositionsAndRolesModel;
+
+         public var userId:String;
+
+         [Bindable]
+         public var editable:Boolean = false;
+
+         private function onShow():void
+         {
+             if (!historyModel.positionsAndRoles)
+             {
+                 dispatchEvent(new FetchProfileEvent(FetchProfileEvent.FETCH_POSITIONS, userId, editable));
+             }
+         }
+			
+		]]>
+	</mx:Script>
+	
+	
+	<positionsRoles:Positions 
+		width="100%"
+		positions="{ historyModel.positionsAndRoles.positions }"
+		editable="{ editable }" 
+		visible="{ editable || historyModel.positionsAndRoles.positions  }"
+		includeInLayout="{ editable || historyModel.positionsAndRoles.positions  }" />
+
+	<positionsRoles:Projects 
+		width="100%"
+		projects="{ historyModel.positionsAndRoles.projects }"
+		editable="{ editable }"
+		visible="{ editable || historyModel.positionsAndRoles.projects  }"
+		includeInLayout="{ editable || historyModel.positionsAndRoles.projects  }"  />
+	
+	<positionsRoles:Coverage 
+		width="100%"
+		coverages="{ historyModel.positionsAndRoles.coverages }"
+		editable="{ editable }"
+		visible="{ editable || historyModel.positionsAndRoles.coverages  }"
+		includeInLayout="{ editable || historyModel.positionsAndRoles.coverages  }"  />
+	
+	<positionsRoles:Organization 
+		width="100%"
+		organizations="{ historyModel.positionsAndRoles.affiliations }"
+		editable="{ editable }"
+		visible="{ editable || historyModel.positionsAndRoles.affiliations  }"
+		includeInLayout="{ editable || historyModel.positionsAndRoles.affiliations  }" />
+	
+	
+</mx:VBox>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	label="DASHBOARD"
+	width="800" height="600"
+	paddingLeft="40"
+	paddingRight="40"
+	paddingTop="30"
+	paddingBottom="30"
+	verticalGap="20" 
+	xmlns:components="com.tps.tpi.view.components.*" 
+	xmlns:dashboard="com.tps.tpi.view.dashboard.*" 
+	xmlns:common="com.tps.tpi.view.common.*">
+	
+	<mx:Script>
+		<![CDATA[
+        import com.tps.tpi.model.presentation.ISearchModel;
+        import com.tps.tpi.events.QuickSearchEvent;
+
+        import mx.controls.Alert;
+
+        import com.tps.tpi.model.presentation.IDashboardModel;
+        import com.tps.tpi.model.objects.dto.PersonDto;
+
+        [Bindable]
+        public var currentPerson:PersonDto;
+
+        [Autowire]
+        public var dashModel:IDashboardModel;
+
+        [Autowire]
+        [Bindable]
+        public var searchModel:ISearchModel;
+
+        private function onSubmitQuickSearch():void
+        {
+            if (searchTerms.text.length > 3)
+            {
+                dispatchEvent(new QuickSearchEvent(QuickSearchEvent.QUICK_SEARCH, searchTerms.text));
+            }
+            else if (searchTerms.text.length == 0)
+            {
+                searchResults.visible = false;
+            }
+            else
+            {
+                //what to do?  show tooltip? ignore this case?
+            }
+        }
+
+        private function onPerformSearch(event:Event):void
+        {
+            if (searchTerms.text.length > 3)
+            {
+                dispatchEvent(new QuickSearchEvent(QuickSearchEvent.QUICK_SEARCH_COUNT, searchTerms.text));
+            }
+            else if (searchTerms.text.length == 0)
+            {
+                searchResults.visible = false;
+            }
+            else
+            {
+                //what to do?  show tooltip? ignore this case?
+            }
+        }
+
+        /**
+         * catching event with data from server in it
+         * prolly not a good idea this
+         * TODO refactor
+         */
+        [Mediate(event="QuickSearchCountResults.EVENT_TYPE")]
+        public function resultsAreInHere():void
+        {
+            searchResults.text = "Search Results: " + searchModel.quickSearchCount;
+            searchResults.visible = true;
+        }
+			
+		]]>
+	</mx:Script>
+		
+		<mx:HBox  width="900" height="210"
+			horizontalGap="15" >
+		 	<mx:HBox height="100%" width="100%"
+		 		styleName="dropShadowContainer"
+		 		 paddingBottom="20"
+		 		 paddingLeft="20"
+		 		 paddingRight="20"
+		 		 paddingTop="20"
+		 		 horizontalGap="30">
+		 		
+		 		<components:ProfileImage
+					id="profileImage" 
+					height="165"
+					maintainAspectRatio="true"
+					source="{ currentPerson.profileImageUrl }" />
+		 		
+		 		<mx:VBox height="165" width="100%" verticalGap="0">
+		 			
+		 			<mx:Label text="Total Profile Views: 1342" />
+		 			<mx:Label text="Total Endorsements: 9" />
+		 			<mx:Spacer height="100%" />
+		 			<mx:Label text="Views of Your Profile By Month" />
+		 			<mx:Image source="@Embed(source='/assets/images/dashboardSampleGraph.png')" horizontalAlign="left" />
+		 		</mx:VBox>
+		 		
+		 		<dashboard:LatestProfileUpdates height="165" width="100%" />
+		 		
+		 	</mx:HBox>
+		 	
+		 	<mx:Panel width="250"
+		 		height="100%" 
+		 		styleName="gtePanel"
+		 		title="MOST POPULAR SEARCHES"
+		 		paddingTop="5"
+		 		paddingBottom="5">
+		 		
+		 		<mx:Image source="@Embed(source='/assets/images/mostPopularSearchesMock.png')" />
+		 		
+		 	</mx:Panel>
+		</mx:HBox>
+		<mx:HBox  width="900" height="140"
+			horizontalGap="15">
+		 	<mx:HBox height="100%" width="100%"
+		 		styleName="dropShadowContainer"
+		 		paddingBottom="20"
+		 		 paddingLeft="20"
+		 		 paddingRight="20"
+		 		 paddingTop="20"
+		 		 horizontalGap="30">
+		 		
+		 		<mx:VBox width="100%" >
+		 			<mx:Label text="SEARCH PROFILES" />
+		 			<mx:Label text="Enter any criteria. Use commas to separate items." color="0xA8A8A8" />
+		 			
+		 			<mx:FormItem defaultButton="{submit}" width="100%" >
+		 				
+		 				<components:QuickSearchInput
+			 				id="searchTerms"
+			 				width="100%" 
+			 				cornerRadius="5"
+			 				performSearch="onPerformSearch( event )" />
+		 			</mx:FormItem>
+		 			<mx:Canvas width="100%">
+			 			<mx:Label id="searchResults" 
+			 				text="Search Results:" 
+			 				left="0"
+			 				visible="false" />
+		 				<mx:Button id="submit" 
+		 					label="VIEW RESULTS" 
+		 					right="0"
+		 					click="onSubmitQuickSearch()" />
+		 			</mx:Canvas>
+		 		</mx:VBox>
+		 	</mx:HBox>
+		 	
+		 	<mx:Panel width="250"
+		 		height="100%"
+		 		styleName="gtePanel"
+		 		title="SAVED SEARCHES">
+		 		
+		 		<mx:Image source="@Embed(source='/assets/images/savedSearchesMock.png')" />
+		 		
+		 	</mx:Panel>
+		</mx:HBox>
+		<!-- this height should be 310...fudging for now -->
+		<mx:HBox width="900" height="310"
+			horizontalGap="15"
+			horizontalScrollPolicy="off">
+		 	<mx:VBox height="100%" width="635"
+		 		styleName="dropShadowContainer"
+		 		verticalAlign="middle"
+		 		horizontalAlign="center">
+		 		
+		 		<!-- 
+		 		 <mx:Canvas width="100%">
+		 		 	<mx:Label text="USER PROFILES" left="0" fontSize="10" />
+		 		 	<mx:Label text="Total # of Profiles:812,139" right="0" fontSize="10" />
+		 		 </mx:Canvas>
+		 		 -->
+		 		 <mx:Image source="@Embed(source='/assets/images/userProfilesDashboardMock.png')"
+		 		 	 maintainAspectRatio="true"/>
+		 		 
+		 	</mx:VBox>
+		 	
+		 	<mx:Panel width="250"
+		 		height="100%"
+		 		styleName="gtePanel"
+		 		title="SAVED CONTACTS"
+		 		paddingTop="5"
+		 		paddingBottom="5"
+		 		paddingLeft="4"
+		 		paddingRight="4">
+		 		
+		 		<mx:Image source="@Embed(source='/assets/images/savedContactsMock.png')"
+		 			 />
+		 	</mx:Panel>
+		</mx:HBox>
+	
+		
+</mx:VBox>

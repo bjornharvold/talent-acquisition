@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<containers:AbstractFormCanvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="400" height="300" 
+	xmlns:containers="com.tps.tpi.containers.*">
+	
+	<mx:Script>
+		<![CDATA[
+			import com.tps.tpi.view.events.ValidChangeEvent;
+			
+			private function onSave():void
+			{
+				formIsValid = true;
+				dispatchEvent( new ValidChangeEvent() );
+			}
+		]]>
+	</mx:Script>
+	<mx:VBox>
+	
+	<mx:TextArea text="I am being edited now"  />
+	<mx:Button label="SAVE CHANGES" click="onSave()" />		
+	</mx:VBox>
+	
+</containers:AbstractFormCanvas>

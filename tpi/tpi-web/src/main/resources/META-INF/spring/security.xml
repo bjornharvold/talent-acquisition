@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security-2.0.4.xsd">
+
+    <!-- spring security for the web layer -->
+    <security:http auto-config="true" access-denied-page="/static/403.jspx">
+        <security:intercept-url pattern="/secure/admin/**" access="ROLE_ADMINISTRATOR"/>
+        <security:intercept-url pattern="/secure/**" access="ROLE_USER"/>
+
+        <!-- this should be set lower once session timeout is lowered in web.xml. Timeout is currently set to 10 hours. -->
+        <security:concurrent-session-control max-sessions="50" exception-if-maximum-exceeded="true"/>
+
+        <security:form-login login-page="/login" authentication-failure-url="/login?success=false"
+                             always-use-default-target="true" default-target-url="/secure/dashboard"/>
+        <security:logout logout-success-url="/"/>
+
+    </security:http>
+
+    <!-- This Spring Security-friendly PasswordEncoder implementation will -->
+    <!-- wrap the PasswordEncryptor instance so that it can be used from   -->
+    <!-- the security framework.                                           -->
+    <bean id="passwordEncoder" class="org.jasypt.spring.security2.PasswordEncoder">
+        <property name="passwordEncryptor" ref="passwordEncryptor"/>
+    </bean>
+
+    <!-- spring security for the domain layer -->
+    <security:global-method-security secured-annotations="enabled" jsr250-annotations="enabled"/>
+
+    <security:authentication-manager alias="authenticationManager"/>
+
+    <!-- spring-security uses our custom user service implementation -->
+    <security:authentication-provider user-service-ref="userService">
+        <security:password-encoder ref="passwordEncoder"/>
+    </security:authentication-provider>
+
+    <!-- An access decision manager used by the business objects -->
+    <bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+        <property name="allowIfAllAbstainDecisions" value="false"/>
+        <property name="decisionVoters">
+            <list>
+                <ref local="roleVoter"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- An access decision voter that reads ROLE_* configuration settings -->
+    <bean id="roleVoter" class="org.springframework.security.vote.RoleVoter">
+        <property name="rolePrefix" value="ROLE_*"/>
+    </bean>
+</beans>

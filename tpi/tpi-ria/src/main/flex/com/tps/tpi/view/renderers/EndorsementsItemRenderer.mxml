@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" >
+	
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ListCollectionView;
+			
+			import com.tps.tpi.view.EmbeddedAssets;
+			
+			private var dataIsDirty:Boolean;
+			private var endorsements:ListCollectionView;
+			
+			public var endorsementsKey:String = "biographySkillEndorsements";
+			
+			override public function set data(value:Object):void
+			{
+				super.data = value;
+				if( value )
+				{
+					endorsements = value[ endorsementsKey ];
+					dataIsDirty = true;
+					invalidateProperties();
+				}
+			} 
+			
+			override protected function commitProperties():void
+			{
+				super.commitProperties();
+				
+				if( dataIsDirty )
+				{
+					dataIsDirty = false;
+					if( endorsements && endorsements.length > 0 )
+					{
+						var num:int = endorsements.length;
+						endorsmentInfo.text = num + ( num > 1 ? " people" : " person"  );	
+
+						ico.visible = true;
+						ico.includeInLayout = true;
+						endorsmentInfo.visible = true;
+						endorsmentInfo.includeInLayout = true;
+						none.visible = false;
+						none.includeInLayout = false;
+					}
+					else
+					{
+						ico.visible = false;
+						ico.includeInLayout = false;
+						endorsmentInfo.visible = false;
+						endorsmentInfo.includeInLayout = false
+						none.visible = true;
+						none.includeInLayout = true;
+					}
+				}
+			}
+			
+			
+		]]>
+	</mx:Script>
+	
+	<mx:Image id="ico" 
+		source="{ EmbeddedAssets.ICON_YELLOW_STAR }"
+		verticalCenter="0" />
+	<mx:Label id="endorsmentInfo" 
+		x="10"
+		verticalCenter="0"
+		color="0x0000ff" />
+	<mx:Label text="" id="none" visible="false" />
+</mx:Canvas>

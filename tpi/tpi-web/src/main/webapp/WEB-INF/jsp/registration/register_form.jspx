@@ -1,0 +1,75 @@
+<!--
+  ~ Copyright (c) 2009. All rights reserved. Bjorn Harvold
+  -->
+
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:spring="http://www.springframework.org/tags"
+          xmlns:spring-form="http://www.springframework.org/tags/form"
+          xmlns:security="http://www.springframework.org/security/tags"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:x="http://java.sun.com/jsp/jstl/xml"
+          xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+          xmlns:tiles="http://tiles.apache.org/tags-tiles"
+          xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0">
+    <jsp:directive.page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"/>
+
+    <div>
+
+        <spring-form:form id="form" commandName="user" action="/registration/signup" method="POST">
+
+            <table cellpadding="0" cellspacing="2" border="0" width="100%">
+                <tr>
+                    <td width="150" class="form_text"><spring:message code="user.email" text="E-mail"/>:&#160;</td>
+                    <td width="250"><spring-form:input path="email" cssClass="textInput"/><span class="required">&#160;*</span></td>
+                    <td><spring-form:errors path="email" cssClass="errors"/></td>
+                </tr>
+                <tr>
+                    <td width="150" class="form_text"><spring:message code="user.username" text="Username"/>:&#160;</td>
+                    <td width="250"><spring-form:input path="username" cssClass="textInput"/><span class="required">&#160;*</span></td>
+                    <td><spring-form:errors path="username" cssClass="errors"/></td>
+                </tr>
+                <tr>
+                    <td class="form_text"><spring:message code="user.password" text="Password"/>:&#160;</td>
+                    <td><spring-form:password path="password" cssClass="textInput"/><span class="required">&#160;*</span></td>
+                    <td><spring-form:errors path="password" cssClass="errors"/></td>
+                </tr>
+                <tr>
+                    <td class="form_text"><spring:message code="user.password.confirm" text="Confirm password"/>:&#160;</td>
+                    <td><spring-form:password path="passwordConfirm" cssClass="textInput"/><span class="required">&#160;*</span></td>
+                    <td><spring-form:errors path="passwordConfirm" cssClass="errors"/></td>
+                </tr>
+                <tr>
+                    <td class="form_text"><spring:message code="captcha.help" text="Security field"/>:&#160;</td>
+                    <td>
+                        <img src="/kaptcha.jpg" alt="kaptcha" id="kaptchaImage"/><br/>
+                        <input type="text" name="kaptcha" value=""/><span class="required">&#160;*</span>
+                    </td>
+                    <td><spring-form:errors path="kaptcha" cssClass="errors"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&#160;</td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        <spring:message var="save" code="button.save" text="Save"/>
+                        <input type="submit" name="submit" value="${save}"/>
+                    </td>
+                </tr>
+            </table>
+
+        </spring-form:form>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#kaptchaImage').click(function () {
+                    $(this).hide()
+                            .attr('src', '/kaptcha.jpg?' + Math.floor(Math.random() * 100))
+                            .fadeIn();
+                })
+            });
+        </script>
+
+    </div>
+</jsp:root>
